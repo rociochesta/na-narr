@@ -4,16 +4,19 @@ import { useParams, useNavigate } from "react-router-dom";
 import Header3PM from "../components/Header3PM.jsx";
 import BottomNav from "../components/BottomNav.jsx";
 
+const GROUP_LABELS = {
+  "start-here": "Start here",
+  "body-first": "Body-first",
+};
+
 export default function ToolSectionPage() {
-  const { sectionId } = useParams(); // grounding, connection, etc
+  const { sectionId } = useParams();
   const navigate = useNavigate();
 
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const [section, setSection] = useState(null);
   const [tools, setTools] = useState([]);
-  const [groups, setGroups] = useState([]);
-  const [groupItems, setGroupItems] = useState([]);
 
   useEffect(() => {
     let ignore = false;
@@ -24,9 +27,7 @@ export default function ToolSectionPage() {
 
       try {
         const res = await fetch(
-          `/.netlify/functions/get-toolbox-section?slug=${encodeURIComponent(
-            sectionId
-          )}`
+          `/.netlify/functions/get-toolbox-section?slug=${encodeURIComponent(sectionId)}`
         );
 
         if (!res.ok) {
@@ -35,21 +36,16 @@ export default function ToolSectionPage() {
         }
 
         const json = await res.json();
-
         if (ignore) return;
 
         setSection(json.section ?? null);
         setTools(Array.isArray(json.tools) ? json.tools : []);
-        setGroups(Array.isArray(json.groups) ? json.groups : []);
-        setGroupItems(Array.isArray(json.groupItems) ? json.groupItems : []);
       } catch (e) {
         console.error(e);
         if (!ignore) {
           setError(e.message || "Could not load section");
           setSection(null);
           setTools([]);
-          setGroups([]);
-          setGroupItems([]);
         }
       } finally {
         if (!ignore) setLoading(false);
@@ -57,43 +53,32 @@ export default function ToolSectionPage() {
     }
 
     load();
-    return () => {
-      ignore = true;
-    };
+    return () => { ignore = true; };
   }, [sectionId]);
 
-  const pinned = useMemo(() => {
-    return tools
-      .filter((t) => t.isPinned)
-      .slice()
-      .sort((a, b) => (a.pinnedOrder ?? 999) - (b.pinnedOrder ?? 999));
+  // Group tools by groupLabel, preserving sort order
+  const grouped = useMemo(() => {
+    const map = new Map();
+    const order = [];
+
+    for (const t of tools) {
+      const key = t.groupLabel || "__ungrouped__";
+      if (!map.has(key)) {
+        map.set(key, []);
+        order.push(key);
+      }
+      map.get(key).push(t);
+    }
+
+    return order.map((key) => ({
+      key,
+      label: GROUP_LABELS[key] || (key === "__ungrouped__" ? "All tools" : key),
+      tools: map.get(key),
+    }));
   }, [tools]);
 
-  const grouped = useMemo(() => {
-    if (!groups.length) return [];
-
-    const toolsById = new Map(tools.map((t) => [t.id, t]));
-
-    const itemsByGroup = groupItems.reduce((acc, it) => {
-      (acc[it.groupId] ||= []).push(it);
-      return acc;
-    }, {});
-
-    return groups
-      .slice()
-      .sort((a, b) => (a.sortOrder ?? 0) - (b.sortOrder ?? 0))
-      .map((g) => ({
-        group: g,
-        tools: (itemsByGroup[g.id] || [])
-          .slice()
-          .sort((a, b) => (a.sortOrder ?? 0) - (b.sortOrder ?? 0))
-          .map((it) => toolsById.get(it.toolId))
-          .filter(Boolean),
-      }))
-      .filter((x) => x.tools.length > 0);
-  }, [groups, groupItems, tools]);
-
-  function ToolCard({ t, showTone = false }) {
+  function ToolCard({ t }) {
+    const showTone = t.groupLabel === "start-here";
     return (
       <button
         type="button"
@@ -140,14 +125,14 @@ export default function ToolSectionPage() {
             <p className="text-[11px] text-slate-500 italic">Loading…</p>
           ) : error ? (
             <div className="rounded-2xl border border-rose-900/40 bg-rose-950/20 px-4 py-3">
-              <p className="text-sm text-rose-300">Couldn’t load this section.</p>
+              <p className="text-sm text-rose-300">Couldn't load this section.</p>
               <p className="text-[11px] text-rose-200/70 mt-1">{error}</p>
             </div>
           ) : !section ? (
             <p className="text-sm text-rose-400">Section not found.</p>
           ) : (
             <>
-              {/* Header */}
+              {/* Section header */}
               <section className="rounded-2xl border border-slate-800 bg-slate-900/60 px-4 py-4">
                 <h1 className="text-lg font-semibold tracking-tight">
                   {section.title}
@@ -157,30 +142,18 @@ export default function ToolSectionPage() {
                     {section.description}
                   </p>
                 ) : null}
-                <p className="text-[11px] text-slate-500 mt-2">
-                  Pick one. Do it badly. Still counts.
-                </p>
+                {section.badge ? (
+                  <p className="text-[11px] text-slate-500 mt-2">
+                    {section.badge}
+                  </p>
+                ) : null}
               </section>
 
-              {/* Start here */}
-              {pinned.length > 0 && (
-                <section className="space-y-2">
+              {/* Tool groups */}
+              {grouped.map(({ key, label, tools: list }) => (
+                <section key={key} className="space-y-2">
                   <p className="text-xs uppercase tracking-[0.16em] text-slate-500">
-                    Start here
-                  </p>
-                  <div className="grid gap-2">
-                    {pinned.map((t) => (
-                      <ToolCard key={t.id} t={t} showTone />
-                    ))}
-                  </div>
-                </section>
-              )}
-
-              {/* Grouped */}
-              {grouped.map(({ group, tools: list }) => (
-                <section key={group.id} className="space-y-2">
-                  <p className="text-xs uppercase tracking-[0.16em] text-slate-500">
-                    {group.title}
+                    {label}
                   </p>
                   <div className="grid gap-2">
                     {list.map((t) => (
@@ -189,20 +162,6 @@ export default function ToolSectionPage() {
                   </div>
                 </section>
               ))}
-
-              {/* fallback if no groups */}
-              {grouped.length === 0 && tools.length > 0 && (
-                <section className="space-y-2">
-                  <p className="text-xs uppercase tracking-[0.16em] text-slate-500">
-                    All tools
-                  </p>
-                  <div className="grid gap-2">
-                    {tools.map((t) => (
-                      <ToolCard key={t.id} t={t} />
-                    ))}
-                  </div>
-                </section>
-              )}
             </>
           )}
         </div>

@@ -12,7 +12,6 @@ export const handler = async (event) => {
   }
 
   try {
-    // 1) section
     const secRes = await pool.query(
       `
       SELECT id, slug, title, description, badge, icon
@@ -28,17 +27,15 @@ export const handler = async (event) => {
       return { statusCode: 404, body: JSON.stringify({ error: "Section not found" }) };
     }
 
-    // 2) tools for that section
     const toolsRes = await pool.query(
       `
       SELECT
         id, section_id, slug, title, subtitle, tone_line,
-        estimated_seconds, kind, is_pinned, pinned_order, sort_order, is_active
+        estimated_seconds, kind, is_pinned, pinned_order,
+        sort_order, is_active, group_label
       FROM public.tools
       WHERE section_id = $1 AND is_active = true
       ORDER BY
-        is_pinned DESC,
-        pinned_order ASC NULLS LAST,
         sort_order ASC,
         title ASC;
       `,
@@ -68,6 +65,7 @@ export const handler = async (event) => {
           isPinned: t.is_pinned === true,
           pinnedOrder: t.pinned_order ?? null,
           sortOrder: t.sort_order ?? 0,
+          groupLabel: t.group_label || null,
         })),
         groups: [],
         groupItems: [],
