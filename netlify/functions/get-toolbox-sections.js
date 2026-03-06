@@ -3,10 +3,7 @@ import { pool } from "./_db.js";
 
 export const handler = async (event) => {
   if (event.httpMethod !== "GET") {
-    return {
-      statusCode: 405,
-      body: JSON.stringify({ error: "Method not allowed" }),
-    };
+    return { statusCode: 405, body: JSON.stringify({ error: "Method not allowed" }) };
   }
 
   try {
@@ -20,9 +17,9 @@ export const handler = async (event) => {
         icon,
         sort_order,
         is_active
-      FROM toolbox_sections
+      FROM public.tool_sections
       WHERE is_active = true
-      ORDER BY sort_order ASC;
+      ORDER BY sort_order ASC, title ASC;
     `);
 
     const sections = result.rows.map((r) => ({
@@ -36,18 +33,9 @@ export const handler = async (event) => {
       isActive: r.is_active === true,
     }));
 
-    return {
-      statusCode: 200,
-      body: JSON.stringify({ sections }),
-    };
+    return { statusCode: 200, body: JSON.stringify({ sections }) };
   } catch (err) {
     console.error("get-toolbox-sections error:", err);
-    return {
-      statusCode: 500,
-      body: JSON.stringify({
-        error: "Internal server error",
-        details: err.message,
-      }),
-    };
+    return { statusCode: 500, body: JSON.stringify({ error: "Internal server error", details: err.message }) };
   }
 };
