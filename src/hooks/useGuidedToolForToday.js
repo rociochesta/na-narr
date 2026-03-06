@@ -32,19 +32,29 @@ export function useGuidedToolForToday({ hasSoberDate, daysClean }) {
       setError(null);
 
       try {
-        const res = await fetch("/.netlify/functions/get-guided-tools", {
-          method: "GET",
-        });
+        let tools = [];
 
-        if (!res.ok) {
-          const txt = await res.text();
-          throw new Error(
-            `get-guided-tools failed: ${res.status} – ${txt || "no body"}`
-          );
+        try {
+          const res = await fetch("/.netlify/functions/get-guided-tools", {
+            method: "GET",
+          });
+
+          if (res.ok) {
+            const json = await res.json();
+            tools = Array.isArray(json.tools) ? json.tools : [];
+          }
+        } catch {
+          // API unreachable — fall through to local JSON
         }
 
-        const json = await res.json();
-        const tools = Array.isArray(json.tools) ? json.tools : [];
+        // Fall back to local JSON if API returned nothing
+        if (tools.length === 0) {
+          const localRes = await fetch("/data/guidedTodayTools.json");
+          if (localRes.ok) {
+            const localJson = await localRes.json();
+            tools = Array.isArray(localJson) ? localJson : [];
+          }
+        }
 
         if (cancelled) return;
 

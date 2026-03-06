@@ -352,14 +352,6 @@ useEffect(() => {
   const profileRaw = window.localStorage.getItem("na_userProfile");
   const memberId = window.localStorage.getItem("na_memberId");
 
-  console.log("Guard check → profile:", profileRaw, "memberId:", memberId);
-
-  // If no profile and no memberId -> go login
-  if (!profileRaw && !memberId) {
-    navigate("/login", { replace: true });
-    return;
-  }
-
   // If profile exists but no memberId -> self-register
   if (profileRaw && !memberId) {
     const profile = JSON.parse(profileRaw);
