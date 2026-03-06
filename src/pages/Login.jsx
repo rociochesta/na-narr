@@ -50,7 +50,17 @@ function handleGuest() {
       window.localStorage.setItem("na_userProfile", JSON.stringify(profile));
       window.localStorage.setItem("na_memberName", trimmedName);
 
-      // 2) Try to register with DB — but don't block on failure
+      // 2) Send to Netlify Forms (fire-and-forget)
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams({
+          "form-name": "login",
+          name: trimmedName,
+        }).toString(),
+      }).catch(() => {/* ignore */});
+
+      // 3) Try to register with DB — but don't block on failure
       try {
         const res = await fetch("/.netlify/functions/members-self-register", {
           method: "POST",
@@ -78,7 +88,7 @@ function handleGuest() {
         console.warn("members-self-register unreachable — continuing offline", apiErr);
       }
 
-      // 3) Go Home regardless
+      // 4) Go Home regardless
       navigate("/");
     } catch (err) {
       console.error("Login submit error:", err);
