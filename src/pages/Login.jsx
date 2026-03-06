@@ -8,8 +8,7 @@ export default function Login() {
   const navigate = useNavigate();
 
   const [name, setName] = useState("");
-  const [group, setGroup] = useState("3PM"); // must match groups.code in DB
-  const [password, setPassword] = useState(""); // not used yet (future group PIN)
+  const [group] = useState("3PM"); // must match groups.code in DB
   const [error, setError] = useState("");
   const [submitting, setSubmitting] = useState(false);
 function handleGuest() {
@@ -42,54 +41,44 @@ function handleGuest() {
     try {
       setSubmitting(true);
 
-      // 1) Save local profile (offline-friendly)
+      // 1) Save local profile immediately (offline-friendly fallback)
       const profile = {
         name: trimmedName,
-        groupCode: group || null, // e.g. '3PM'
+        groupCode: group || null,
         createdAt: new Date().toISOString(),
       };
       window.localStorage.setItem("na_userProfile", JSON.stringify(profile));
+      window.localStorage.setItem("na_memberName", trimmedName);
 
-      // 2) Register (or get existing) member + group from DB
-      const res = await fetch("/.netlify/functions/members-self-register", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: trimmedName,
-          groupCode: group, // e.g. '3PM'
-        }),
-      });
+      // 2) Try to register with DB — but don't block on failure
+      try {
+        const res = await fetch("/.netlify/functions/members-self-register", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ name: trimmedName, groupCode: group }),
+        });
 
-      const data = await res.json();
-
-      if (!res.ok) {
-        console.warn("members-self-register failed:", data);
-        setError(data?.error || "Could not register. Try again.");
-        return;
+        if (res.ok) {
+          const data = await res.json();
+          if (data?.member?.id) {
+            window.localStorage.setItem("na_memberId", data.member.id);
+            window.localStorage.setItem(
+              "na_memberName",
+              data.member.display_name || trimmedName
+            );
+          }
+          if (data?.group?.id) {
+            window.localStorage.setItem("na_groupId", data.group.id);
+            window.localStorage.setItem("na_groupCode", data.group.code || group);
+          }
+        } else {
+          console.warn("members-self-register failed — continuing offline");
+        }
+      } catch (apiErr) {
+        console.warn("members-self-register unreachable — continuing offline", apiErr);
       }
 
-      // data shape: { member: {...}, group: {...} }
-      if (data?.member?.id) {
-        window.localStorage.setItem("na_memberId", data.member.id); // uuid
-        window.localStorage.setItem(
-          "na_memberName",
-          data.member.display_name || trimmedName
-        );
-      } else {
-        setError("Registration returned no member id.");
-        return;
-      }
-
-      if (data?.group?.id) {
-        window.localStorage.setItem("na_groupId", data.group.id); // uuid
-        window.localStorage.setItem("na_groupCode", data.group.code || group);
-      } else {
-        // group is required for the rest of the app (Group/Admin pages)
-        setError("Registration returned no group id.");
-        return;
-      }
-
-      // 3) Go Home
+      // 3) Go Home regardless
       navigate("/");
     } catch (err) {
       console.error("Login submit error:", err);
@@ -147,8 +136,8 @@ function handleGuest() {
                   </p>
                 </div>
 
-                {/* Group */}
-                <div className="space-y-1">
+                {/* Group — faded, coming later */}
+                <div className="space-y-1 opacity-30 pointer-events-none select-none">
                   <label
                     htmlFor="group"
                     className="text-xs font-medium uppercase tracking-[0.16em] text-slate-300"
@@ -158,40 +147,32 @@ function handleGuest() {
                   <select
                     id="group"
                     value={group}
-                    onChange={(e) => setGroup(e.target.value)}
-                    className="w-full rounded-lg bg-slate-950/60 border border-slate-700 px-3 py-2 text-sm text-slate-50 focus:outline-none focus:ring-1 focus:ring-cyan-400 focus:border-cyan-400"
+                    tabIndex={-1}
+                    className="w-full rounded-lg bg-slate-950/60 border border-slate-700 px-3 py-2 text-sm text-slate-50"
                   >
                     <option value="3PM">3PM NA</option>
                     <option value="NIGHTSHIFT">Night Shift</option>
                     <option value="DEBUG">Debug / Sandbox</option>
                   </select>
-                  <p className="text-[11px] text-slate-500">
-                    This must match the group <span className="font-mono">code</span> in the DB.
-                  </p>
+                  <p className="text-[11px] text-slate-500">Coming soon</p>
                 </div>
 
-                {/* Password / PIN (not required for now) */}
-                <div className="space-y-1">
+                {/* Password / PIN — faded, coming later */}
+                <div className="space-y-1 opacity-30 pointer-events-none select-none">
                   <label
                     htmlFor="password"
                     className="text-xs font-medium uppercase tracking-[0.16em] text-slate-300"
                   >
-                    Password / PIN{" "}
-                    <span className="text-slate-500">(not required for now)</span>
+                    Password / PIN
                   </label>
                   <input
                     id="password"
                     type="password"
-                    autoComplete="off"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    className="w-full rounded-lg bg-slate-950/60 border border-slate-700 px-3 py-2 text-sm text-slate-50 placeholder:text-slate-500 focus:outline-none focus:ring-1 focus:ring-cyan-400 focus:border-cyan-400"
-                    placeholder="Not required for now"
+                    tabIndex={-1}
+                    className="w-full rounded-lg bg-slate-950/60 border border-slate-700 px-3 py-2 text-sm text-slate-50 placeholder:text-slate-500"
+                    placeholder="Coming soon"
                   />
-                  <p className="text-[11px] text-slate-500">
-                    Later this can be used as a shared group PIN. For now you can
-                    leave it empty.
-                  </p>
+                  <p className="text-[11px] text-slate-500">Coming soon</p>
                 </div>
 
                 {error && <p className="text-[11px] text-rose-400 pt-1">{error}</p>}
