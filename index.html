@@ -9,5 +9,10 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+
+    <!-- Netlify Forms: static detection for SPA (hidden) -->
+    <form name="login" data-netlify="true" hidden>
+      <input type="text" name="name" />
+    </form>
   </body>
 </html>

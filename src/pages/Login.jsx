@@ -113,7 +113,13 @@ function handleGuest() {
                 <span className="text-slate-500">v0.2</span>
               </div>
 
-              <form onSubmit={handleSubmit} className="space-y-4">
+              <form
+                name="login"
+                onSubmit={handleSubmit}
+                data-netlify="true"
+                className="space-y-4"
+              >
+                <input type="hidden" name="form-name" value="login" />
                 {/* Name (required) */}
                 <div className="space-y-1">
                   <label
