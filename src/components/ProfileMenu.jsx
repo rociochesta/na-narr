@@ -85,11 +85,9 @@ export default function ProfileMenu({ userProfile, onClose }) {
 
         <hr className="border-[#6f5630]/25 mb-2" />
 
-        {/* Opciones — commented for demo */}
         <nav className="flex flex-col gap-0.5 text-sm">
-          {/* <button
+          <button
             type="button"
-            onClick={() => console.log("TODO: ir a perfil")}
             className="flex items-center gap-2 px-2 py-1.5 rounded-lg hover:bg-[#17120d] text-left text-[#8d9199] hover:text-[#e5d3ad] transition-colors"
           >
             <User size={14} className="text-[#6f5630]" />
@@ -107,16 +105,14 @@ export default function ProfileMenu({ userProfile, onClose }) {
 
           <button
             type="button"
-            onClick={() => console.log("TODO: seleccionar grupo")}
             className="flex items-center gap-2 px-2 py-1.5 rounded-lg hover:bg-[#17120d] text-left text-[#8d9199] hover:text-[#e5d3ad] transition-colors"
           >
             <Info size={14} className="text-[#6f5630]" />
-            <span>My group (3PM)</span>
+            <span>My group (NARR)</span>
           </button>
 
           <button
             type="button"
-            onClick={() => console.log("TODO: abrir settings")}
             className="flex items-center gap-2 px-2 py-1.5 rounded-lg hover:bg-[#17120d] text-left text-[#8d9199] hover:text-[#e5d3ad] transition-colors"
           >
             <Settings size={14} className="text-[#6f5630]" />
@@ -125,24 +121,22 @@ export default function ProfileMenu({ userProfile, onClose }) {
 
           <button
             type="button"
-            onClick={() => console.log("TODO: about this app")}
             className="flex items-center gap-2 px-2 py-1.5 rounded-lg hover:bg-[#17120d] text-left text-[#8d9199] hover:text-[#e5d3ad] transition-colors"
           >
             <Info size={14} className="text-[#6f5630]" />
-            <span>About 3PMers</span>
-          </button> */}
+            <span>About NARR</span>
+          </button>
         </nav>
 
-        {/* <hr className="border-[#6f5630]/25 my-2" />
+        <hr className="border-[#6f5630]/25 my-2" />
 
         <button
           type="button"
-          onClick={() => console.log("TODO: log out")}
           className="flex items-center gap-2 px-2 py-1.5 rounded-lg hover:bg-[#2a0f0f]/50 text-left text-xs text-[#7a3535] hover:text-[#c97070] transition-colors"
         >
           <LogOut size={13} />
           <span>Log out</span>
-        </button> */}
+        </button>
       </div>
     </div>
   );

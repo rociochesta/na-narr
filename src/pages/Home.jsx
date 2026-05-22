@@ -811,14 +811,11 @@ useEffect(() => {
             "{jftEntry.punchlines[Math.floor(Math.random() * jftEntry.punchlines.length)]}"
           </p>
         )}
-        {/* <div className="pt-2 flex justify-end">
-          <Link
-            to="/jft"
-            className="text-[10px] text-[#6b7078] hover:text-[#c6a56b] underline underline-offset-4 transition-colors"
-          >
+        <div className="pt-2 flex justify-end">
+          <span className="text-[10px] text-[#6b7078] hover:text-[#c6a56b] underline underline-offset-4 transition-colors cursor-pointer">
             Read more
-          </Link>
-        </div> */}
+          </span>
+        </div>
       </>
     )}
     {!jftLoading && !jftError && !jftEntry && (
@@ -1035,20 +1032,14 @@ useEffect(() => {
                       Start with one sentence. It doesn't have to be deep, just honest.
                     </p>
                   )}
-                  {/* <div className="flex gap-2 pt-1">
-                    <Link
-                      to="/gratitudes/new"
-                      className="flex-1 text-[11px] text-center border border-[#c6a56b]/60 text-[#e5d3ad] rounded-lg py-1.5 hover:bg-[#c6a56b]/10 transition-colors"
-                    >
+                  <div className="flex gap-2 pt-1">
+                    <span className="flex-1 text-[11px] text-center border border-[#c6a56b]/60 text-[#e5d3ad] rounded-lg py-1.5 hover:bg-[#c6a56b]/10 transition-colors cursor-pointer">
                       Add gratitude
-                    </Link>
-                    <Link
-                      to="/gratitudes"
-                      className="flex-1 text-[11px] text-center border border-[#6f5630]/30 text-[#8d9199] rounded-lg py-1.5 hover:bg-[#17120d] hover:text-[#e5d3ad] transition-colors"
-                    >
+                    </span>
+                    <span className="flex-1 text-[11px] text-center border border-[#6f5630]/30 text-[#8d9199] rounded-lg py-1.5 hover:bg-[#17120d] hover:text-[#e5d3ad] transition-colors cursor-pointer">
                       View all
-                    </Link>
-                  </div> */}
+                    </span>
+                  </div>
                 </div>
               )}
             </div>
@@ -1082,14 +1073,11 @@ useEffect(() => {
                       </p>
                     )}
                   </div>
-                  {/* <div className="flex justify-end pt-1">
-                    <Link
-                      to="/my-why"
-                      className="text-[11px] text-[#c6a56b] underline underline-offset-4 hover:text-[#d4b06a] transition-colors"
-                    >
+                  <div className="flex justify-end pt-1">
+                    <span className="text-[11px] text-[#c6a56b] underline underline-offset-4 hover:text-[#d4b06a] transition-colors cursor-pointer">
                       {savedWhy ? "Change my why" : "Write my why"}
-                    </Link>
-                  </div> */}
+                    </span>
+                  </div>
                 </div>
               )}
             </div>
@@ -1154,7 +1142,7 @@ useEffect(() => {
           </Link>
         </div>
       </main>
-      {/* <BottomNav /> */}
+      <BottomNav />
     </div>
   );
 }
