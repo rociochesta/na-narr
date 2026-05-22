@@ -25,6 +25,16 @@ function handleGuest() {
   window.localStorage.setItem("na_groupId", "guest");
   window.localStorage.setItem("na_groupCode", "guest");
 
+  fetch("/", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: new URLSearchParams({
+      "form-name": "login",
+      name: "Guest",
+      type: "guest",
+    }).toString(),
+  }).catch(() => {});
+
   navigate("/");
 }
 
@@ -57,8 +67,9 @@ function handleGuest() {
         body: new URLSearchParams({
           "form-name": "login",
           name: trimmedName,
+          type: "user",
         }).toString(),
-      }).catch(() => {/* ignore */});
+      }).catch(() => {});
 
       // 3) Try to register with DB — but don't block on failure
       try {
