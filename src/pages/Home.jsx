@@ -52,7 +52,8 @@ import BottomNav from "../components/BottomNav";
 import { AnimatePresence } from "framer-motion";
 import { getTimeUntilMeeting } from "../utils/getTimeUntilMeeting.js";
 
-import { Video } from "lucide-react";
+import { Video, RefreshCcw, Anchor } from "lucide-react";
+import shipImg from "../assets/ship.png";
 
 export default function Home() {
   const navigate = useNavigate();
@@ -493,16 +494,26 @@ useEffect(() => {
     />
 
     <div className="min-w-0 space-y-1.5">
-      <motion.p
-        key={rotatingSlogan}
-        initial={{ opacity: 0, y: 4 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: -4 }}
-        transition={{ duration: 0.5 }}
-        className="text-[11px] leading-snug text-[#c6a56b] italic"
-      >
-        {rotatingSlogan}
-      </motion.p>
+      <div className="flex items-start gap-1.5">
+        <motion.p
+          key={rotatingSlogan}
+          initial={{ opacity: 0, y: 4 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -4 }}
+          transition={{ duration: 0.5 }}
+          className="text-[11px] leading-snug text-[#c6a56b] italic flex-1"
+        >
+          {rotatingSlogan}
+        </motion.p>
+        <button
+          type="button"
+          onClick={() => setRotatingSlogan(getSlogan({ groupKey: "3PM" }))}
+          className="shrink-0 text-[#6f5630] hover:text-[#c6a56b] transition-colors mt-0.5"
+          title="Next slogan"
+        >
+          <RefreshCcw size={11} />
+        </button>
+      </div>
 
       {displayName && showHiLine && (
         <p className="text-[11px] leading-snug text-[#7f858c]">
@@ -512,31 +523,69 @@ useEffect(() => {
     </div>
   </div>
 </section>
-{/* NEXT MEETING — premium block */}
-<section className="relative overflow-hidden rounded-xl border border-[#6f5630]/25 bg-[#0f1012]/70 px-4 py-4 shadow-lg shadow-black/30">
-  <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#c6a56b]/25 to-transparent" />
-  <div className="flex items-center justify-between gap-3">
-    <div className="min-w-0">
-      <p className="text-xs uppercase tracking-[0.18em] text-[#6f5630]">
-        Next meeting
-      </p>
-      <p className="text-sm font-medium text-[#e5d3ad] mt-1">
-        {timeUntilMeeting}
-      </p>
-      <p className="text-[11px] text-[#6b7078] mt-0.5">
-        NARR Homegroup • Daily
-      </p>
-    </div>
+{/* NEXT MEETING */}
+<section
+  className="
+    relative overflow-hidden
+    rounded-2xl
+    border border-[#8a642f]/45
+    bg-[#080b0d]
+    px-5 py-5
+    shadow-[0_12px_35px_rgba(0,0,0,0.55),inset_0_0_30px_rgba(198,165,107,0.06)]
+  "
+>
+  {/* same brass edge glow as hero */}
+  <div className="absolute inset-0 rounded-2xl pointer-events-none border border-[#d6a84f]/20" />
+  <div className="absolute top-0 left-4 right-4 h-px bg-gradient-to-r from-transparent via-[#f0c56e]/60 to-transparent" />
 
-    <a
-      href="https://zoom.us/whatever"
-      target="_blank"
-      rel="noreferrer"
-      className="shrink-0 inline-flex items-center gap-1 rounded-full border border-[#c6a56b]/60 bg-[#15171b] px-3 py-1.5 text-[11px] font-medium text-[#d4b06a] hover:bg-[#c6a56b]/10 hover:border-[#c6a56b]/80 transition-colors"
-    >
-      <Video size={14} />
-      <span>Join Zoom</span>
-    </a>
+  {/* ship — absolute left, fading into background */}
+  <img
+    src={shipImg}
+    alt=""
+    className="absolute left-0 top-0 h-full w-36 object-cover object-right opacity-30 pointer-events-none"
+    style={{ maskImage: "linear-gradient(to right, transparent, black 60%)", WebkitMaskImage: "linear-gradient(to right, transparent, black 60%)" }}
+  />
+
+  {/* content — offset right to clear ship */}
+  <div className="relative pl-28">
+    <p className="text-[10px] uppercase tracking-[0.28em] text-[#c6a56b] mb-1">
+      Next meeting
+    </p>
+
+    <div className="flex items-end justify-between gap-3">
+      <div>
+        <p className="text-[28px] font-bold leading-none text-[#f3dfb1] tracking-tight">
+          {timeUntilMeeting}
+        </p>
+        <p className="text-[11px] text-[#6b7078] mt-1">
+          NARR Homegroup • Daily
+        </p>
+      </div>
+
+      <a
+        href="https://zoom.us/whatever"
+        target="_blank"
+        rel="noreferrer"
+        className="shrink-0 inline-flex items-center gap-1.5 rounded-full border border-[#c6a56b]/60 bg-[#15171b] px-3 py-1.5 text-[11px] font-medium text-[#d4b06a] hover:bg-[#c6a56b]/10 hover:border-[#c6a56b]/80 transition-colors"
+      >
+        <Video size={13} />
+        <span>Join Zoom</span>
+      </a>
+    </div>
+  </div>
+
+  {/* handwritten note — Caveat font, chalk-on-dark feel */}
+  <div
+    className="relative mt-4 pl-4"
+    style={{ fontFamily: "'Caveat', cursive" }}
+  >
+    <p className="text-[15px] leading-tight text-[#7eb8c4] rotate-[-0.8deg]">
+      We show up.
+    </p>
+    <p className="text-[13px] leading-tight text-[#6aa8b4] rotate-[-0.5deg] flex items-center gap-1.5">
+      We show up. That's the whole toolkit.
+      <Anchor size={11} className="text-[#5a98a4] mb-0.5" />
+    </p>
   </div>
 </section>
 
