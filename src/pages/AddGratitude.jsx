@@ -7,267 +7,285 @@ import BottomNav from "../components/BottomNav";
 
 
 const PROMPTS = [
-  "What didn’t emotionally assassinate you today?",
-  "What tiny thing kept you from setting everything on fire?",
-  "Name one thing that didn’t implode.",
-  "What helped you not relapse today?",
-  "Something stupidly small you’re still grateful for.",
+  "What didn’t emotionally mutiny today?",
+  "What tiny thing stopped yer brain from settin’ the ship on fire?",
+  "Name one thing that didn’t sink today.",
+  "What helped ye not relapse into the abyss, matey?",
+  "What stupidly small thing kept ye afloat today?",
+  "What kept the chaos from takin’ the wheel?",
+  "What made existence 2% less cursed today?",
+  "What did yer addiction absolutely hate seeing ye do today?",
+  "What tiny victory deserves pirate applause?",
+  "What kept ye from abandonin’ ship emotionally?",
+  "Name one thing ye survived without dramatics.",
+  "What made reality slightly less unbearable today?",
+  "What didn’t go completely sideways?",
+  "What helped ye stay on this side o’ sanity?",
+  "What tiny act of responsibility offended yer inner chaos goblin?",
+  "What moment made ye feel slightly human again?",
+  "What didn’t collapse, explode, or text yer ex today?",
+  "What gave yer nervous system a brief ceasefire?",
+  "What tiny thing reminded ye life ain’t entirely cursed?",
+  "What kept ye from lettin’ the darkness captain the vessel today?"
 ];
 
 // Generic / NA-friendly gratitude ideas
 const SUGGESTIONS = [
-  "I didn’t use today, even though my brain held a board meeting about it.",
-  "I woke up clean, and apparently that’s allowed now.",
-  "I had coffee instead of a breakdown, which feels like spiritual progress.",
-  "I said 'no' to something I used to say 'yes' to without thinking.",
-  "Someone checked on me, and I didn’t assume they wanted something.",
-  "I slept without negotiating with substances. Miracles are weird.",
-  "My brain wanted chaos, but I gave it hydration and a chair.",
-  "I felt feelings and didn’t explode. Science can’t explain this.",
-  "I laughed at something that used to destroy me. That’s evolution.",
-  "I ate actual food instead of using adrenaline as a meal replacement.",
-  "I reached out before falling apart, which is new behavior for me.",
-  "My addiction is offended I’m still alive. That’s kind of hilarious.",
-  "I noticed silence didn’t kill me. Turns out it’s just quiet.",
-  "I remembered I don’t have to answer every thought that shows up.",
-  "I survived a craving without applause, trophies, or cocaine.",
-  "I respected a boundary without resenting the person who set it.",
-  "I didn’t disappear, even though disappearing felt comfortable.",
-  "I realized I’m allowed to rest before I earn it.",
-  "I handled something badly, but not destructively. That matters.",
-  "I didn’t text someone who belongs in my past. Growth is petty and powerful.",
-  "I had a roof over my head, which used to feel optional.",
-  "I found reasons to stay when I used to look for exits.",
-  "I didn’t try to fix myself in one day. I let time breathe.",
-  "My feelings showed up uninvited, and I didn’t evacuate the building.",
-  "I wasn’t alone today, even when my brain tried to convince me I was.",
-  "I surprised myself by caring, even a little.",
-  "I handled a thought without turning it into a catastrophe.",
-  "I didn’t search for chaos just because things felt calm.",
-  "I lived today instead of surviving it. I didn’t know that was allowed.",
-  "I didn’t ask the universe to delete me. That’s a plot twist.",
-  "I chose reality instead of nostalgia for destruction.",
-  "I didn’t apologize for existing. That feels illegal.",
-  "I let someone help me without dying of embarrassment.",
+ 
+  "I didn’t use today, even though me brain held a mutiny about it.",
+  "I woke up clean, and apparently the sea gods allow that now.",
+  "I had coffee instead of a breakdown. Pirate spirituality be strange.",
+  "I said 'no' to somethin’ I used to sprint toward blindly.",
+  "Someone checked on me, and I didn’t assume they wanted treasure.",
+  "I slept without bargainin’ with substances. Miracles be weird, matey.",
+  "Me brain wanted chaos, but I gave it hydration and a chair aboard ship.",
+  "I felt feelings and didn’t explode. The crew remains confused.",
+  "I laughed at somethin’ that used to sink me. That be evolution, harrr.",
+  "I ate actual food instead of usin’ adrenaline as rations.",
+  "I reached out before fallin’ apart. Suspiciously healthy behavior.",
+  "Me addiction be offended I’m still alive. Honestly? Hilarious.",
+  "I noticed silence didn’t kill me. Turns out it’s just quiet waters.",
+  "I remembered I don’t have to answer every cursed thought that docks ashore.",
+  "I survived a craving without applause, trophies, or cocaine. Very rude to addiction.",
+  "I respected a boundary without challengin’ it to a duel.",
+  "I didn’t disappear, even though abandonin’ ship felt comfortable.",
+  "I realized I’m allowed to rest before earnin’ it. Revolutionary concept.",
+  "I handled somethin’ badly, but not destructively. Character development, matey.",
+  "I didn’t message someone who belongs in the deep ocean o’ me past.",
+  "I had a roof over me head, which once felt optional.",
+  "I found reasons to stay when I used to search fer escape boats.",
+  "I didn’t try to fix meself in one day. I let time steer a bit.",
+  "Me feelings showed up uninvited, and I didn’t evacuate the vessel.",
+  "I wasn’t alone today, even though me brain tried convincin’ me otherwise.",
+  "I surprised meself by carin’, even just a little.",
+  "I handled a thought without turnin’ it into a full shipwreck.",
+  "I didn’t search fer chaos just because calm waters felt suspicious.",
+  "I lived today instead of merely survivin’ it. Didn’t know that was legal.",
+  "I didn’t ask the universe to throw me overboard today. Plot twist.",
+  "I chose reality over nostalgia fer destruction.",
+  "I didn’t apologize fer existin’. That feels deeply illegal, harrr.",
+  "I let someone help me without dyin’ o’ embarrassment.",
   "I didn’t sabotage a good moment just because I didn’t trust it.",
-  "I showed up, even when my brain told me not to.",
-  "I didn’t quit on myself, even when it felt pointless.",
-  "I gave my future a chance to exist past today.",
-  "I didn’t relapse just because I was uncomfortable.",
-  "I remembered that not everything is a red flag — some things are just people.",
-  "I didn’t use today, which feels rude to my addiction’s expectations.",
-  "I drank water like a responsible mammal. Who am I becoming?",
-  "I didn’t lose my mind today — just misplaced it for a few hours.",
-  "I ate breakfast before overthinking my existence.",
-  "I ignored a craving like it was a spam email. Deleted.",
-  "I kept my mouth shut in a situation where chaos wanted a sequel.",
-  "I remembered deodorant. Recovery has layers.",
-  "I didn’t Google my symptoms. I let my anxiety rest.",
-  "I left the house and didn’t need a reward or a drug medal.",
-  "I sat still for five minutes without filing an emotional complaint.",
-  "I survived a feeling without needing a chemical translator.",
-  "I didn’t stalk my past today. Let the dead stay dead.",
-  "I used my actual phone alarm instead of emotional emergencies.",
-  "I said ‘no’ and didn’t internally combust.",
-  "I didn’t try to trauma-bond with a stranger. Progress.",
-  "I considered running away, but gas prices said no.",
-  "I didn’t argue with my brain out loud today. Small win.",
-  "I remembered passwords instead of relapsing.",
-  "I didn’t spiral over a text bubble. Olympic-level restraint.",
-  "I let someone finish their sentence. Revolutionary.",
-  "I didn’t mistake boredom for destiny. New behavior unlocked.",
-  "I realized not every thought is a subpoena.",
-  "I avoided someone who drains my sanity. Health is weird.",
-  "I didn’t go looking for red flags. They can find me if they want me that bad.",
-  "I found my keys where I left them. Miracles everywhere.",
-  "I didn’t apologize for existing in a three-minute conversation.",
-  "I used my inside voice even though chaos wanted the mic.",
-  "I didn’t compare myself to someone who isn’t me. Unbelievable.",
-  "I cooked something that didn’t come from a box. My ancestors are confused.",
-  "I survived a phone call without emotionally flatlining.",
-  "I didn’t fantasize about moving countries to avoid responsibility.",
-  "I sat with discomfort instead of upgrading it to a crisis.",
-  "I made a decision without having to scroll through existential dread.",
-  "I didn’t mistake hunger for doom. Turns out I just needed lunch.",
-  "I let myself laugh without needing a disaster as context.",
-  "I didn’t diagnose myself with five new mental illnesses before breakfast.",
-  "I avoided a meltdown by blinking aggressively instead of exploding.",
-  "I didn’t rehearse conversations that haven't happened yet. My brain is offended.",
-  "I let someone care about me without running toward the nearest exit.",
-  "I’m grateful I didn’t use today, even though part of me still wanted to.",
-  "I’m grateful I stayed alive long enough for things to get slightly less unbearable.",
-  "I’m grateful I can feel pain without needing to disappear from it.",
-  "I’m grateful I don’t have to lie to everyone just to function anymore.",
-  "I’m grateful I no longer wake up wondering if today will be the day I lose everything.",
-  "I’m grateful I don’t hate myself as consistently as I used to.",
-  "I’m grateful I can admit I was wrong without collapsing into shame.",
-  "I’m grateful I don’t have to pretend I’m okay to be accepted.",
-  "I’m grateful my cravings don’t control my calendar anymore.",
-  "I’m grateful I can be honest without expecting punishment.",
-  "I’m grateful I can sit with my thoughts without needing to sedate them.",
-  "I’m grateful I know what help feels like, even if I still struggle to ask for it.",
-  "I’m grateful I don’t mistake numbness for peace anymore.",
-  "I’m grateful I don’t need chaos to feel alive.",
-  "I’m grateful I don’t have to earn rest like a hostage negotiation.",
-  "I’m grateful that facing myself didn’t kill me, even when it felt like it would.",
-  "I’m grateful I can see my patterns before they destroy me.",
-  "I’m grateful I don’t have to perform strength to be accepted.",
-  "I’m grateful I can tell the difference between love and attention now.",
-  "I’m grateful I can feel something other than panic.",
-  "I’m grateful for the moments where joy didn’t feel suspicious.",
-  "I’m grateful that guilt isn’t my entire personality anymore.",
-  "I’m grateful I’m not chasing validation like it's oxygen.",
-  "I’m grateful that loneliness doesn’t automatically turn into self-destruction.",
-  "I’m grateful I can recognize a boundary before I bleed through it.",
-  "I’m grateful I don’t apologize for existing as often.",
-  "I’m grateful that silence doesn’t feel like a threat anymore.",
-  "I’m grateful I don’t worship my pain like it’s my identity.",
-  "I’m grateful that not everything is my fault.",
-  "I’m grateful I don’t confuse attention with affection.",
-  "I’m grateful that hope didn’t stay dead forever.",
-  "I’m grateful that I finally stopped auditioning for people who never chose me.",
-  "I’m grateful that my life isn’t just something I survive anymore.",
-  "I’m grateful I’m no longer waiting for someone to save me.",
-  "I’m grateful that my addiction didn’t get the last word.",
-  "I’m grateful I can miss people without disappearing.",
-  "I’m grateful that my past no longer predicts my future.",
-  "I’m grateful that existing doesn’t feel like a crime.",
-  "I'm grateful for the white chip, because admitting I had no control was somehow the most powerful thing I’ve ever done.",
-  "I'm grateful I don’t have to explain my crazy — everyone in the room already speaks the language.",
-  "I'm grateful for the old-timer whose stories scare me sober.",
-  "I'm grateful for slogans that sounded stupid until they kept me alive.",
-  "I'm grateful the meeting starts on time, even if my emotions don’t.",
-  "I'm grateful I can sit in a room full of strangers and feel more understood than I ever did at home.",
-  "I'm grateful the coffee tastes terrible, because it reminds me I’m not here for comfort.",
-  "I'm grateful for the newcomer who accidentally tells my story with different words.",
-  "I'm grateful for the person who shares exactly what I needed to hear without knowing it.",
-  "I'm grateful that ‘just for today’ is the only commitment my brain can handle.",
-  "I'm grateful for the parking lot therapy that lasts longer than the meeting.",
-  "I'm grateful there’s always someone who laughs at things civilians would call concerning.",
-  "I'm grateful for the silence after someone tells the truth — it feels like church without the pews.",
-  "I'm grateful I don’t have to earn my seat here. Showing up is enough.",
-  "I'm grateful for the chip I swore I’d never get.",
-  "I'm grateful for the person who texts me when I disappear before I implode.",
-  "I'm grateful that no one in NA expects me to be fine.",
-  "I'm grateful for the sponsor who answers the phone even when I don’t know what I’m asking for.",
-  "I'm grateful that relapse isn’t the end of my story — just a plot complication.",
-  "I'm grateful I learned that God is a concept, not a threat.",
-  "I'm grateful I can say 'I don’t know' without feeling stupid.",
-  "I'm grateful my pain has subtitles now.",
-  "I'm grateful I don’t have to pretend my past was normal.",
-  "I'm grateful someone said ‘keep coming back’ before I believed I should.",
-  "I'm grateful that Step One didn't kill me, even though it killed my ego.",
-  "I'm grateful I learned that asking for help isn’t a personality flaw.",
-  "I'm grateful the steps don’t care how broken I think I am.",
-  "I'm grateful the room welcomes the version of me I tried to bury.",
-  "I'm grateful that laughter in NA sounds like survival.",
-  "I'm grateful I found a place where my worst moments are qualifications, not disqualifications.",
-  "I'm grateful the meeting ended, but the fellowship didn’t.",
-  "I'm grateful someone told me my story isn’t unique — and meant it as comfort.",
-  "I'm grateful I don't have to solve my entire life before the closing prayer.",
-  "I'm grateful I stopped mistaking self-destruction for personality.",
-  "I'm grateful NA gave me people who understand sentences that start with ‘I swear I wasn’t gonna use, but—’",
-  "I'm grateful I learned that being vulnerable doesn't mean being disposable.",
-  "I'm grateful I finally understand why people clap — it’s not applause, it’s permission to exist.",
-  "I'm grateful I didn’t relapse just to prove someone right.",
-  "I'm grateful I outlived people’s expectations of me — emotionally and statistically.",
-  "I'm grateful I’m getting better while they’re still talking about who I used to be.",
-  "I'm grateful I don’t need to destroy myself to get attention anymore.",
-  "I'm grateful I didn’t respond to that message my trauma wrote.",
-  "I'm grateful I can walk away without needing an audience.",
-  "I'm grateful my peace annoys the version of me who loved chaos.",
-  "I'm grateful my growth is happening quietly — it confuses the people waiting for my downfall.",
-  "I'm grateful I can say ‘no’ without composing a five-paragraph essay about it.",
-  "I'm grateful I stopped apologizing for existing. It ruined so many people's plans.",
-  "I'm grateful I didn’t shrink myself to make someone else feel comfortable.",
-  "I'm grateful my progress is none of the people-pleasers’ business.",
-  "I'm grateful I learned that not everyone deserves access to me.",
-  "I'm grateful my silence says more than my explanations ever did.",
-  "I'm grateful I’m healing in ways that make my past irrelevant.",
-  "I'm grateful I don’t panic when I’m not included in things I don’t want to attend.",
-  "I'm grateful I no longer confuse being needed with being valued.",
-  "I'm grateful I’m no longer addicted to proving myself to people who never mattered.",
-  "I'm grateful my boundaries are now wall-mounted and visible.",
-  "I'm grateful I don't chase closure that I can give myself.",
-  "I'm grateful I don’t argue with people committed to misunderstanding me.",
-  "I'm grateful I no longer perform stability for people who prefer me broken.",
-  "I'm grateful I let go of people who only loved me when I was losing.",
-  "I'm grateful I know the difference between being ignored and being freed.",
-  "I'm grateful my phone no longer decides my self-worth.",
-  "I'm grateful I don’t need to win arguments I don’t want to be in.",
-  "I'm grateful my healing ruined my taste for chaos.",
-  "I'm grateful the person I used to be no longer gets a vote.",
-  "I'm grateful I didn’t self-destruct just to make a point.",
-  "I'm grateful I outgrew people who expected me to relapse.",
-  "I'm grateful I finally understand that silence can be a boundary.",
-  "I'm grateful I choose my peace over their opinions.",
-  "I'm grateful I'm the one who got away — from myself.",
-  "I'm grateful I proved my addiction wrong by existing.",
-  "I'm grateful I’m becoming someone I would have envied before recovery.",
-  "I'm grateful I don’t talk to myself like I'm the enemy anymore.",
-  "I'm grateful I finally understand that wanting love doesn't make me weak.",
-  "I'm grateful I no longer treat kindness like a trap.",
-  "I'm grateful I can accept compliments without needing evidence.",
-  "I'm grateful I'm learning to believe people mean it when they say they care.",
-  "I'm grateful I stopped confusing being needed with being worthy.",
-  "I'm grateful I no longer apologize for existing.",
-  "I'm grateful I’m starting to see myself as someone worth staying clean for.",
-  "I'm grateful I can take up space without feeling like a problem.",
-  "I'm grateful I don’t shrink myself to fit places I’ve outgrown.",
-  "I'm grateful I’m not scared of being seen anymore.",
-  "I'm grateful I don’t assume everyone is waiting for me to fail.",
-  "I'm grateful I can celebrate my progress without downplaying it.",
-  "I'm grateful I don’t treat every mistake like a personality flaw.",
-  "I'm grateful I'm learning the difference between humility and self-erasure.",
-  "I'm grateful I know I don't need to earn my right to be here.",
-  "I'm grateful I finally understand that boundaries protect me, not punish me.",
-  "I'm grateful I’m becoming someone I trust.",
-  "I'm grateful I no longer confuse attention with affection.",
-  "I'm grateful I can be honest about my past without making it my identity.",
-  "I'm grateful my worth isn’t determined by how much pain I can tolerate.",
-  "I'm grateful I can love parts of myself I used to hide.",
-  "I'm grateful I stopped calling survival a personality trait.",
-  "I'm grateful I don’t chase approval like oxygen.",
-  "I'm grateful I know I’m allowed to want things without earning permission.",
-  "I'm grateful I don’t disappear when someone gets close.",
-  "I'm grateful I’m not terrified of success anymore.",
-  "I'm grateful I can imagine a future without bracing for impact.",
-  "I'm grateful I'm learning to care about myself without conditions.",
-  "I'm grateful that hope didn’t stay dead forever.",
-  "I'm grateful I finally understand that who I am is not a mistake.",
-  "I'm grateful I'm starting to like the person I’m becoming.",
-  "I'm grateful I stopped rehearsing rejection before it happens.",
-  "I'm grateful my identity is no longer defined by failure.",
-  "I'm grateful I treat myself like a human being now.",
-  "I'm grateful I finally know that wanting more doesn’t make me greedy.",
-  "I'm grateful I’m allowed to stay.",
-  "I'm grateful believing in myself isn’t cringe anymore.",
-  "I'm grateful that I don’t disappear from my own life.",
-  "I had a bed to sleep in and a roof over my head.",
-  "I had food today, and I didn’t have to hustle or lie to get it.",
-  "I have clean clothes to wear, and I didn’t have to borrow them.",
-  "I have running water, which is something I used to ignore.",
-  "I can take a shower whenever I want. That used to be optional.",
-  "I have a phone that connects me to people instead of destroying me.",
-  "I have a place to sit, sleep, and exist without being chased away.",
-  "I woke up in the same place I fell asleep. Stability is underrated.",
-  "I have electricity, which means I can cook, charge my phone, and not freeze.",
-  "I have access to a bathroom without asking permission.",
-  "I didn’t have to wonder where I would sleep tonight.",
-  "I have shoes that fit and don’t hurt. My feet are grateful.",
-  "I have a fridge with actual food in it. That wasn't always true.",
-  "I have a blanket that keeps me warm without strings attached.",
-  "I have toothpaste, deodorant, and soap — basic dignity in a bottle.",
-  "I have a pillow. My neck finally stopped protesting.",
-  "I have cups, plates, and utensils. I’m not eating like a raccoon anymore.",
-  "I have Wi-Fi, which keeps me connected to recovery instead of chaos.",
-  "I have a door I can close, which means I have safety.",
-  "I have time today that wasn't swallowed by addiction.",
-  "I have places I can go where nobody wants anything from me.",
-  "I have space that belongs to me, even if it's small.",
-  "I have heat when it's cold and shade when it's hot. Luxury disguised as normal.",
-  "I didn’t have to worry about survival today. That’s not nothing.",
-  "I have a pillow, a blanket, and a tomorrow. I never used to plan for that.",
+  "I showed up even when me brain screamed ‘abandon ship.’",
+  "I didn’t quit on meself, even when it felt pointless.",
+  "I gave me future permission to exist beyond today.",
+  "I didn’t relapse just because discomfort boarded the ship.",
+  "I remembered not everythin’ be a red flag. Some things be just people.",
+  "I didn’t use today, which feels disrespectful to addiction’s expectations.",
+
+  "I drank water like a responsible sea mammal. Who be I becoming, harrr?",
+"I didn’t lose me mind today — just misplaced it below deck fer a few hours.",
+"I ate breakfast before overthinkin’ me cursed existence.",
+"I ignored a craving like spam mail from a sketchy merchant ship. Deleted.",
+"I kept me mouth shut in a situation where chaos wanted a sequel mutiny.",
+"I remembered deodorant. Recovery be havin’ layers, matey.",
+"I didn’t consult the sea charts o’ doom fer imaginary illnesses today.",
+"I left the ship and didn’t require a reward or a sobriety medal.",
+"I sat still fer five minutes without filin’ an emotional complaint to the captain.",
+"I survived a feeling without requirin’ a chemical translator.",
+"I didn’t stalk me past today. Let the dead sink.",
+"I used me actual alarm clock instead o’ emotional emergencies.",
+"I said ‘nay’ and didn’t internally explode like cannon fire.",
+"I didn’t try to trauma-bond with a random sailor. Progress, harrr.",
+"I considered runnin’ away, but the price o’ rum and fuel said otherwise.",
+"I didn’t argue with me brain out loud today. Small victory fer the crew.",
+"I remembered passwords instead o’ relapsin’. A miracle o’ modern piracy.",
+"I didn’t spiral over a text bubble. Olympic-level restraint aboard this vessel.",
+"I let someone finish their sentence. Revolutionary pirate behavior.",
+"I didn’t mistake boredom fer destiny. New software unlocked in the captain’s quarters.",
+"I realized not every thought be a legal summons from the abyss.",
+"I avoided someone who drains me sanity. Health be weird, matey.",
+"I didn’t go searchin’ fer red flags. They can sail toward me if they want me that badly.",
+"I found me keys where I left ’em. Miracles across the seven seas.",
+"I didn’t apologize fer existing in a three-minute conversation aboard ship.",
+"I used me inside voice even though chaos wanted the microphone.",
+"I didn’t compare meself to another sailor today. Unbelievable scenes.",
+"I cooked somethin’ that didn’t come from a crate. Me ancestors be confused.",
+"I survived a phone call without emotionally sinkin’ beneath the waves.",
+"I didn’t fantasize about fleein’ to another kingdom to avoid responsibility.",
+"I sat with discomfort instead o’ promotin’ it to a full-blown catastrophe.",
+"I made a decision without scrollin’ through existential dread first.",
+"I didn’t mistake hunger fer doom. Turns out I just needed rations.",
+"I let meself laugh without requirin’ a disaster fer context.",
+"I didn’t diagnose meself with five new curses before breakfast.",
+"I avoided a meltdown by blinkin’ aggressively instead o’ explodin’ like a powder keg.",
+"I didn’t rehearse conversations that haven’t happened yet. Me brain be offended.",
+"I let someone care about me without sprintin’ toward the nearest lifeboat.",
+"I’m grateful I didn’t use today, even though part o’ me still wanted to.",
+"I’m grateful I stayed alive long enough fer life to become slightly less unbearable, matey.",
+ "I’m grateful I can feel pain without abandonin’ ship over it.",
+"I’m grateful I don’t have to lie to every sailor aboard just to function anymore.",
+"I’m grateful I no longer wake wonderin’ if today be the day the whole vessel sinks.",
+"I’m grateful I don’t hate meself with the same consistency as before.",
+"I’m grateful I can admit I was wrong without drownin’ in shame.",
+"I’m grateful I don’t have to pretend I’m fine to be welcomed by the crew.",
+"I’m grateful me cravings no longer captain me calendar.",
+"I’m grateful I can speak honestly without expectin’ cannon fire in return.",
+"I’m grateful I can sit with me thoughts without sedatin’ the entire crew.",
+"I’m grateful I know what help feels like, even if askin’ fer it still feels cursed.",
+"I’m grateful I don’t mistake numbness fer peace anymore, harrr.",
+"I’m grateful I don’t require chaos to feel alive aboard this ship.",
+"I’m grateful I don’t have to earn rest like a hostage negotiation with pirates.",
+"I’m grateful facin’ meself didn’t kill me, even when it felt certain to.",
+"I’m grateful I can spot me patterns before they wreck the vessel again.",
+"I’m grateful I don’t have to perform strength fer acceptance anymore.",
+"I’m grateful I can tell the difference between love and attention now.",
+"I’m grateful I can feel somethin’ besides panic.",
+"I’m grateful fer moments where joy didn’t feel suspicious or cursed.",
+"I’m grateful guilt ain’t me entire personality anymore.",
+"I’m grateful I’m no longer chasin’ validation like oxygen aboard a sinkin’ ship.",
+"I’m grateful loneliness no longer automatically turns into self-destruction.",
+"I’m grateful I can recognize a boundary before bleedin’ through it.",
+"I’m grateful I don’t apologize fer existin’ quite as often.",
+"I’m grateful silence no longer feels like a threat from the deep.",
+"I’m grateful I don’t worship me pain like it be me pirate flag.",
+"I’m grateful not every disaster be me fault.",
+"I’m grateful I no longer confuse attention with affection.",
+"I’m grateful hope didn’t stay buried at sea forever.",
+"I’m grateful I stopped auditionin’ fer crews that never wanted me aboard.",
+"I’m grateful me life ain’t just somethin’ I survive anymore.",
+"I’m grateful I’m no longer waitin’ fer another sailor to rescue me.",
+"I’m grateful me addiction didn’t get the final word in the captain’s log.",
+"I’m grateful I can miss people without vanishin’ into the fog.",
+"I’m grateful me past no longer predicts the next voyage.",
+"I’m grateful existin’ no longer feels like a crime punishable by cannon.",
+"I’m grateful fer the white chip, because admittin’ I had no control somehow became the strongest thing I ever did.",
+"I’m grateful I don’t have to explain me madness — the whole crew already speaks pirate crazy.",
+"I’m grateful fer the old-timer sailor whose stories scare me sober, harrr.",
+  "I'm grateful fer slogans that sounded stupid until they kept me vessel afloat.",
+"I'm grateful the meetin’ starts on time, even if me emotions arrive drunk and late.",
+"I'm grateful I can sit in a room full o’ strangers and feel more understood than I ever did at home port.",
+"I'm grateful the coffee tastes terrible, because it reminds me I ain’t here fer comfort, harrr.",
+"I'm grateful fer the newcomer sailor who accidentally tells me story with different words.",
+"I'm grateful fer the pirate who shares exactly what I needed to hear without knowin’ it.",
+"I'm grateful that ‘just fer today’ be the only contract me brain can currently survive.",
+"I'm grateful fer the parkin’ lot therapy sessions that outlive the actual meetin’.",
+"I'm grateful there’s always another sailor laughin’ at things civilians would report to authorities.",
+"I'm grateful fer the silence after someone tells the truth — feels like church without the pews aboard ship.",
+"I'm grateful I don’t have to earn me seat here. Showin’ up be enough.",
+"I'm grateful fer the chip I swore I’d never live long enough to receive.",
+"I'm grateful fer the sailor who sends messages when I vanish before implodin’.",
+"I'm grateful no one in NA expects me to be fine all the damn time.",
+"I'm grateful fer the sponsor who answers the parrot-phone even when I don’t know what I’m askin’.",
+"I'm grateful relapse ain’t the end o’ me story — just a nasty storm chapter.",
+"I'm grateful I learned God be more concept than cannon threat.",
+"I'm grateful I can say ‘I don’t know’ without feelin’ like the dumbest pirate at sea.",
+"I'm grateful me pain finally came with subtitles.",
+"I'm grateful I don’t have to pretend me past was normal sailor behavior.",
+"I'm grateful someone shouted ‘keep comin’ back’ before I believed I deserved to.",
+"I'm grateful Step One didn’t kill me, even though it stabbed me ego repeatedly.",
+"I'm grateful I learned askin’ fer help ain’t a personality defect.",
+"I'm grateful the steps don’t care how broken I think the ship be.",
+"I'm grateful the room welcomes the version o’ me I tried to bury at sea.",
+"I'm grateful laughter in NA sounds exactly like survival, matey.",
+"I'm grateful I found a place where me worst moments became qualifications instead o’ disqualifications.",
+"I'm grateful the meetin’ ended, but the fellowship kept sailin’.",
+"I'm grateful someone told me me story weren’t unique — and somehow that felt comfortin’.",
+"I'm grateful I don’t have to solve me entire cursed existence before the closin’ prayer.",
+"I'm grateful I stopped mistakin’ self-destruction fer personality.",
+"I'm grateful NA gave me pirates who understand sentences startin’ with ‘I swear I weren’t gonna use, but—’",
+"I'm grateful I learned vulnerability don’t mean disposable.",
+"I'm grateful I finally understand why sailors clap — it ain’t applause, it’s permission to exist aboard the crew.",
+"I'm grateful I didn’t relapse just to prove some bastard right.",
+"I'm grateful I outlived people’s expectations o’ me — emotionally and statistically, harrr.",
+"I'm grateful I’m gettin’ better while they still gossip about the pirate I used to be.",
+"I'm grateful I don’t need to destroy meself fer attention anymore.",
+"I'm grateful I didn’t answer that cursed message me trauma wrote.",
+"I'm grateful I can walk away without requirin’ an audience at the docks.",
+  "I'm grateful me peace annoys the version o’ me that worshipped chaos, harrr.",
+"I'm grateful me growth be happenin’ quietly — confusin’ the sailors waitin’ fer me downfall.",
+"I'm grateful I can say ‘nay’ without writin’ a five-scroll apology afterward.",
+"I'm grateful I stopped apologizin’ fer existin’. It ruined a lot o’ people’s evil little plans.",
+"I'm grateful I didn’t shrink meself just to keep another sailor comfortable.",
+"I'm grateful me progress ain’t the business o’ chronic people-pleasers aboard ship.",
+"I'm grateful I learned not every pirate deserves access to me vessel.",
+"I'm grateful me silence says more than all me desperate explanations ever did.",
+"I'm grateful I’m healin’ in ways that make me past less relevant to the voyage.",
+"I'm grateful I don’t panic when I’m excluded from ports I never wanted to visit anyway.",
+"I'm grateful I no longer confuse bein’ needed with bein’ valued.",
+"I'm grateful I stopped provin’ meself to sailors who never mattered in the first place.",
+"I'm grateful me boundaries now hang on the wall like loaded cutlasses.",
+"I'm grateful I don’t chase closure I can hand meself fer free.",
+"I'm grateful I don’t argue with sailors committed to misunderstandin’ me.",
+"I'm grateful I no longer perform stability fer people who preferred me broken.",
+"I'm grateful I released the crew that only loved me while I was sinkin’.",
+"I'm grateful I know the difference between bein’ ignored and bein’ freed.",
+"I'm grateful me cursed phone no longer decides me worth as a human pirate.",
+"I'm grateful I don’t need to win arguments I never wanted aboard me ship.",
+"I'm grateful me healing destroyed me taste fer chaos.",
+"I'm grateful the pirate I used to be no longer gets a vote in captain’s meetings.",
+"I'm grateful I didn’t self-destruct just to prove a dramatic point.",
+"I'm grateful I outgrew the sailors who expected me to relapse.",
+"I'm grateful I finally understand silence can be a boundary instead o’ a punishment.",
+"I'm grateful I choose me peace over other people’s loud opinions.",
+"I'm grateful I be the one who escaped — from meself, matey.",
+"I'm grateful I proved me addiction wrong simply by continuin’ to exist.",
+"I'm grateful I’m becomin’ someone I would’ve envied before recovery.",
+"I'm grateful I don’t talk to meself like I be the enemy anymore.",
+"I'm grateful I finally understand wantin’ love don’t make me weak.",
+"I'm grateful I no longer treat kindness like a trap laid by enemy ships.",
+"I'm grateful I can accept compliments without demandin’ physical evidence.",
+"I'm grateful I’m learnin’ to believe sailors when they say they care.",
+"I'm grateful I stopped confusin’ bein’ needed with bein’ worthy.",
+"I'm grateful I no longer apologize fer takin’ up oxygen aboard this ship.",
+"I'm grateful I’m startin’ to see meself as someone worth stayin’ clean fer.",
+"I'm grateful I can take up space without feelin’ like a problem below deck.",
+"I'm grateful I don’t shrink meself to fit ports I’ve already outgrown.",
+"I'm grateful I’m no longer terrified o’ bein’ truly seen, harrr.",
+  "I'm grateful I don’t assume every sailor aboard be waitin’ fer me to fail.",
+"I'm grateful I can celebrate me progress without immediately sinkin’ it with self-hatred.",
+"I'm grateful I don’t treat every mistake like proof I’m cursed.",
+"I'm grateful I’m learnin’ the difference between humility and erasin’ meself.",
+"I'm grateful I know I don’t need to earn me right to exist aboard this ship.",
+"I'm grateful I finally understand boundaries protect me vessel — they ain’t punishment.",
+"I'm grateful I’m becomin’ a pirate I actually trust.",
+"I'm grateful I no longer confuse attention with affection from random sailors.",
+"I'm grateful I can speak honestly about me past without wearin’ it as me entire identity.",
+"I'm grateful me worth ain’t measured by how much suffering I can survive.",
+"I'm grateful I can love the parts o’ meself I once buried below deck.",
+"I'm grateful I stopped callin’ survival a personality trait.",
+"I'm grateful I no longer chase approval like oxygen at sea.",
+"I'm grateful I know I’m allowed to want things without askin’ permission from the universe.",
+"I'm grateful I don’t disappear when someone gets emotionally close aboard ship.",
+"I'm grateful I’m no longer terrified o’ success, matey.",
+"I'm grateful I can imagine a future without constantly bracin’ fer impact.",
+"I'm grateful I’m learnin’ to care fer meself without conditions and contracts.",
+"I'm grateful hope didn’t stay dead at the bottom o’ the ocean forever.",
+"I'm grateful I finally understand who I am ain’t a mistake.",
+"I'm grateful I’m startin’ to like the pirate I’m becoming.",
+"I'm grateful I stopped rehearsin’ rejection before it even happens.",
+"I'm grateful me identity ain’t defined by failure anymore.",
+"I'm grateful I treat meself like an actual human now instead o’ a cursed sea creature.",
+"I'm grateful I finally know wantin’ more don’t make me greedy.",
+"I'm grateful I’m allowed to stay aboard.",
+"I'm grateful believin’ in meself no longer feels cringe-worthy.",
+"I'm grateful I no longer vanish from me own life, harrr.",
+
+"I had a bed to sleep in and a roof over me head.",
+"I had food today and didn’t have to hustle, scheme, or lie fer it.",
+"I have clean clothes to wear and didn’t need to borrow ’em from another sailor.",
+"I have runnin’ water, which I used to ignore like spoiled royalty.",
+"I can take a shower whenever I want. That once felt optional aboard me old life.",
+"I have a phone that connects me to people instead o’ destroyin’ me.",
+"I have a place to sit, sleep, and exist without bein’ chased from the docks.",
+"I woke up in the same place I fell asleep. Stability be underrated treasure.",
+"I have electricity, which means I can cook, charge me devices, and avoid freezin’ to death.",
+"I have access to a bathroom without askin’ permission like a prisoner aboard ship.",
+"I didn’t have to wonder where I’d sleep tonight.",
+"I have shoes that fit and don’t torture me feet. The toes be grateful.",
+"I have a fridge with actual food in it. That weren’t always true, matey.",
+"I have a blanket that keeps me warm without emotional strings attached.",
+"I have toothpaste, deodorant, and soap — basic dignity in bottle form.",
+"I have a pillow. Me neck finally stopped mutinyin’.",
+"I have cups, plates, and utensils. I’m no longer eatin’ like a raccoon behind a tavern.",
+"I have Wi-Fi, which keeps me connected to recovery instead o’ chaos.",
+"I have a door I can close, which means safety exists.",
+"I have time today that wasn’t swallowed whole by addiction.",
+"I have places I can go where nobody be demandin’ somethin’ from me.",
+"I have space that belongs to me, even if it be small as a cabin.",
+"I have heat when it’s cold and shade when it’s hot. Luxury disguised as normal life.",
+"I didn’t have to fight fer survival today. That ain’t nothin’, harrr.",
+"I have a pillow, a blanket, and a tomorrow. I never used to plan fer tomorrows."
 ];
 
 // Humor categories (solo estas se muestran)
@@ -279,7 +297,6 @@ const FUNNY_CATEGORIES = [
   "Reasons I didn’t relapse",
 ];
 
-// Neutral mapping oculta (por si después quieres sponsor mode / stats)
 const NEUTRAL_CATEGORIES = [
   "Something I did right",
   "Something I learned",
@@ -312,7 +329,7 @@ export default function AddGratitude() {
     setError("");
 
     if (!text.trim()) {
-      setError("Write at least one line. It doesn’t have to be deep.");
+      setError("Write at least one line, matey. It don’t need to sound wise.");
       return;
     }
 
@@ -362,34 +379,36 @@ export default function AddGratitude() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-50 flex flex-col">
+    <div className="min-h-screen bg-[#0b0c0f] text-[#e5d3ad] flex flex-col">
       <Header3PM />
 
       <main className="flex-1">
         <div className="max-w-md mx-auto px-4 py-6 space-y-5">
-          {/* 3PM intro / ritual */}
-          <section className="bg-slate-900/60 border border-slate-800 rounded-2xl px-4 py-3 space-y-1">
-            <p className="text-[11px] uppercase tracking-[0.16em] text-slate-500">
-              3PM check-in
+
+          {/* NARR intro / ritual */}
+          <section className="relative bg-[#0f1012]/70 border border-[#6f5630]/25 rounded-2xl px-4 py-3 space-y-1 overflow-hidden">
+            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#c6a56b]/30 to-transparent" />
+            <p className="text-[11px] uppercase tracking-[0.20em] text-[#c6a56b]">
+              NARR check-in
             </p>
-            <p className="text-xs text-slate-300">
-              One sentence that proves you didn&apos;t let your addiction win
-              today.
+            <p className="text-xs text-[#8d9199]">
+              One sentence that proves ye didn't let yer addiction win today.
             </p>
           </section>
 
           {/* Form */}
           <form onSubmit={handleSubmit} className="space-y-5">
+
             {/* Textarea card */}
-            <div className="bg-slate-900 border border-slate-800 rounded-2xl px-4 py-3 space-y-2">
+            <div className="bg-[#0f1012]/70 border border-[#6f5630]/25 rounded-2xl px-4 py-3 space-y-2">
               <div className="flex items-center justify-between">
                 <label
                   htmlFor="gratitudeText"
-                  className="block text-xs font-medium uppercase tracking-[0.16em] text-slate-400"
+                  className="block text-xs font-medium uppercase tracking-[0.18em] text-[#c6a56b]"
                 >
-                  What are you grateful for?
+                  What are ye grateful for?
                 </label>
-                <span className="text-[10px] text-slate-500">
+                <span className="text-[10px] text-[#6b7078]">
                   It can be dumb. It still counts.
                 </span>
               </div>
@@ -400,14 +419,14 @@ export default function AddGratitude() {
                   value={text}
                   onChange={(e) => setText(e.target.value)}
                   rows={4}
-                  className="w-full bg-slate-950/80 border border-slate-700 rounded-xl px-3 py-2 text-sm text-slate-50 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 resize-none pr-9"
+                  className="w-full bg-[#0b0c0f] border border-[#6f5630]/35 rounded-xl px-3 py-2 text-sm text-[#e5d3ad] placeholder:text-[#4a4f58] focus:outline-none focus:border-[#c6a56b]/70 focus:ring-1 focus:ring-[#c6a56b]/40 resize-none pr-9 transition-colors"
                   placeholder={prompt}
                 />
                 {text.trim() && (
                   <button
                     type="button"
-                    onClick={() => setText("")}
-                    className="absolute right-2 top-2 text-slate-500 hover:text-rose-300 hover:bg-rose-900/30 p-1 rounded transition-colors"
+                    onClick={() => setText(“")}
+                    className="absolute right-2 top-2 text-[#6b7078] hover:text-[#c97070] hover:bg-[#2a0f0f]/50 p-1 rounded transition-colors"
                     title="Clear text"
                   >
                     <Eraser size={14} />
@@ -417,13 +436,13 @@ export default function AddGratitude() {
             </div>
 
             {/* Inspiration box */}
-            <section className="bg-slate-900 border border-slate-800 rounded-2xl px-4 py-3 space-y-3">
+            <section className="bg-[#0f1012]/70 border border-[#6f5630]/25 rounded-2xl px-4 py-3 space-y-3">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-xs font-medium uppercase tracking-[0.16em] text-slate-400">
+                  <p className="text-xs font-medium uppercase tracking-[0.18em] text-[#c6a56b]">
                     Need an idea?
                   </p>
-                  <p className="text-[11px] text-slate-500">
+                  <p className="text-[11px] text-[#6b7078]">
                     Tap until one feels true. Then tweak it.
                   </p>
                 </div>
@@ -431,15 +450,15 @@ export default function AddGratitude() {
                 <button
                   type="button"
                   onClick={() => setInspo(getRandomSuggestion())}
-                  className="p-1.5 rounded-full border border-slate-700 hover:border-cyan-400 hover:text-cyan-300 transition-colors"
+                  className="p-1.5 rounded-full border border-[#6f5630]/40 bg-[#15171b] text-[#8d9199] hover:border-[#c6a56b]/70 hover:text-[#d4b06a] transition-colors"
                   title="New suggestion"
                 >
                   <RefreshCcw size={14} />
                 </button>
               </div>
 
-              <p className="text-sm text-slate-100 italic leading-snug">
-                “{inspo}”
+              <p className="text-sm text-[#e5d3ad] italic leading-snug">
+                "{inspo}"
               </p>
 
               <div className="flex justify-end">
@@ -449,7 +468,7 @@ export default function AddGratitude() {
                     if (!text.trim()) setText(inspo);
                     else setText((prev) => `${prev}\n${inspo}`);
                   }}
-                  className="text-[10px] px-3 py-1 border border-slate-600 rounded-full text-slate-200 hover:border-cyan-400 hover:text-cyan-200 transition-colors"
+                  className="text-[10px] px-3 py-1 border border-[#6f5630]/40 rounded-full text-[#8d9199] hover:border-[#c6a56b]/70 hover:text-[#e5d3ad] transition-colors"
                 >
                   Use this (or edit it)
                 </button>
@@ -457,17 +476,15 @@ export default function AddGratitude() {
             </section>
 
             {/* Categories as vibe tags */}
-            <div className="bg-slate-900/60 border border-slate-800 rounded-2xl px-4 py-3 space-y-2">
+            <div className="bg-[#0f1012]/70 border border-[#6f5630]/25 rounded-2xl px-4 py-3 space-y-2">
               <div className="flex items-center justify-between">
-                <p className="text-xs font-medium uppercase tracking-[0.16em] text-slate-400">
+                <p className="text-xs font-medium uppercase tracking-[0.18em] text-[#c6a56b]">
                   Category (optional)
                 </p>
-                <span className="text-[10px] text-slate-500">
-                  Tag the vibe for future-you.
+                <span className="text-[10px] text-[#6b7078]">
+                  Tag the vibe fer future-ye.
                 </span>
               </div>
-
-        
 
               <div className="mt-2 grid grid-cols-1 sm:grid-cols-2 gap-2">
                 {FUNNY_CATEGORIES.map((label, idx) => {
@@ -477,14 +494,12 @@ export default function AddGratitude() {
                       key={label}
                       type="button"
                       onClick={() =>
-                        setSelectedIndex((prev) =>
-                          prev === idx ? null : idx
-                        )
+                        setSelectedIndex((prev) => prev === idx ? null : idx)
                       }
                       className={`text-xs rounded-lg border px-3 py-2 text-left transition-colors ${
                         isSelected
-                          ? "border-cyan-400 bg-cyan-400/15 text-cyan-100 shadow-[0_0_16px_rgba(34,211,238,0.35)]"
-                          : "border-slate-700 bg-slate-950 text-slate-200 hover:border-cyan-300/70 hover:text-cyan-200"
+                          ? “border-[#c6a56b]/80 bg-[#c6a56b]/10 text-[#e5d3ad] shadow-[0_0_14px_rgba(198,165,107,0.2)]"
+                          : “border-[#6f5630]/30 bg-[#0b0c0f] text-[#8d9199] hover:border-[#c6a56b]/50 hover:text-[#e5d3ad]"
                       }`}
                     >
                       {label}
@@ -496,7 +511,7 @@ export default function AddGratitude() {
 
             {/* Error */}
             {error && (
-              <p className="text-xs text-rose-400 bg-rose-950/40 border border-rose-900/60 rounded-md px-3 py-2">
+              <p className="text-xs text-[#c97070] bg-[#2a0f0f]/50 border border-[#7a3535]/50 rounded-md px-3 py-2">
                 {error}
               </p>
             )}
@@ -505,37 +520,40 @@ export default function AddGratitude() {
             <div className="space-y-2 pt-1">
               <button
                 type="submit"
-                className={`w-full text-sm font-semibold tracking-wide border rounded-xl py-2.5 transition-colors shadow-[0_0_18px_rgba(34,211,238,0.2)] ${
+                className={`w-full text-sm font-semibold tracking-wide border rounded-xl py-2.5 transition-colors ${
                   text.trim()
-                    ? "border-cyan-400 text-cyan-100 bg-cyan-500/10 hover:bg-cyan-400/20"
-                    : "border-slate-700 text-slate-400 bg-slate-900 cursor-pointer hover:border-cyan-300/50 hover:text-cyan-200"
+                    ? “border-[#c6a56b]/80 text-[#e5d3ad] bg-[#c6a56b]/10 hover:bg-[#c6a56b]/18 shadow-[0_0_18px_rgba(198,165,107,0.15)]"
+                    : “border-[#6f5630]/30 text-[#6b7078] bg-[#0f1012] hover:border-[#c6a56b]/40 hover:text-[#8d9199]"
                 }`}
               >
                 Save gratitude
               </button>
+
               <button
                 type="button"
-                onClick={() => navigate("/")}
-                className="w-full text-sm font-semibold tracking-wide border border-slate-600 text-slate-200 rounded-xl py-2.5 hover:bg-slate-800/80 transition-colors"
+                onClick={() => navigate(“/")}
+                className="w-full text-sm font-semibold tracking-wide border border-[#6f5630]/30 text-[#8d9199] rounded-xl py-2.5 hover:bg-[#17120d] hover:text-[#e5d3ad] transition-colors"
               >
                 Back to home
               </button>
-                <button
-    type="button"
-    onClick={() => navigate("/gratitudes")}
-    className="w-full text-[11px] font-medium text-cyan-300 hover:text-cyan-200 underline underline-offset-2"
-  >
-    View & share today&apos;s gratitude list
-  </button>
+
+              <button
+                type="button"
+                onClick={() => navigate(“/gratitudes")}
+                className="w-full text-[11px] font-medium text-[#c6a56b] hover:text-[#d4b06a] underline underline-offset-2 transition-colors"
+              >
+                View & share today's gratitude list
+              </button>
             </div>
           </form>
 
-          <p className="pt-2 text-[11px] text-center text-slate-500">
-            This might feel small. Your addiction hates that it still counts.
+          <p className="pt-2 text-[11px] text-center text-[#4a4f58]">
+            This might feel small. Yer addiction hates that it still counts.
           </p>
         </div>
       </main>
-          <BottomNav />
+
+      <BottomNav />
     </div>
   );
 }

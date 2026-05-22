@@ -11,7 +11,7 @@ export default function MilestoneIcon({ milestone, isToday = false }) {
     return (
       <Star
         size={16}
-        className={`text-yellow-300 ${isToday ? "icon-shimmer" : ""}`}
+        className={`text-[#d4b06a] ${isToday ? "icon-shimmer" : ""}`}
       />
     );
   }
@@ -21,7 +21,7 @@ export default function MilestoneIcon({ milestone, isToday = false }) {
     return (
       <Crown
         size={16}
-        className={`text-yellow-300 ${isToday ? "icon-shimmer" : ""}`}
+        className={`text-[#d4b06a] ${isToday ? "icon-shimmer" : ""}`}
       />
     );
   }
@@ -31,18 +31,18 @@ export default function MilestoneIcon({ milestone, isToday = false }) {
     return (
       <ChipCircle
         size={14}
-        color={color || "#22d3ee"}
+        color={color || "#c6a56b"}
         filled={true}
         className={isToday ? "icon-shimmer" : ""}
       />
     );
   }
 
-  // No oficiales (semanas, 4m, 5m, 7m, 8m, 10m, 11m) → círculo cyan vacío
+  // No oficiales (semanas, 4m, 5m, 7m, 8m, 10m, 11m) → círculo vacío
   return (
     <ChipCircle
       size={14}
-      color="#22d3ee"
+      color="#c6a56b"
       filled={false}
       className={isToday ? "icon-shimmer" : ""}
     />

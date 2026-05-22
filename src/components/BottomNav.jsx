@@ -12,7 +12,18 @@ export default function BottomNav() {
   ];
 
   return (
-    <nav className="fixed bottom-0 left-0 right-0 z-30 bg-slate-950/95 border-t border-slate-800 backdrop-blur-lg">
+    <nav
+      className="
+        fixed bottom-0 left-0 right-0 z-30
+        bg-[#0b0c0f]/95
+        border-t border-[#6f5630]/30
+        backdrop-blur-lg
+        shadow-[0_-8px_30px_rgba(0,0,0,0.45)]
+      "
+    >
+      {/* subtle gold top glow */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#c6a56b]/40 to-transparent" />
+
       <div className="max-w-md mx-auto flex justify-between px-6 py-3">
         {navItems.map(({ to, label, icon: Icon }) => (
           <NavLink
@@ -20,25 +31,42 @@ export default function BottomNav() {
             to={to}
             end
             className={({ isActive }) =>
-              `group flex flex-col items-center gap-1 transition-colors ${
+              `group relative flex flex-col items-center gap-1 transition-all duration-200 ${
                 isActive
-                  ? "text-cyan-300"
-                  : "text-slate-500 hover:text-slate-300"
+                  ? "text-[#d4b06a]"
+                  : "text-[#6b7078] hover:text-[#c6a56b]"
               }`
             }
           >
-            <Icon
-              size={18}
-              className={
-                label === "Tools"
-                  ? // animación solo para el martillo
-                    "transition-transform duration-150 group-hover:-translate-y-0.5 group-hover:-rotate-6"
-                  : ""
-              }
-            />
-            <span className="text-[10px] font-medium tracking-wide">
-              {label}
-            </span>
+            {({ isActive }) => (
+              <>
+                {/* active glow */}
+                {isActive && (
+                  <div
+                    className="
+                      absolute -top-2 w-7 h-[2px]
+                      rounded-full
+                      bg-[#d4b06a]
+                      blur-sm
+                      opacity-80
+                    "
+                  />
+                )}
+
+                <Icon
+                  size={18}
+                  className={
+                    label === "Tools"
+                      ? "transition-transform duration-150 group-hover:-translate-y-0.5 group-hover:-rotate-6"
+                      : "transition-transform duration-150 group-hover:-translate-y-0.5"
+                  }
+                />
+
+                <span className="text-[10px] font-medium tracking-wide">
+                  {label}
+                </span>
+              </>
+            )}
           </NavLink>
         ))}
       </div>

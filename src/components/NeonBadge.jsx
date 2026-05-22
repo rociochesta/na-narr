@@ -3,7 +3,7 @@ import React from "react";
 import { motion } from "framer-motion";
 
 export default function NeonBadge({ num, size = 64, className = "" }) {
-  const dimension = size; // px
+  const dimension = size;
 
   return (
     <motion.svg
@@ -12,39 +12,78 @@ export default function NeonBadge({ num, size = 64, className = "" }) {
       viewBox="0 0 84 84"
       xmlns="http://www.w3.org/2000/svg"
       className={className}
-      initial={{ scale: 1, opacity: 0.96 }}
-      animate={{ scale: [1, 1.03, 1], opacity: [0.96, 1, 0.96] }}
-      transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+      initial={{ scale: 1, opacity: 0.94 }}
+      animate={{ scale: [1, 1.03, 1], opacity: [0.94, 1, 0.94] }}
+      transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
     >
       <defs>
-        <radialGradient id="badgeGlow" cx="0.5" cy="0.5" r="0.75">
-          <stop offset="0%" stopColor="#22D3EE" stopOpacity="0.45" />
-          <stop offset="70%" stopColor="#22D3EE" stopOpacity="0.15" />
-          <stop offset="100%" stopColor="#22D3EE" stopOpacity="0" />
+        {/* warm amber glow */}
+        <radialGradient id="coinGlow" cx="0.5" cy="0.5" r="0.75">
+          <stop offset="0%"   stopColor="#c6a56b" stopOpacity="0.45" />
+          <stop offset="65%"  stopColor="#c6a56b" stopOpacity="0.12" />
+          <stop offset="100%" stopColor="#c6a56b" stopOpacity="0"    />
+        </radialGradient>
+        {/* inner face gradient — dark warm */}
+        <radialGradient id="coinFace" cx="0.38" cy="0.35" r="0.65">
+          <stop offset="0%"   stopColor="#221a0f" />
+          <stop offset="100%" stopColor="#0d0b08" />
         </radialGradient>
       </defs>
 
-      {/* Outer glow */}
-      <circle cx="42" cy="42" r="40" fill="url(#badgeGlow)" />
+      {/* Outer amber glow */}
+      <circle cx="42" cy="42" r="41" fill="url(#coinGlow)" />
 
-      {/* Neon ring */}
+      {/* Outer decorative ring */}
       <circle
-        cx="42"
-        cy="42"
-        r="32"
-        stroke="#22D3EE"
-        strokeWidth="2.2"
-        opacity="0.75"
+        cx="42" cy="42" r="38"
+        fill="none"
+        stroke="#6f5630"
+        strokeWidth="0.8"
+        opacity="0.5"
       />
 
-      {/* Inner circle */}
+      {/* Main gold ring */}
       <circle
-        cx="42"
-        cy="42"
-        r="26"
-        fill="rgba(15,23,42,0.95)" // bg-slate-900-ish
-        stroke="rgba(34,211,238,0.5)"
-        strokeWidth="1.4"
+        cx="42" cy="42" r="33"
+        fill="none"
+        stroke="#c6a56b"
+        strokeWidth="2"
+        opacity="0.80"
+      />
+
+      {/* Compass tick marks at N/E/S/W */}
+      {[0, 90, 180, 270].map((deg) => {
+        const rad = (deg * Math.PI) / 180;
+        const x1 = 42 + 33 * Math.sin(rad);
+        const y1 = 42 - 33 * Math.cos(rad);
+        const x2 = 42 + 28 * Math.sin(rad);
+        const y2 = 42 - 28 * Math.cos(rad);
+        return (
+          <line
+            key={deg}
+            x1={x1} y1={y1} x2={x2} y2={y2}
+            stroke="#c6a56b"
+            strokeWidth="1.5"
+            opacity="0.55"
+          />
+        );
+      })}
+
+      {/* Inner face */}
+      <circle
+        cx="42" cy="42" r="26"
+        fill="url(#coinFace)"
+        stroke="rgba(198,165,107,0.3)"
+        strokeWidth="1.2"
+      />
+
+      {/* Subtle inner highlight arc */}
+      <path
+        d="M 28 32 A 16 16 0 0 1 56 32"
+        fill="none"
+        stroke="rgba(255,255,255,0.06)"
+        strokeWidth="3"
+        strokeLinecap="round"
       />
 
       {/* Number */}
@@ -53,10 +92,10 @@ export default function NeonBadge({ num, size = 64, className = "" }) {
         y="42"
         textAnchor="middle"
         dominantBaseline="central"
-        fill="#A5F3FC" // cyan-200-ish
+        fill="#e5d3ad"
         fontSize="26"
         fontFamily="Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif"
-        fontWeight="600"
+        fontWeight="700"
       >
         {num}
       </text>

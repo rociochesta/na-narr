@@ -31,27 +31,37 @@ export default function ProfileMenu({ userProfile, onClose }) {
   };
 
   return (
-    // overlay oscuro POR ENCIMA de todo
     <div
-      className="fixed inset-0 z-40 bg-black/40"
+      className="fixed inset-0 z-40 bg-black/50"
       onClick={onClose}
     >
       {/* Panel anclado al header, arriba a la derecha */}
       <div
-        className="absolute right-4 top-[3.25rem] w-64 rounded-2xl border border-slate-700 bg-slate-900/95 shadow-xl backdrop-blur p-3 text-slate-100"
-        onClick={(e) => e.stopPropagation()} // no cerrar al hacer click dentro
+        className="
+          absolute right-4 top-[3.25rem] w-64
+          rounded-2xl
+          border border-[#6f5630]/40
+          bg-[#0d0e11]/97
+          shadow-[0_8px_40px_rgba(0,0,0,0.6)]
+          backdrop-blur-xl
+          p-3
+        "
+        onClick={(e) => e.stopPropagation()}
       >
+        {/* subtle gold top glow */}
+        <div className="absolute top-0 left-0 right-0 h-px rounded-t-2xl bg-gradient-to-r from-transparent via-[#c6a56b]/35 to-transparent" />
+
         {/* Header del menú */}
         <div className="flex items-start justify-between gap-2 mb-2">
           <div className="flex items-center gap-2">
-            <div className="h-8 w-8 rounded-full bg-cyan-500/20 border border-cyan-400/60 flex items-center justify-center">
-              <User size={16} className="text-cyan-300" />
+            <div className="h-8 w-8 rounded-full bg-[#17120d] border border-[#c6a56b]/60 flex items-center justify-center shadow-[0_0_10px_rgba(198,165,107,0.12)]">
+              <User size={16} className="text-[#d4b06a]" />
             </div>
             <div className="flex flex-col">
-              <span className="text-xs uppercase tracking-[0.16em] text-slate-400">
-                Logged in as
+              <span className="text-[10px] uppercase tracking-[0.20em] text-[#6f5630]">
+                Aboard as
               </span>
-              <span className="text-sm font-medium text-slate-100 truncate max-w-[9rem]">
+              <span className="text-sm font-medium text-[#e5d3ad] truncate max-w-[9rem]">
                 {displayName}
               </span>
             </div>
@@ -59,7 +69,7 @@ export default function ProfileMenu({ userProfile, onClose }) {
 
           <button
             onClick={onClose}
-            className="p-1 rounded-full hover:bg-slate-800 text-slate-400 hover:text-slate-100 transition-colors"
+            className="p-1 rounded-full hover:bg-[#1a1610] text-[#6b7078] hover:text-[#c6a56b] transition-colors"
             aria-label="Close profile menu"
           >
             <X size={14} />
@@ -67,31 +77,31 @@ export default function ProfileMenu({ userProfile, onClose }) {
         </div>
 
         {cleanDate && (
-          <div className="flex items-center gap-2 mb-3 text-[11px] text-slate-400">
-            <CalendarClock size={13} className="text-cyan-300" />
+          <div className="flex items-center gap-2 mb-3 text-[11px] text-[#6b7078]">
+            <CalendarClock size={13} className="text-[#c6a56b]" />
             <span>Clean date: {cleanDate}</span>
           </div>
         )}
 
-        <hr className="border-slate-800 mb-2" />
+        <hr className="border-[#6f5630]/25 mb-2" />
 
         {/* Opciones */}
-        <nav className="flex flex-col gap-1 text-sm">
+        <nav className="flex flex-col gap-0.5 text-sm">
           <button
             type="button"
             onClick={() => console.log("TODO: ir a perfil")}
-            className="flex items-center gap-2 px-2 py-1.5 rounded-lg hover:bg-slate-800 text-left"
+            className="flex items-center gap-2 px-2 py-1.5 rounded-lg hover:bg-[#17120d] text-left text-[#8d9199] hover:text-[#e5d3ad] transition-colors"
           >
-            <User size={14} className="text-slate-400" />
+            <User size={14} className="text-[#6f5630]" />
             <span>My profile</span>
           </button>
 
           <button
             type="button"
             onClick={goToSoberDate}
-            className="flex items-center gap-2 px-2 py-1.5 rounded-lg hover:bg-slate-800 text-left"
+            className="flex items-center gap-2 px-2 py-1.5 rounded-lg hover:bg-[#17120d] text-left text-[#8d9199] hover:text-[#e5d3ad] transition-colors"
           >
-            <CalendarClock size={14} className="text-slate-400" />
+            <CalendarClock size={14} className="text-[#6f5630]" />
             <span>Change clean date</span>
           </button>
 
@@ -99,37 +109,37 @@ export default function ProfileMenu({ userProfile, onClose }) {
           <button
             type="button"
             onClick={() => console.log("TODO: seleccionar grupo")}
-            className="flex items-center gap-2 px-2 py-1.5 rounded-lg hover:bg-slate-800 text-left"
+            className="flex items-center gap-2 px-2 py-1.5 rounded-lg hover:bg-[#17120d] text-left text-[#8d9199] hover:text-[#e5d3ad] transition-colors"
           >
-            <Info size={14} className="text-slate-400" />
+            <Info size={14} className="text-[#6f5630]" />
             <span>My group (3PM)</span>
           </button>
 
           <button
             type="button"
             onClick={() => console.log("TODO: abrir settings")}
-            className="flex items-center gap-2 px-2 py-1.5 rounded-lg hover:bg-slate-800 text-left"
+            className="flex items-center gap-2 px-2 py-1.5 rounded-lg hover:bg-[#17120d] text-left text-[#8d9199] hover:text-[#e5d3ad] transition-colors"
           >
-            <Settings size={14} className="text-slate-400" />
+            <Settings size={14} className="text-[#6f5630]" />
             <span>Settings</span>
           </button>
 
           <button
             type="button"
             onClick={() => console.log("TODO: about this app")}
-            className="flex items-center gap-2 px-2 py-1.5 rounded-lg hover:bg-slate-800 text-left"
+            className="flex items-center gap-2 px-2 py-1.5 rounded-lg hover:bg-[#17120d] text-left text-[#8d9199] hover:text-[#e5d3ad] transition-colors"
           >
-            <Info size={14} className="text-slate-400" />
+            <Info size={14} className="text-[#6f5630]" />
             <span>About 3PMers</span>
           </button>
         </nav>
 
-        <hr className="border-slate-800 my-2" />
+        <hr className="border-[#6f5630]/25 my-2" />
 
         <button
           type="button"
           onClick={() => console.log("TODO: log out")}
-          className="flex items-center gap-2 px-2 py-1.5 rounded-lg hover:bg-red-900/30 text-left text-xs text-red-300"
+          className="flex items-center gap-2 px-2 py-1.5 rounded-lg hover:bg-[#2a0f0f]/50 text-left text-xs text-[#7a3535] hover:text-[#c97070] transition-colors"
         >
           <LogOut size={13} />
           <span>Log out</span>
