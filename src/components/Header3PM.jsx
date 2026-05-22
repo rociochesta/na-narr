@@ -1,65 +1,23 @@
+// src/components/Header3PM.jsx
 import React, { useState, useEffect } from "react";
 import { User } from "lucide-react";
-import { getSlogan } from "../utils/getSlogan.js";
 import ProfileMenu from "./ProfileMenu.jsx";
+import naIcon from "../assets/naicon.png";
+import disclaimerImg from "../assets/disclaimer.png";
 
 export default function Header3PM({ showMenu = true }) {
-  const [slogan, setSlogan] = useState("");
   const [userProfile, setUserProfile] = useState(null);
   const [isProfileMenuOpen, setIsProfileMenuOpen] = useState(false);
 
   useEffect(() => {
-    // 1️⃣ load profile from localStorage
-    let profileObj = null;
     try {
       const raw = window.localStorage.getItem("na_userProfile");
-      if (raw) {
-        profileObj = JSON.parse(raw);
-        setUserProfile(profileObj);
-      }
+      if (raw) setUserProfile(JSON.parse(raw));
     } catch (err) {
       console.error("Error loading sailor profile:", err);
     }
-
-    const waitForGroupId = async (tries = 10, delayMs = 200) => {
-      for (let i = 0; i < tries; i++) {
-        const gid = window.localStorage.getItem("na_groupId");
-        if (gid) return gid;
-        await new Promise((r) => setTimeout(r, delayMs));
-      }
-      return null;
-    };
-
-    const loadSloganFromDb = async () => {
-      try {
-        const groupId = await waitForGroupId();
-
-        const url = groupId
-          ? `/.netlify/functions/get-slogan?groupId=${encodeURIComponent(groupId)}`
-          : "/.netlify/functions/get-slogan";
-
-        console.log("[NARR Header] fetching signal fire:", {
-          groupId,
-          url,
-        });
-
-        const res = await fetch(url);
-        if (!res.ok) throw new Error(`HTTP ${res.status}`);
-
-        const data = await res.json();
-
-        if (data?.text) setSlogan(data.text);
-        else setSlogan(getSlogan({ groupKey: "3PM" }));
-      } catch (err) {
-        console.error("Failed to load harbor slogan:", err);
-        setSlogan(getSlogan({ groupKey: "3PM" }));
-      }
-    };
-
-    loadSloganFromDb();
   }, []);
 
-  // user initial for avatar
   const userInitial =
     (userProfile?.display_name || userProfile?.name || "")
       .trim()
@@ -71,48 +29,43 @@ export default function Header3PM({ showMenu = true }) {
       <header
         className="
           sticky top-0 z-20
-          border-b border-[#6f5630]/25
-          bg-[#0b0c0f]/95
+          border-b border-[#6f5630]/35
+          bg-[#090807]/95
           backdrop-blur-xl
+          shadow-[0_8px_30px_rgba(0,0,0,0.55)]
         "
       >
-        {/* subtle gold glow */}
-        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#c6a56b]/35 to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#c6a56b]/45 to-transparent" />
 
-        <div className="max-w-md mx-auto px-4 py-3 flex items-center justify-between gap-3">
-
-          {/* Group badge */}
-          <div className="flex items-center gap-2">
-            <div
-              className="
-                h-8 w-8 rounded-full
-                border border-[#c6a56b]/70
-                bg-[#17120d]
-                flex items-center justify-center
-                text-[11px] font-semibold
-                text-[#d4b06a]
-                shadow-[0_0_12px_rgba(198,165,107,0.15)]
-              "
-            >
-              3PM
-            </div>
-
-            <div className="flex flex-col leading-tight">
-              <span className="text-[10px] uppercase tracking-[0.22em] text-[#c6a56b]">
-                NARR
-              </span>
-
-              <span className="text-[11px] text-[#777b84]">
-                Recovery crew
-              </span>
-            </div>
+        <div className="max-w-md mx-auto px-3 py-2.5 flex items-center gap-3">
+          <div
+            className="
+              h-10 w-10 shrink-0 rounded-full
+              border border-[#c6a56b]/75
+              bg-gradient-to-br from-[#211609] via-[#0e0d0b] to-[#050505]
+              flex items-center justify-center
+              overflow-hidden
+              shadow-[0_0_16px_rgba(198,165,107,0.25),inset_0_0_10px_rgba(255,205,105,0.08)]
+            "
+          >
+            <img src={naIcon} alt="NA" className="h-full w-full object-cover" />
           </div>
 
-          {/* Slogan */}
-          <div className="flex-1 text-right">
-            <p className="text-[11px] text-[#e5d3ad] font-medium leading-snug">
-              {slogan || "…"}
+          <div className="min-w-0 shrink-0">
+            <p className="text-[15px] leading-none font-semibold tracking-[0.28em] text-[#f4d48a]">
+              NARR
             </p>
+            <p className="mt-1 text-[11px] leading-none text-[#9b8c72]">
+              Recovery crew
+            </p>
+          </div>
+
+          <div className="flex-1 min-w-0 flex items-center justify-center rotate-[-1deg]">
+            <img
+              src={disclaimerImg}
+              alt="Disclaimer: NARR stands for NA Rocio Recovery"
+              className="max-h-10 w-full object-contain"
+            />
           </div>
 
           {/* Profile button */}
@@ -121,15 +74,16 @@ export default function Header3PM({ showMenu = true }) {
               type="button"
               onClick={() => setIsProfileMenuOpen(true)}
               className="
-                ml-1 h-8 w-8 rounded-full
-                border border-[#6f5630]/40
-                bg-[#15171b]
-                text-[#8d9199]
-                hover:text-[#d4b06a]
-                hover:border-[#c6a56b]/70
+                h-10 w-10 shrink-0 rounded-full
+                border border-[#6f5630]/55
+                bg-[#121214]
+                text-[#9b9da3]
+                hover:text-[#f4d48a]
+                hover:border-[#c6a56b]/80
                 transition-colors
                 flex items-center justify-center
-                text-[11px] font-semibold
+                text-[12px] font-semibold
+                shadow-[inset_0_0_10px_rgba(255,205,105,0.04)]
               "
             >
               {userInitial ? <span>{userInitial}</span> : <User size={16} />}
