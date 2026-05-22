@@ -40,7 +40,7 @@ export default function Header3PM({ showMenu = true }) {
         <div className="max-w-md mx-auto px-3 py-2.5 flex items-center gap-3">
           <div
             className="
-              h-10 w-10 shrink-0 rounded-full
+              h-8 w-10 shrink-0 rounded-full
               border border-[#c6a56b]/75
               bg-gradient-to-br from-[#211609] via-[#0e0d0b] to-[#050505]
               flex items-center justify-center

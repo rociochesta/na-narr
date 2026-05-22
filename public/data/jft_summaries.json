@@ -1,121 +1,115 @@
+
 [
-{
+  {
   "id": "jft_12_08",
   "month": 12,
   "day": 8,
   "source": "JFT",
-  "title": "Call It What It Is",
-  "short_summary": "We love disguising our defects because 'sounds nicer' feels safer than 'is ruining my life.' Calling manipulation 'people pleasing' or fear 'being chill' makes it look like a personality trait instead of emotional tax evasion. Recovery starts when we stop rebranding dysfunction and call our bullshit what it is. Only then can we actually let it go.",
+  "title": "Call the Storm What It Is",
+  "short_summary": "We addicts love repainting our defects so they look less dangerous. We call manipulation ‘being nice,’ isolation ‘independence,’ and fear ‘just being chill.’ Dressing up dysfunction doesn’t make the ship less damaged — it just hides the leaks longer. Recovery starts when we stop giving our wreckage clever little nicknames and call it what it actually is. Truth patches holes. Denial just decorates the sinking.",
   "theme_tags": ["integrity", "self-delusion", "identity", "denial"],
   "punchlines": [
-    "You can’t heal what you’re still giving a nickname.",
-    "My defects weren’t subtle — I was.",
-    "Rebranding fear as ‘easygoing’ is still fear, just with better marketing."
+    "Ye can’t repair a leak ye keep callin’ ‘personality.’",
+    "My defects weren’t hiding — I was.",
+    "Fear wearing better clothes is still fear."
   ]
-}
-,
+},
 {
   "id": "jft_12_09",
   "month": 12,
   "day": 9,
   "source": "JFT",
-  "title": "Listening Without Loading a Reply",
-  "short_summary": "My ears work fine; it's my ego that's deaf. I don’t listen — I wait for my turn to perform. Real listening isn't planning my comeback or building a TED Talk in my head while someone bleeds in front of me. When I stop rehearsing my identity and pay attention, I accidentally connect. Listening is not a personality trait; it's the death of self-obsession, and weirdly, that feels like freedom.",
+  "title": "Listening Without Loading the Cannons",
+  "short_summary": "My ears worked fine — it was my ego causing the storm. I didn’t listen; I waited for my turn to perform. Real listening isn’t building speeches in my head while another sailor bleeds beside me. When I stop rehearsing who I want to appear to be and actually pay attention, something strange happens: connection. Listening isn’t silence. It’s surrendering the need to steer every conversation back toward myself.",
   "theme_tags": ["presence", "ego", "connection", "self-obsession"],
   "punchlines": [
-    "If I'm talking in my head, I'm not listening — I'm editing reality.",
-    "My ears were fine. My ego was the volume problem.",
-    "Listening isn't silence — it's surrender."
+    "If I’m rehearsing replies, I’m not listening — I’m navigatin’ myself.",
+    "My ears were workin’. My ego was the storm.",
+    "Listening is surrender without sinkin’."
   ]
-}
-,
-  {
+},
+{
   "id": "jft_12_10",
   "month": 12,
   "day": 10,
   "source": "JFT",
-  "title": "What Winning Actually Looks Like",
-  "short_summary": "In NA, “winners” aren’t enlightened unicorns — they’re just addicts who refuse to abandon themselves today. A winner isn't someone with a perfect life; it’s someone who keeps showing up while their life is on fire. They don’t worship personalities; they practice principles. They don’t disappear when things get hard; they tell the truth and stay clean anyway. Winning here isn’t glamorous — it’s consistency disguised as hope.",
+  "title": "What Winning Looks Like at Sea",
+  "short_summary": "Recovery winners aren’t magical captains with perfect maps. They’re addicts who refuse to abandon ship today. A winner is someone who keeps showing up while the deck is still on fire. They practice principles instead of performin’ personalities. They tell the truth, stay with the crew, and keep rowing through rough water. Recovery victories rarely look glamorous — most of the time they just look like consistency surviving another tide.",
   "theme_tags": ["consistency", "principles", "identity", "action"],
   "punchlines": [
-    "Recovery isn’t a competition — the prize is waking up.",
-    "Winners aren’t special. They’re just still here.",
-    "If I’m clean today, I’m already on the podium."
+    "Recovery ain’t a race — the prize is seein’ another sunrise.",
+    "Winners aren’t special sailors. They just stayed aboard.",
+    "If I’m clean today, the ship still floats."
   ]
-}
-,
-  {
+},
+{
   "id": "jft_12_11",
   "month": 12,
   "day": 11,
   "source": "JFT",
-  "title": "Misery Is Optional, Delusion Wasn't",
-  "short_summary": "Misery used to feel safer than change. At least pain was predictable — recovery wasn’t. We weren’t loyal to drugs; we were loyal to familiarity. Even now, clean, we can cling to discomfort like it's a toxic comfort blanket. The truth? No one is forcing us to stay miserable. Recovery doesn’t drag us out of pain — it hands us the door handle. Whether we walk out or decorate the cell is up to us.",
+  "title": "Misery Was Familiar Waters",
+  "short_summary": "Misery used to feel safer than change because at least I knew the currents. We addicts aren’t loyal to pain because it’s good — we’re loyal because it’s familiar. Even clean, I can romanticize suffering like it’s part of my identity. Recovery doesn’t drag me out of the storm against my will. It hands me the wheel and asks whether I want to keep circling the same wreckage. The cell door opens from the inside.",
   "theme_tags": ["comfort_zone", "fear", "choice", "self-sabotage"],
   "punchlines": [
-    "Misery wasn’t my destiny — it was my habit.",
-    "I wasn’t addicted to drugs; I was addicted to predictable pain.",
-    "If I'm suffering today, it's because I renewed the subscription."
+    "Misery wasn’t destiny — it was muscle memory.",
+    "I wasn’t addicted to drugs alone. I was addicted to familiar storms.",
+    "Some suffering survives because I keep feedin’ it rum."
   ]
-}
-,
-  {
+},
+{
   "id": "jft_12_12",
   "month": 12,
   "day": 12,
   "source": "JFT",
-  "title": "Fear of Change (or Why My Brain Thinks Comfort Is Oxygen)",
-  "short_summary": "Change feels like death because my ego hates not being in charge. I treat every shift in life as a threat, even when staying the same is what’s actually killing me. The funny part? Most of the changes I fought turned out to be upgrades. Recovery didn’t ruin my life — it exposed the parts that needed replacing. Fear isn’t proof something is wrong; it’s proof something is moving.",
+  "title": "Fear of Change",
+  "short_summary": "My brain treats change like mutiny even when staying the same is what’s sinking the ship. Recovery keeps proving something uncomfortable: most of the things I feared ended up saving my life. Fear doesn’t always mean danger. Sometimes it just means the old captain isn’t steering anymore. Growth feels unnatural because addiction trained me to survive storms, not calm seas.",
   "theme_tags": ["ego", "growth", "fear", "adaptation"],
   "punchlines": [
-    "My comfort zone wasn’t comfortable — it was familiar pain with good lighting.",
-    "Fear isn’t intuition — it’s my past trying to stay employed.",
-    "If change was truly dangerous, it wouldn’t improve my life every time I stop fighting it."
+    "My comfort zone was just familiar wreckage with lantern lighting.",
+    "Fear ain’t prophecy — it’s old storms tryin’ to stay captain.",
+    "If change was truly deadly, recovery wouldn’t keep savin’ my life."
   ]
-}
-,
-  {
+},
+{
   "id": "jft_12_13",
   "month": 12,
   "day": 13,
   "source": "JFT",
-  "title": "Membership Is a Choice, Not a Rescue Mission",
-  "short_summary": "We love diagnosing other people’s addictions like we’re spiritual EMTs, but NA has a brutal rule: no one joins unless they want to. Recovery doesn’t work by hostage situation. You can drag someone to a chair, but you can’t make them surrender. Membership isn’t paperwork — it’s admitting you’re done losing. The door is always open, but walking through it is a solo decision.",
+  "title": "No Sailor Gets Dragged Aboard",
+  "short_summary": "Recovery doesn’t work like kidnapping. I can throw ropes, light signal fires, and leave the harbor open — but no addict joins the crew unless they want to survive. Membership isn’t paperwork; it’s surrender. The moment I admit I’m tired of drowning, I step aboard willingly. Nobody rescued me by force. They just kept the lantern lit long enough for me to find shore.",
   "theme_tags": ["boundaries", "autonomy", "attraction", "surrender"],
   "punchlines": [
-    "I can carry the message — not the addict.",
-    "Recovery is voluntary; misery was mandatory.",
-    "I didn’t join NA because I was inspired — I joined because I ran out of lies."
+    "I can carry the message, not row the ship for someone else.",
+    "Recovery is voluntary. Shipwrecks weren’t.",
+    "I joined because I ran out of lies and lifeboats."
   ]
-}
-,
-  {
+},
+{
   "id": "jft_12_14",
   "month": 12,
   "day": 14,
   "source": "JFT",
-  "title": "Addiction Isn’t the Drug — It’s the Operating System",
-  "short_summary": "We didn’t think we were addicts because we didn’t match the movie version: no trench coat, no needles, no robbing gas stations. Then we realized addiction isn’t about the drug — it’s about the part of us that can turn anything into an escape. Even without substances, the same brain runs the same script: obsess, avoid, self-destruct, repeat. Drugs were just the special effects. The problem lived in us. The solution has to live in us, too — and that’s what the Twelve Steps are actually fixing.",
+  "title": "Addiction Is the Captain, Not the Cargo",
+  "short_summary": "I thought drugs were the problem until I removed them and watched the same patterns keep steering the ship. Addiction isn’t about one substance — it’s the part of me that can turn anything into escape. Obsession, avoidance, self-destruction, isolation: same ocean, different storms. The substances were just the loudest waves. The real problem lived below deck the whole time.",
   "theme_tags": ["identity", "disease_concept", "self-awareness", "steps"],
   "punchlines": [
-    "The drugs left my system — the addict stayed rent-free.",
-    "Turns out my problem wasn’t cocaine — it was me unsupervised.",
-    "Addiction isn’t about what I used. It’s about why I couldn’t stop."
+    "The drugs left the harbor. The addict stayed aboard.",
+    "Turns out cocaine wasn’t the captain — my thinking was.",
+    "Addiction ain’t about what I used. It’s about why I kept runnin’."
   ]
-}
-,
-  {
+},
+{
   "id": "jft_12_15",
   "month": 12,
   "day": 15,
   "source": "JFT",
-  "title": "The Spiritual Loophole: Keep It by Giving It Away",
-  "short_summary": "Recovery didn’t come with an invoice. People gave me rides, time, attention, and hope without asking for anything back. The math is weird: the more I share, the more I have. When I help someone newer than me, I’m not being noble—I’m protecting my own recovery. My story only becomes useless when I keep it to myself. Sharing isn’t charity; it’s maintenance. If I stop giving this away, I eventually lose it.",
+  "title": "Keep the Lantern Lit",
+  "short_summary": "Recovery survives through sharing. Sailors before me handed me rides, hope, coffee, chairs, truth, and late-night phone calls without askin’ for payment. The strange math of recovery is this: the more I give away, the more stable my own ship becomes. Helping another addict isn’t charity — it’s maintenance. If I stop passing the lantern, eventually I drift back into darkness myself.",
   "theme_tags": ["service", "gratitude", "maintenance", "spiritual_principles"],
   "punchlines": [
-    "Apparently the only thing I don’t lose when I share it… is my recovery.",
-    "My story isn’t a burden when someone needs it—it’s a lifeline.",
-    "Helping you keeps me clean. That’s the most honest selfish act I know."
+    "Recovery is the only cargo that multiplies when shared.",
+    "My story stops bein’ baggage once it becomes a map.",
+    "Helping another sailor keeps my own ship afloat."
   ]
 }
 ,
@@ -124,8 +118,8 @@
   "month": 12,
   "day": 16,
   "source": "JFT",
-  "title": "Where there's smoke...",
-  "short_summary": "Complacency shows up like smoke: fewer meetings, less contact with newcomers, drifting from your sponsor. Catch it early—stay connected, stay involved, keep recovery close—so a small wisp doesn’t turn into an inferno.",
+  "title": "Smoke on the Horizon",
+  "short_summary": "Complacency rarely arrives screaming. It drifts in quiet like smoke over dark water: fewer meetings, fewer calls, drifting from the crew, convincing yourself the ship can steer itself now. Recovery asks for maintenance long before disaster. Stay connected. Stay visible. A tiny spark ignored below deck becomes a fire no sailor can outrun.",
   "theme_tags": [
     "complacency",
     "maintenance",
@@ -136,21 +130,20 @@
     "early warning signs"
   ],
   "punchlines": [
-    "Complacency doesn’t announce itself. It just slowly turns the lights off.",
-    "If your recovery gets quiet, don’t call it peace yet.",
-    "Smoke first. Fire later. Move now.",
-    "Skip enough meetings and your brain will start pitching “normal” again.",
-    "Maintenance isn’t boring. It’s how you don’t burn the house down."
+    "Complacency dims the lanterns before it sinks the ship.",
+    "If recovery gets too quiet, don’t mistake it for peace.",
+    "Smoke first. Shipwreck later.",
+    "Skip enough meetings and yer brain starts sellin’ ‘normal’ again.",
+    "Maintenance keeps the vessel afloat."
   ]
-}
-,
- {
+},
+{
   "id": "jft_12_17",
   "month": 12,
   "day": 17,
   "source": "JFT",
-  "title": "Service motives",
-  "short_summary": "Service in NA only works when the motive is clear: carrying the message to the addict who still suffers. Ego, recognition, or needing to feel important can quietly poison service. Checking motives—through honesty, reflection, and connection—keeps service welcoming instead of performative.",
+  "title": "Why We Serve",
+  "short_summary": "Service only works when the motive stays clean. If I’m helping to feel important, admired, or needed, eventually my ego grabs the wheel. Real service is carrying the lantern to the addict still lost at sea. It’s not performance. It’s survival. Honest motives keep recovery welcoming instead of turning it into another stage for self-obsession.",
   "theme_tags": [
     "service",
     "motives",
@@ -161,21 +154,20 @@
     "connection"
   ],
   "punchlines": [
-    "Service isn’t a stage. It’s a signal fire.",
-    "If I need applause, I’m probably not helping.",
-    "Ego makes noise. Service makes space.",
-    "The message gets lost when the messenger needs credit.",
-    "Check motives early—damage happens quietly."
+    "Service ain’t theater — it’s a lighthouse.",
+    "If I need applause, I probably lost the message.",
+    "Ego fires cannons. Service lights harbors.",
+    "The message sinks when the messenger needs worship.",
+    "Check the motives before the storm checks them for ye."
   ]
-}
-,
- {
+},
+{
   "id": "jft_12_18",
   "month": 12,
   "day": 18,
   "source": "JFT",
-  "title": "The message of our meetings",
-  "short_summary": "Meetings work when the focus stays on recovery—how we got here and how we stay. War stories, debates, and venting can drown the message. If meetings feel empty or frustrating, it may be a signal to look at how we’re sharing. Carrying the message is a choice we make every time we speak.",
+  "title": "What Meetings Are For",
+  "short_summary": "Meetings save lives when the focus stays on recovery: how we survived the storm and how we keep sailing. Endless war stories, debates, and emotional cannon fire can drown the message beneath the noise. Every time I share, I choose whether I’m helping another addict stay afloat or just entertaining myself. The message matters more than my performance.",
   "theme_tags": [
     "meetings",
     "carrying the message",
@@ -186,87 +178,81 @@
     "humility"
   ],
   "punchlines": [
-    "Stories entertain. Recovery saves lives.",
-    "If I bring the mess, don’t be surprised when the message gets lost.",
-    "Meetings aren’t podcasts about my past.",
-    "What I share either helps someone stay—or gives them an excuse to leave.",
-    "The message works best when it’s not competing with my ego."
+    "Stories entertain sailors. Recovery keeps ‘em alive.",
+    "If I dump chaos on deck, don’t act surprised when the message sinks.",
+    "Meetings ain’t tavern tales about my wreckage.",
+    "Every share either throws a rope or cuts one.",
+    "The message works best when my ego stops yellin’ over it."
   ]
-}
-,
+},
 {
   "id": "jft_12_19",
   "month": 12,
   "day": 19,
   "source": "JFT",
-  "title": "Walking the Way I Talk",
-  "short_summary": "In recovery, words are cheap. I can sound spiritual, quote principles, and still live like nothing changed. I can talk a good program and practice a very different one at home. The real work starts when there’s no meeting, no audience, and no one to impress. Integrity isn’t how wise I sound — it’s what I do when convenience and principles collide. If my life doesn’t match my message, I’m not carrying recovery. I’m just doing spiritual cosplay.",
+  "title": "Walk the Deck You Talk",
+  "short_summary": "In recovery, words are cheap cargo. I can sound spiritual, quote principles, and still steer my life straight into reefs. Integrity starts after the meeting ends — when nobody’s watching, applauding, or correcting me. Recovery isn’t measured by how wise I sound aboard ship. It’s measured by whether my actions survive rough water.",
   "theme_tags": ["integrity", "action", "principles", "authenticity", "self-honesty"],
   "punchlines": [
-    "My recovery isn’t my vocabulary — it’s my behavior.",
-    "Principles don’t need witnesses. My ego does.",
-    "Quoting the program without living it is just spiritual karaoke."
+    "My recovery ain’t my vocabulary — it’s how I steer.",
+    "Principles don’t need audiences. Ego does.",
+    "Quoting recovery without living it is just pirate karaoke."
   ]
-}
-
-,
-  {
+},
+{
   "id": "jft_12_20",
   "month": 12,
   "day": 20,
   "source": "JFT",
-  "title": "Overcoming Self-Obsession",
-  "short_summary": "I didn’t stop being self-centered when I stopped using — I just got cleaner about it. I still walk into rooms assuming everyone is watching, judging, or secretly thinking about me. I still want instant attention, immediate reassurance, and emotional customer service on demand. Recovery slowly reveals a brutal truth: the world does not revolve around me, and that’s actually good news. The more I insist on being the center of everything, the more miserable I become. Relief comes when I stop monitoring how I’m being perceived and start paying attention to someone else. Helping others doesn’t make me noble — it makes me sane. Giving is how I escape myself.",
+  "title": "Escaping the Center of the Universe",
+  "short_summary": "I didn’t stop being self-obsessed when I stopped using. I just became cleaner about it. I still walk into rooms assuming everyone’s watching me, judging me, thinking about me. Recovery slowly reveals something humbling: most people are too busy surviving their own storms to monitor mine. Relief begins when I stop staring at myself and start noticing the crew beside me. Helping another addict doesn’t make me noble — it gets me out of solitary confinement inside my own skull.",
   "theme_tags": ["self-obsession", "ego", "service", "connection", "humility"],
   "punchlines": [
-    "Turns out the problem wasn’t that people ignored me — it’s that I never stopped watching myself.",
-    "Self-obsession feels like importance, but it behaves like a prison.",
-    "The fastest way out of my head is to show up for someone else."
+    "Turns out the prison wasn’t people — it was my own reflection.",
+    "Self-obsession feels important but rows like an anchor.",
+    "The fastest escape from my head is helping another sailor."
   ]
-}
-,
-  {
+},
+{
   "id": "jft_12_21",
   "month": 12,
   "day": 21,
   "source": "JFT",
-  "title": "Acceptance Before Change",
-  "short_summary": "I live between two lies. One says I’m broken beyond repair, so why bother trying. The other says there’s nothing wrong with me, so why bother changing. Both extremes keep me exactly where I am. Fear tells me I’ll never become who I want to be. Denial tells me I don’t need to become anyone else. Acceptance is the uncomfortable middle ground where I stop running from myself. When I admit I’m powerless and my life has been unmanageable, I puncture the lie that says I don’t need to change. When I believe help is possible, I puncture the lie that says I can’t. Acceptance doesn’t mean liking everything I find — it means telling the truth long enough to become free.",
+  "title": "Acceptance Before the Tide Turns",
+  "short_summary": "I lived trapped between two lies: I’m too broken to change, or I don’t need to change at all. Both kept me stranded in the same wreckage. Acceptance is the middle water where I stop arguing with reality long enough to steer somewhere new. Admitting powerlessness doesn’t chain me — it finally cuts the rope tying me to denial.",
   "theme_tags": ["acceptance", "change", "fear", "denial", "honesty"],
   "punchlines": [
-    "Fear says I’m too broken to change. Denial says I don’t need to. Both are liars.",
-    "Acceptance isn’t giving up — it’s stopping the argument with reality.",
-    "I don’t change because I hate myself. I change because I finally stopped lying."
+    "Fear says I’m doomed. Denial says I’m fine. Both are drunk navigators.",
+    "Acceptance ain’t surrendering life — it’s surrendering the lie.",
+    "Recovery began the moment I stopped defending the shipwreck."
   ]
-}
-,
-  {
+},
+{
   "id": "jft_12_22",
   "month": 12,
   "day": 22,
   "source": "JFT",
-  "title": "A New Way to Live",
-  "short_summary": "The worst part of addiction wasn’t that it might kill me someday — it was that I was already dead while breathing. I moved through life like a ghost, existing without meaning, connection, or responsibility. Recovery didn’t just stop the drugs; it gave me a reason to stay. Working the Steps taught me something radical: I matter, and so do other people. My actions affect lives beyond my own head. Staying alive now requires participation. I maintain this new life by contributing, by showing up, by caring — not perfectly, but consistently. The old life is always waiting, but it only wins if I stop choosing this one.",
+  "title": "A New Voyage",
+  "short_summary": "The worst part of addiction wasn’t dying someday — it was drifting through life already half gone. Recovery didn’t just remove substances. It taught me participation. The Steps gave me something terrifying and beautiful: responsibility, connection, meaning, crew. Staying alive now means showing up, helping out, and choosing the voyage again each day instead of drifting back toward the wreckage.",
   "theme_tags": ["meaning", "service", "identity", "connection", "responsibility"],
   "punchlines": [
-    "Addiction didn’t make me reckless — it made me invisible.",
-    "Recovery didn’t give me a life. It taught me how to participate in one.",
-    "I stay alive by staying useful."
+    "Addiction didn’t make me dangerous — it made me disappear.",
+    "Recovery taught me how to board my own life again.",
+    "I stay alive by staying useful aboard the ship."
   ]
-}
-,
-  {
+},
+{
   "id": "jft_12_23",
   "month": 12,
   "day": 23,
   "source": "JFT",
-  "title": "New Ideas (a.k.a. Stop Trusting the Brain That Almost Killed You)",
-  "short_summary": "My old ideas felt familiar, efficient, and comfortable — which should have been the first red flag. When things get hard, my instinct is to go back to what I know, even if what I know nearly destroyed me. Recovery asks me to do something deeply offensive to my ego: try ideas that didn’t come from my own head. Meetings, steps, sponsors, honesty — none of these were my inventions, and that’s exactly why they work. A new life requires new thinking, and new thinking feels wrong at first. That doesn’t mean it’s bad. It means it’s not addiction running the show anymore.",
+  "title": "New Maps Feel Wrong",
+  "short_summary": "My old thinking nearly sank me, yet part of me still trusts it because it feels familiar. Recovery asks me to try maps drawn by people who survived waters I almost drowned in. Meetings, sponsors, honesty, Steps — none of these came from my ego, and that’s exactly why they work. New thinking feels unnatural because addiction hates losing command of the ship.",
   "theme_tags": ["open-mindedness", "change", "ego", "growth", "recovery"],
   "punchlines": [
-    "My old ideas had great vibes and terrible outcomes.",
-    "If my thinking got me here, maybe it doesn’t get to lead anymore.",
-    "New ideas feel uncomfortable because addiction hates being unemployed."
+    "My old maps had confidence and terrible outcomes.",
+    "Maybe the brain that wrecked the ship shouldn’t captain the rebuild.",
+    "New ideas feel dangerous because addiction fears unemployment."
   ]
 },
 {
@@ -274,117 +260,112 @@
   "month": 12,
   "day": 24,
   "source": "JFT",
-  "title": "The Group",
-  "short_summary": "I didn’t stay clean because of willpower or insight. I stayed because I walked into a room full of people who knew exactly what I was and didn’t flinch. The group works because it’s built from shared reality, not advice. I trusted these people because they weren’t pretending — they were living proof that change was possible. The atmosphere of recovery doesn’t happen by accident; it’s created when addicts show up, help out, and stay after the meeting instead of disappearing. When I participate, I don’t just help the group — I anchor myself. Belonging didn’t save my life by magic. It saved my life by keeping me from being alone with my head.",
+  "title": "The Crew",
+  "short_summary": "I didn’t stay clean through willpower alone. I stayed because I found a crew that recognized my storms without flinching. Recovery groups work because they’re built from shared wreckage and shared survival. The atmosphere of recovery doesn’t appear magically — it’s built when addicts keep showing up, stacking chairs, making coffee, answering calls, and refusing to let each other drift alone into dark water.",
   "theme_tags": ["community", "belonging", "service", "connection", "hope"],
   "punchlines": [
-    "The group didn’t fix me — it kept me from isolating long enough to destroy myself.",
-    "I trusted the message because it came from people who survived it.",
-    "Belonging is relapse prevention with chairs and coffee."
+    "The crew didn’t fix me — they stopped me from sinkin’ alone.",
+    "I trusted the message because it came from sailors who survived the storm.",
+    "Belonging is relapse prevention with folding chairs and burnt coffee."
   ]
-}
-,
-  {
+},
+{
   "id": "jft_12_25",
   "month": 12,
   "day": 25,
   "source": "JFT",
-  "title": "Anonymity (or: My Ego Doesn’t Need a Name Tag)",
-  "short_summary": "Anonymity isn’t about hiding — it’s about not needing to be the main character. My self-will ran my life for years and called it ‘personality.’ Turns out constantly imposing my ideas on reality wasn’t leadership, it was control disguised as confidence. When I stop insisting that my way is the way, something weird happens: life gets lighter, people feel safer, and I don’t have to manage everything like a failing CEO. Anonymity reminds me that recovery works better when I’m part of something bigger than my name, my opinions, or my need to be right. The less I push, the more things actually move.",
+  "title": "Anonymity",
+  "short_summary": "Anonymity reminds me the voyage isn’t about me being captain of the universe. My ego spent years treating control like leadership. Recovery keeps teaching me something quieter: the ship moves smoother when I stop trying to command every wave. I don’t need to be the hero, the loudest sailor, or the smartest voice on deck. I just need to stay part of the crew.",
   "theme_tags": ["ego", "selflessness", "anonymity", "humility", "spiritual_principles"],
   "punchlines": [
-    "Anonymity is my ego being asked to sit down and shut up — lovingly.",
-    "Turns out the universe doesn’t need my supervision.",
-    "When I stopped running everything, things started working."
+    "Anonymity is my ego being told to swab the deck.",
+    "Turns out the ocean sailed fine without my supervision.",
+    "The less I force the tide, the easier the voyage becomes."
   ]
-}
-,
- {
+},
+{
   "id": "jft_12_26",
   "month": 12,
   "day": 26,
   "source": "JFT",
-  "title": "Never-Failing Power (Unlike My Previous Life Choices)",
-  "short_summary": "I used to put all my faith in one thing at a time — a drug, a person, an idea — and call it loyalty. Then it collapsed, every single time. Recovery didn’t magically remove my tendency to depend; it just exposed how dangerous it is when I expect humans to function like gods. Sponsors sleep. People get tired. Relationships wobble. A Power greater than myself doesn’t flake, ghost, or burn out. Trusting something bigger than me isn’t weakness — it’s finally admitting I was never built to run life alone. Fear loses its grip when I stop expecting finite things to be infinite.",
+  "title": "A Power Bigger Than the Storm",
+  "short_summary": "I used to demand impossible things from people: perfect loyalty, endless stability, permanent rescue. Humans crack under that weight. Recovery taught me to stop asking sailors to be gods. People get tired. Sponsors sleep. Crews drift. But a Higher Power doesn’t burn out or abandon ship. Trusting something bigger than myself finally loosened fear’s grip on the wheel.",
   "theme_tags": ["faith", "trust", "fear", "higher_power", "letting_go"],
   "punchlines": [
-    "I kept asking humans to be gods and got disappointed every time.",
-    "My Higher Power doesn’t need sleep or validation.",
-    "Trusting something bigger than me is cheaper than panic."
+    "I kept expectin’ mortals to control the ocean.",
+    "My Higher Power doesn’t clock out for the night.",
+    "Faith costs less than panic."
   ]
-}
-,
-  {
+},
+{
   "id": "jft_12_27",
   "month": 12,
   "day": 27,
   "source": "JFT",
-  "title": "Restored to Sanity (In Small, Unimpressive Moments)",
-  "short_summary": "After admitting my insanity, it’s tempting to assume it’s permanent — like I’m clean now but doomed to think sideways forever. But recovery already proved something important: obsession left. If that miracle happened, maybe the rest isn’t impossible either. Sanity doesn’t return all at once; it shows up quietly in choices that don’t look dramatic. Cutting up credit cards. Calling my sponsor instead of my old contacts. Pausing instead of spiraling. These moments don’t feel spiritual — they feel boring, awkward, and inconvenient. And that’s how I know they’re sane. Each small, reasonable decision is evidence that something bigger than me is doing work I couldn’t.",
+  "title": "Sanity Returns Quietly",
+  "short_summary": "Sanity didn’t crash into my life like a tidal wave. It arrived quietly through small decisions: making calls, cutting ties, pausing instead of spiraling, choosing recovery before chaos. None of it looked dramatic. That’s how I know it was real. Insanity screamed. Recovery usually whispers from the helm while asking me to do the next reasonable thing.",
   "theme_tags": ["sanity", "faith", "daily_actions", "recovery", "growth"],
   "punchlines": [
-    "Sanity didn’t arrive with fireworks — it showed up as better decisions.",
-    "My insanity was loud. Recovery is quiet and inconvenient.",
-    "If obsession left, maybe the rest can follow."
+    "Sanity arrived disguised as inconvenient choices.",
+    "My insanity was loud. Recovery rows quietly.",
+    "If obsession left once, maybe the rest of the storm can too."
   ]
 }
-,{
+,
+{
   "id": "jft_12_28",
   "month": 12,
   "day": 28,
   "source": "JFT",
-  "title": "Depression (Not a Moral Failure)",
-  "short_summary": "Depression still shows up in recovery — the difference is I don’t have to disappear with it. When I isolate, my thoughts get heavier and louder, and despair starts negotiating. Recovery asks me to do the opposite of my instinct: show up anyway. Go to the meeting. Text the sponsor. Speak the feeling out loud instead of letting it rot in silence. Depression doesn’t mean I’m failing or broken; it means I’m human with a nervous system that still needs care. Feelings pass, even the heavy ones. I don’t have to fight them — I just have to not let them drive.",
+  "title": "Depression Ain’t a Moral Failure",
+  "short_summary": "Depression still boards the ship in recovery — the difference now is I don’t have to disappear below deck with it. Isolation turns the storm louder. Thoughts get heavier. Despair starts negotiatin’ like it owns the map. Recovery asks me to do the opposite of instinct: stay visible. Go to the meeting. Message the crew. Speak the feeling before silence feeds it into something larger. Depression doesn’t mean I’m weak or failing. It means I’m human and still healing. Storms pass faster when I stop handin’ them the wheel.",
   "theme_tags": ["mental_health", "acceptance", "connection", "depression", "self-care"],
   "punchlines": [
-    "Depression isn’t a relapse — isolation is the warm-up.",
-    "I don’t need to fix my feelings. I need witnesses.",
-    "Feelings pass. Silence feeds them."
+    "Depression ain’t relapse — isolation is the first wave.",
+    "I don’t need repairs. I need crew beside me.",
+    "Feelings pass. Silence builds shipwrecks."
   ]
-}
-,
-  {
+},
+{
   "id": "jft_12_29",
   "month": 12,
   "day": 29,
   "source": "JFT",
-  "title": "Through Other People’s Eyes (Unfortunately)",
-  "short_summary": "At some point, recovery delivers an uncomfortable truth: the version of me in my head is not the version everyone else is dealing with. I’m not as terrible or as impressive as I think — I’m just too close to myself to see clearly. That’s where other addicts come in. Not to attack me, not to fix me, but to reflect me. Sometimes they show me strengths I didn’t know I had. Other times they point at blind spots I’ve been stepping into for years. My first reaction is usually defense — which is often a sign I just touched something real. I don’t have to accept every opinion, but I can’t afford to ignore feedback just because it’s uncomfortable. Seeing myself through others’ eyes doesn’t diminish me. It gives me a clearer map.",
+  "title": "Seeing Myself Through the Crew’s Eyes",
+  "short_summary": "Recovery eventually hands me an uncomfortable compass: the version of myself in my head isn’t always reality. I’m usually not as monstrous or as legendary as I imagine — just too close to my own storm to navigate clearly. Other addicts help reflect the truth back at me. Sometimes they show strengths I buried. Sometimes they point toward reefs I keep crashing into. My first reaction is usually defense, which probably means the cannonball hit something real. Feedback doesn’t shrink me. It gives me better maps.",
   "theme_tags": ["self-awareness", "feedback", "humility", "growth", "identity"],
   "punchlines": [
-    "If feedback hurts, it probably hit something real.",
-    "My blind spots don’t disappear just because I close my eyes.",
-    "Other people aren’t attacking me — they’re rendering reality."
+    "If feedback stings, it probably struck real wood.",
+    "Blind spots don’t vanish because I sail with my eyes closed.",
+    "The crew ain’t attacking me — they’re helping chart the waters."
   ]
-}
-,
-  {
+},
+{
   "id": "jft_12_30",
   "month": 12,
   "day": 30,
   "source": "JFT",
-  "title": "Wishing Is Not a Recovery Plan",
-  "short_summary": "Recovery can feel painfully slow. Same thoughts, same feelings, same internal arguments — day after day. My brain loves wishing for a shortcut, a breakthrough, a sudden emotional upgrade. But wishing never kept me clean. If it worked, I’d have been cured years ago. What actually changes things is action — uncomfortable, repetitive, unglamorous action — and staying connected to something bigger than my own thinking. The steps work because they force movement, not because they promise comfort. Prayer keeps me grounded when action feels pointless. Together, they keep me from confusing hope with procrastination.",
+  "title": "Wishing Never Steered the Ship",
+  "short_summary": "Recovery feels painfully slow sometimes. Same fears. Same thoughts. Same exhausting tides. My brain loves fantasy solutions: breakthroughs, sudden peace, magical transformations. But wishing never kept me clean. Action did. Small, repetitive, often boring action. Meetings. Prayer. Calls. Steps. Recovery works because it forces movement while addiction waits for inspiration. Hope matters — but hope without action is just driftwood floating in circles.",
   "theme_tags": ["action", "prayer", "discipline", "consistency", "recovery"],
   "punchlines": [
-    "Wishing didn’t get me clean. Doing did.",
-    "Recovery isn’t slow — my resistance is.",
-    "Action moves my feet. Prayer keeps my head from sabotaging it."
+    "Wishing never rowed the ship anywhere.",
+    "Recovery ain’t slow — resistance drops the anchor.",
+    "Action moves the vessel. Prayer steadies the compass."
   ]
-}
-,
-  {
+},
+{
   "id": "jft_12_31",
   "month": 12,
   "day": 31,
   "source": "JFT",
-  "title": "Service Is What Keeps This Alive",
-  "short_summary": "At some point in recovery, life stabilizes a little. Not perfect — just functional. The chaos quiets down. The panic loosens its grip. And then the real question shows up: now what? Recovery doesn’t exist so I can sit back and admire my progress. It exists so I can participate. Service isn’t about holding a position or collecting credibility — it’s about staying connected to something bigger than my own head. It shows up in small, unglamorous ways: listening when I’d rather disappear, showing up when no one is clapping, doing my part even when I don’t feel inspired. Service is how recovery survives contact with real life. It keeps me from shrinking back into myself. It reminds me that this works because we pass it on, not because we mastered it.",
+  "title": "Service Keeps the Lantern Lit",
+  "short_summary": "Eventually recovery becomes less about survival and more about participation. The storms calm a little. Life grows steadier. Then the real question arrives: what do I do with this second chance? Service keeps me connected to something larger than my own skull. It isn’t glory or status — it’s maintenance. It’s making coffee, answering calls, listening when I’d rather vanish, showing up without applause. Recovery survives because sailors pass the lantern forward instead of hoarding the light for themselves.",
   "theme_tags": ["service", "connection", "purpose", "maintenance", "community"],
   "punchlines": [
-    "Recovery didn’t save my life so I could sit out the rest of it.",
-    "Service isn’t heroic — it’s maintenance.",
-    "If I want this to keep working, I have to keep showing up."
+    "Recovery didn’t save me so I could drift alone afterward.",
+    "Service ain’t heroic — it keeps the ship afloat.",
+    "If I want recovery alive tomorrow, I gotta help carry it today."
   ]
 }
 ,
@@ -469,214 +450,456 @@
     "punchlines": []
   },
   {
-    "id": "jft_03_01",
-    "month": 3,
-    "day": 1,
-    "source": "JFT",
-    "title": "Anxiety Attack? Cool. Here's a Checklist.",
-    "short_summary": "Everything is on fire, nothing can wait, and your nervous system has declared a state of emergency over something that probably isn't a state of emergency. Classic. The move — and this is annoyingly effective — is to actually stop. Not metaphorically. Stop. Then ask yourself what on this list actually needs to happen today versus what is just being loud. Spoiler: most of it is just loud. Then, if you're into the Higher Power thing, ask what it wants from you instead of what your panic wants. Then do the one thing. Just the one. Turns out this works, which is mildly insulting given how simple it is.",
-    "theme_tags": ["anxiety", "action", "higher_power", "perspective", "triage"],
-    "punchlines": [
-      "Your nervous system filed a false alarm. Again.",
-      "Most of what feels urgent just has better volume.",
-      "Stopping is not giving up. It's how you avoid doing something catastrophically stupid."
-    ]
-  },
-  {
-    "id": "jft_03_02",
-    "month": 3,
-    "day": 2,
-    "source": "JFT",
-    "title": "Apparently You're Allowed to Succeed Now",
-    "short_summary": "After years of being spectacularly bad at life, something went right. And now instead of enjoying it, you're waiting for it to be taken away, or feeling guilty for having it, or shrinking so no one accuses you of thinking you're better than them. None of that is humility. That's just old failure disguised as a personality trait. The program — annoyingly — suggests you let the win land. Tell someone. Even be a little proud, if you can stomach it. Because when you succeed out loud, the person behind you who thinks it's impossible for them starts reconsidering. So do it for them if you can't do it for yourself.",
-    "theme_tags": ["self-esteem", "success", "gratitude", "identity", "growth"],
-    "punchlines": [
-      "Shrinking after a win isn't humility. It's just failure with better branding.",
-      "You earned this. Weird. But true.",
-      "Let it land. Someone behind you needs to see it's survivable."
-    ]
-  },
-  {
-    "id": "jft_03_03",
-    "month": 3,
-    "day": 3,
-    "source": "JFT",
-    "title": "Relapse: A Spoiler You Already Know",
-    "short_summary": "Using looks like an exit. You've seen this movie. It isn't an exit — it's a longer, more expensive, more humiliating route back to where you are right now, except with bonus suffering. Think it all the way through: not the first hit, the whole sequel. The medical stuff. The explaining yourself again. The people you'd have to call. And past all of that — the part nobody talks about enough — is the spiritual loneliness. The quiet you built disappears. You're just alone again in a way that has no bottom. The feeling you're trying to escape right now is temporary. The relapse math never changes.",
-    "theme_tags": ["relapse", "consequences", "faith", "higher_power", "hope"],
-    "punchlines": [
-      "Using isn't a door out. It's a longer hallway to the same room.",
-      "Think it through past the first hit. The ending hasn't changed.",
-      "The feeling is temporary. The consequences have a longer contract."
-    ]
-  },
-  {
-    "id": "jft_03_04",
-    "month": 3,
-    "day": 4,
-    "source": "JFT",
-    "title": "The Steps: Annoyingly, They're Just How Life Works Now",
-    "short_summary": "Before NA, things happened randomly and badly and you had no idea why. The steps don't fix that by explaining the universe. They fix it by giving you a process to actually live inside instead of just reacting to. You see the patterns. You stop being surprised by the same wall you've hit seventeen times. You get some humility — not the fake kind, the real kind that comes from writing down your worst moments and reading them to another human. At some point the steps stop being something you do and become something you are. That's when life stops being a series of things that happen to you. Annoying that it works. But it works.",
-    "theme_tags": ["steps", "process", "acceptance", "self-awareness", "growth"],
-    "punchlines": [
-      "The steps don't explain your life. They give you somewhere to put it.",
-      "You've hit this wall before. The steps are why you recognize it now.",
-      "Annoying that it works. But here we are."
-    ]
-  },
-  {
-    "id": "jft_03_05",
-    "month": 3,
-    "day": 5,
-    "source": "JFT",
-    "title": "Getting Called Out Is Not a Personal Attack (Even If It Feels Like One)",
-    "short_summary": "Nobody likes having their behavior described back to them accurately. It's mortifying. The instinct is to get defensive, explain why it was actually fine, and change the subject to something your sponsor did wrong. Predictable. The anger is almost always confirmation — if it didn't land, it wouldn't sting. Rude awakenings are just spiritual progress in a packaging you didn't order. Something hidden is now visible. Now you can actually do something about it. The option was always there: keep hiding it, or let it get exposed and move past it. The hiding is the part that's actually expensive.",
-    "theme_tags": ["humility", "honesty", "ego", "growth", "self-awareness"],
-    "punchlines": [
-      "If it made you furious, it was probably accurate.",
-      "Defensiveness is just your ego buying time.",
-      "Getting called out is embarrassing. Staying stuck is worse."
-    ]
-  },
-  {
-    "id": "jft_03_06",
-    "month": 3,
-    "day": 6,
-    "source": "JFT",
-    "title": "Your Brain Is a Brilliant Liar and You Keep Hiring It",
-    "short_summary": "Rationalization is what happens when your brain writes a legal brief for a bad decision. It sounds reasonable. It has structure. It makes a compelling case for why you specifically don't have to follow the same principles everyone else does, because your situation is different and also you understand the program better than people with twenty years clean. You don't. The tell is always the same: you're arguing for an exception. The steps have no exceptions section. You can rationalize your way through a chunk of recovery and still be slowly backing toward the exit without realizing it. The sponsor exists specifically for this.",
-    "theme_tags": ["self-deception", "honesty", "ego", "denial", "steps"],
-    "punchlines": [
-      "Rationalization is a lie that did its homework.",
-      "If you're arguing the rules don't apply to you, they especially apply to you.",
-      "Your brain is the best lawyer you've ever had. Fire it occasionally."
-    ]
-  },
-  {
-    "id": "jft_03_07",
-    "month": 3,
-    "day": 7,
-    "source": "JFT",
-    "title": "Life Is Good and That's Somehow Also Dangerous",
-    "short_summary": "Things are actually going well. Career, relationships, maybe even a plant that's still alive. And somewhere in there the meeting started feeling optional, the sponsor call became a monthly thing, and the steps are now more of a concept than a practice. Understandable. Also a slow-motion relapse setup. The good times are not proof you're fixed. They're proof the program is working — which means the program is still required. You are one drug away from all of this. That's not paranoia, that's just arithmetic. Stay connected to where you came from, especially when you feel like you don't need to.",
-    "theme_tags": ["complacency", "priorities", "gratitude", "vigilance", "maintenance"],
-    "punchlines": [
-      "Life is good because the program is working. The program still needs to happen.",
-      "You're one drug away. Not as a threat — just as math.",
-      "Gratitude without maintenance is just a countdown."
-    ]
-  },
-  {
-    "id": "jft_03_08",
-    "month": 3,
-    "day": 8,
-    "source": "JFT",
-    "title": "Self-Love: Less Affirmations, More Not Canceling on Yourself",
-    "short_summary": "Waiting to feel love for yourself before you act like you love yourself is how you wait forever. The mirror affirmation thing is fine but it's not the mechanism. The mechanism is boring: keep your commitments, show up for your own needs, do the thing you said you'd do. Self-esteem isn't something you find — it's a conclusion your brain reaches after watching you act like you matter, repeatedly, over time. You slowly become someone who does what they say. That's it. That's the whole thing. The feeling arrives quietly after the behavior has been running long enough.",
-    "theme_tags": ["self-esteem", "self-care", "action", "identity", "growth"],
-    "punchlines": [
-      "Don't wait to feel worthy. Act worthy and let your brain catch up.",
-      "Self-love is just evidence you've been collecting without noticing.",
-      "The affirmation is fine. The kept promise is what actually works."
-    ]
-  },
-  {
-    "id": "jft_03_09",
-    "month": 3,
-    "day": 9,
-    "source": "JFT",
-    "title": "You Survived the Big Stuff. The Can Opener Almost Killed You.",
-    "short_summary": "Divorce, job loss, death — we know how to handle catastrophe. We mobilize. We call people. We survive it. What genuinely breaks addicts in recovery is the small stuff: bad drivers, broken appliances, an email that took too long to answer. Because it's constant, unglamorous, and there's nothing noble about being derailed by a can opener. The Serenity Prayer wasn't written for your worst moments. It was written for Tuesdays. When something minor has completely hijacked your day, that's the signal — not about the thing, but about how tightly you're holding everything.",
-    "theme_tags": ["perspective", "patience", "serenity", "acceptance", "irritability"],
-    "punchlines": [
-      "We survive disasters. The can opener nearly ends us every time.",
-      "The Serenity Prayer is for Tuesdays, not catastrophes.",
-      "If something small owns your whole day, the problem isn't the small thing."
-    ]
-  },
-  {
-    "id": "jft_03_10",
-    "month": 3,
-    "day": 10,
-    "source": "JFT",
-    "title": "Showing Up to Meetings Is Not the Same as Recovering",
-    "short_summary": "Meetings are genuinely good. The people, the coffee, the occasional piece of wisdom that lands exactly right. None of that is the program. You cannot sit in enough rooms to absorb recovery through your skin. The steps are the program. Hearing about acceptance two hundred times is not the same as working Step One yourself. Someone else's amends story is inspiring and completely useless for your own guilt. Recovery is an inside job and the inside job requires tools you actually pick up. The meeting is where you stay connected to people doing the work. The work happens somewhere else.",
-    "theme_tags": ["steps", "action", "recovery", "discipline", "personal_program"],
-    "punchlines": [
-      "You can't attend your way into recovery. Eventually you have to work it.",
-      "The meeting is where you stay connected. The steps are where you change.",
-      "Inspired by someone else's Ninth Step is nice. Doing yours is different."
-    ]
-  },
-  {
-    "id": "jft_03_11",
-    "month": 3,
-    "day": 11,
-    "source": "JFT",
-    "title": "Resentments: You're Carrying Rocks for People Who Aren't Tired",
-    "short_summary": "You are walking around with a bag of rocks that represents everyone who wronged you, and the people in the bag are not tired. You are. Every grudge is weight — small ones are pebbles, old deep ones are boulders — and you've been hauling all of it everywhere you go. To work, to bed, to meetings, to dinner. The person you resent is not suffering proportionately. This is the joke. Letting it go isn't mercy for them. It's just you putting down something heavy that was only ever hurting you. The lighter you travel, the further recovery actually goes.",
-    "theme_tags": ["resentment", "forgiveness", "freedom", "spiritual_growth", "inventory"],
-    "punchlines": [
-      "You're carrying rocks for people who aren't tired.",
-      "The person you resent hasn't thought about this today. You have.",
-      "Letting go isn't mercy — it's just not wanting to carry it anymore."
-    ]
-  },
-  {
-    "id": "jft_03_12",
-    "month": 3,
-    "day": 12,
-    "source": "JFT",
-    "title": "Bored in Recovery? Congratulations, You're Stable.",
-    "short_summary": "The chaos is gone. The crisis is over. You have a routine, a gratitude list, a life that objectively works — and it feels inexplicably flat. That's not ingratitude. That's your nervous system finally getting quiet enough to notice it wants more. The answer is not to generate new chaos, which is always available and never as satisfying as it promises. The answer is expansion: learn something, take a risk, sponsor someone, make a new friend, stretch in a direction that scares you slightly. Boredom in recovery isn't proof something is wrong. It's proof you've stopped growing. Those are different problems with different solutions.",
-    "theme_tags": ["boredom", "growth", "complacency", "purpose", "potential"],
-    "punchlines": [
-      "Bored in recovery means you're stable. That took years. Don't blow it up.",
-      "Chaos is always available and never actually helps.",
-      "Boredom isn't the problem. Stopping is."
-    ]
-  },
-  {
-    "id": "jft_03_13",
-    "month": 3,
-    "day": 13,
-    "source": "JFT",
-    "title": "You Picked Your Sponsor for Ridiculous Reasons and It Worked Anyway",
-    "short_summary": "Be honest: you asked this person to sponsor you because they were funny, or had a good car, or were the only one who picked up the phone. Not exactly a rigorous selection process. And then something strange happened over time — they started actually knowing you. And because they'd already walked the road ahead of you, they could see around corners you hadn't reached yet. The moment when they say exactly the right thing isn't magic. It's just pattern recognition from someone who's been here longer. The program put that person in your life for a reason. Treat that relationship like it matters.",
-    "theme_tags": ["sponsorship", "trust", "connection", "gratitude", "higher_power"],
-    "punchlines": [
-      "You picked them for bad reasons. The relationship became real anyway.",
-      "They've walked this road before you. That's worth more than you're giving it.",
-      "The right person showed up. Try not to ghost them."
-    ]
-  },
-  {
-    "id": "jft_03_14",
-    "month": 3,
-    "day": 14,
-    "source": "JFT",
-    "title": "Your Relationships Are a Mirror and You Keep Fogging It Up",
-    "short_summary": "Character doesn't live in how you think about yourself. It lives in how you treat people when you're tired, annoyed, or not getting what you want. The inventory hurts most here because that's where the patterns are: the unrealistic expectations, the double standards, the intolerance dressed up as having principles. Writing it down doesn't fix the relationship — but it breaks open the story you've been telling yourself about your part in it. Then you share it with someone who will say the thing you don't want to hear. That's how you get actual perspective instead of just the version that makes you the reasonable one.",
-    "theme_tags": ["relationships", "inventory", "honesty", "accountability", "growth"],
-    "punchlines": [
-      "Your character doesn't live in your self-concept. It lives in how you treat people.",
-      "The inventory doesn't fix the relationship. It fixes what you're bringing to it.",
-      "You keep editing your part out of the story. Stop that."
-    ]
-  },
-  {
+  "id": "jft_03_01",
+  "month": 3,
+  "day": 1,
+  "source": "JFT",
+  "title": "Storm or Just Loud Weather?",
+  "short_summary": "Everything feels urgent. The ship is apparently sinking. The nervous system has declared mutiny over something that probably isn’t fatal. Classic addict weather. Recovery asks for something deeply offensive to panic: stop moving. Seriously. Stop. Then sort the real emergencies from the loud waves in your skull. Most of it isn’t danger — it’s volume. Ask your Higher Power what actually needs steering today instead of listening to the storm screaming below deck. Then do the next right thing. Just one. Annoyingly simple. Even more annoyingly effective.",
+  "theme_tags": ["anxiety", "action", "higher_power", "perspective", "triage"],
+  "punchlines": [
+    "Yer nervous system spotted danger where there was mostly weather.",
+    "Most emergencies are just louder than they are real.",
+    "Stopping the ship briefly prevents steering it into rocks."
+  ]
+},
+{
+  "id": "jft_03_02",
+  "month": 3,
+  "day": 2,
+  "source": "JFT",
+  "title": "Apparently Ye’re Allowed to Win Now",
+  "short_summary": "Something finally went right and now my first instinct is to shrink, apologize, or wait for the tide to take it away. Recovery keeps teaching me that this isn’t humility — it’s old failure still haunting the deck. The program suggests something uncomfortable: let the victory land. Speak it aloud. Let another addict see that survival and growth are possible. Sometimes the sailor behind me needs proof the ship can actually make it to shore.",
+  "theme_tags": ["self-esteem", "success", "gratitude", "identity", "growth"],
+  "punchlines": [
+    "Shrinking after success ain’t humility — it’s old wreckage.",
+    "Turns out ye earned this harbor.",
+    "Let the crew see survival is possible."
+  ]
+},
+{
+  "id": "jft_03_03",
+  "month": 3,
+  "day": 3,
+  "source": "JFT",
+  "title": "Relapse Is a Voyage Ye Already Know",
+  "short_summary": "Using looks like escape until I remember the full map. Addiction never offers a new destination — just a longer route back to the same wreckage with extra suffering attached. Recovery asks me to think beyond the first hit and remember the whole storm: the lies, the calls, the isolation, the spiritual emptiness. The feeling I’m trying to outrun today is temporary. The consequences of relapse always demand a longer voyage home.",
+  "theme_tags": ["relapse", "consequences", "faith", "higher_power", "hope"],
+  "punchlines": [
+    "Using ain’t escape — it’s another trip through the same storm.",
+    "Think past the first wave. Ye already know the ending.",
+    "Temporary feelings shouldn’t captain permanent disasters."
+  ]
+},
+{
+  "id": "jft_03_04",
+  "month": 3,
+  "day": 4,
+  "source": "JFT",
+  "title": "The Steps Became the Map",
+  "short_summary": "Before recovery, life felt random and violent, like sailing without stars or compass. The Steps didn’t explain the ocean — they gave me a way to navigate it. Patterns become visible. Walls become recognizable. Humility stops being theory and starts becoming survival. Eventually the Steps stop feeling like chores and start becoming the structure holding the ship together. Annoying that it works. But here we are.",
+  "theme_tags": ["steps", "process", "acceptance", "self-awareness", "growth"],
+  "punchlines": [
+    "The Steps didn’t calm the sea — they taught me navigation.",
+    "Ye keep hittin’ the same reef until ye finally chart it.",
+    "Annoyin’ that it works. Still works though."
+  ]
+},
+{
+  "id": "jft_03_05",
+  "month": 3,
+  "day": 5,
+  "source": "JFT",
+  "title": "Getting Called Out Feels Like Cannon Fire",
+  "short_summary": "Nobody enjoys hearing accurate descriptions of their own defects. The instinct is always defense: explain it away, blame somebody else, launch smoke bombs. But usually the sting means something real got hit. Recovery keeps exposing the leaks I worked so hard to hide below deck. Humiliating? Absolutely. Useful? Also yes. Truth hurts less than spending another decade trapped in the same storm pretending nothing’s wrong.",
+  "theme_tags": ["humility", "honesty", "ego", "growth", "self-awareness"],
+  "punchlines": [
+    "If it enraged ye instantly, it probably struck truth.",
+    "Defensiveness is ego buyin’ time to escape.",
+    "Being exposed hurts less than staying trapped below deck forever."
+  ]
+},
+{
+  "id": "jft_03_06",
+  "month": 3,
+  "day": 6,
+  "source": "JFT",
+  "title": "Yer Brain Keeps Forging Fake Maps",
+  "short_summary": "Rationalization is addiction writing beautiful arguments for terrible decisions. Suddenly my situation becomes ‘different,’ my relapse ideas sound reasonable, and the program somehow applies to everyone except me. Strange coincidence. The warning sign is almost always the same: I’m arguing for an exception instead of honesty. Recovery gave me sponsors because my brain can turn shipwrecks into TED Talks if left unsupervised.",
+  "theme_tags": ["self-deception", "honesty", "ego", "denial", "steps"],
+  "punchlines": [
+    "Rationalization is a lie dressed like a navigator.",
+    "If the rules ‘don’t apply’ to ye today, they probably especially do.",
+    "Yer brain writes convincing mutiny speeches."
+  ]
+},
+{
+  "id": "jft_03_07",
+  "month": 3,
+  "day": 7,
+  "source": "JFT",
+  "title": "Calm Seas Can Be Dangerous Too",
+  "short_summary": "Life gets better and suddenly the meeting feels optional. The sponsor call becomes occasional. The program turns into background noise because the storms quieted down. Recovery keeps reminding me: calm water doesn’t mean I’m cured. It usually means the ship maintenance is working. The second I stop maintaining it, the old tides start creeping back in. Gratitude without maintenance slowly turns into drift.",
+  "theme_tags": ["complacency", "priorities", "gratitude", "vigilance", "maintenance"],
+  "punchlines": [
+    "The calm sea still needs navigation.",
+    "Ye’re one bad decision away from rough water again. That’s just math.",
+    "Gratitude without maintenance becomes driftwood."
+  ]
+},
+{
+  "id": "jft_03_08",
+  "month": 3,
+  "day": 8,
+  "source": "JFT",
+  "title": "Self-Love Looks Suspiciously Like Maintenance",
+  "short_summary": "Waiting to magically feel worthy before treating myself with care is how I stayed broken for years. Recovery teaches a less glamorous version of self-love: keep promises to yourself, show up for your own needs, stay consistent even when inspiration disappears. Self-esteem isn’t discovered like treasure buried on an island. It’s built slowly through repeated evidence that I matter enough to care for.",
+  "theme_tags": ["self-esteem", "self-care", "action", "identity", "growth"],
+  "punchlines": [
+    "Act worthy long enough and the brain eventually believes it.",
+    "Self-respect is built plank by plank.",
+    "Affirmations help. Keeping promises rebuilds ships."
+  ]
+},
+ {
+  "id": "jft_03_09",
+  "month": 3,
+  "day": 9,
+  "source": "JFT",
+  "title": "The Tiny Leaks Sink the Ship",
+  "short_summary": "Addicts survive catastrophes surprisingly well. We mobilize. We call the crew. We row through hurricanes. What actually destroys our peace is the tiny nonsense: broken can openers, slow emails, someone driving like they’ve never seen a road before. The small stuff becomes unbearable because it’s constant and unglamorous. Recovery teaches me that if a tiny leak ruins the whole voyage, the leak probably isn’t the real issue. The Serenity Prayer was built for ordinary Tuesdays at sea, not just giant storms.",
+  "theme_tags": ["perspective", "patience", "serenity", "acceptance", "irritability"],
+  "punchlines": [
+    "We survive hurricanes and lose our minds over forks.",
+    "The Serenity Prayer was written for annoying Tuesdays.",
+    "If a tiny leak sinks the whole ship, something deeper’s already cracked."
+  ]
+},
+{
+  "id": "jft_03_10",
+  "month": 3,
+  "day": 10,
+  "source": "JFT",
+  "title": "Meetings Ain’t the Whole Voyage",
+  "short_summary": "Meetings matter. The coffee matters. The crew matters. But recovery doesn’t absorb through the skin because I sat in enough folding chairs. The Steps are where the real navigation happens. Listening to somebody else talk about surrender isn’t the same as surrendering myself. The meeting keeps me connected to sailors doing the work. The work itself still waits for me outside the room.",
+  "theme_tags": ["steps", "action", "recovery", "discipline", "personal_program"],
+  "punchlines": [
+    "Eventually ye gotta stop attendin’ recovery and actually work it.",
+    "Meetings connect the crew. The Steps rebuild the ship.",
+    "Inspired sailors still gotta row."
+  ]
+},
+{
+  "id": "jft_03_11",
+  "month": 3,
+  "day": 11,
+  "source": "JFT",
+  "title": "Ye’re Carrying Cargo That Ain’t Yours",
+  "short_summary": "Resentments are like dragging sacks of wet stones across the deck for people who aren’t even aboard anymore. The people I resent aren’t exhausted by this weight — I am. Recovery slowly teaches me that forgiveness isn’t mercy for them. It’s relief for me. Letting go doesn’t erase what happened. It just stops me from carrying old storms into every new harbor.",
+  "theme_tags": ["resentment", "forgiveness", "freedom", "spiritual_growth", "inventory"],
+  "punchlines": [
+    "Ye’re carrying rocks for sailors who already left the harbor.",
+    "The resentment keeps exhausting ye, not them.",
+    "Travel lighter. The voyage gets longer from here."
+  ]
+},
+{
+  "id": "jft_03_12",
+  "month": 3,
+  "day": 12,
+  "source": "JFT",
+  "title": "Boredom Means the Storm Finally Stopped",
+  "short_summary": "Recovery gets stable and suddenly life feels strangely quiet. No chaos. No emergency. No emotional cannon fire every night. The addict brain mistakes peace for emptiness because it got trained on survival. The answer isn’t creating new disasters to feel alive again. It’s growth. Expansion. Learning. Risking something healthy instead of detonating the ship for entertainment. Boredom isn’t failure — it’s often the first calm sea I’ve ever experienced.",
+  "theme_tags": ["boredom", "growth", "complacency", "purpose", "potential"],
+  "punchlines": [
+    "Boredom usually means the ship finally stopped sinking.",
+    "Chaos is always available and still overrated.",
+    "The answer ain’t another storm — it’s a bigger horizon."
+  ]
+},
+{
+  "id": "jft_03_13",
+  "month": 3,
+  "day": 13,
+  "source": "JFT",
+  "title": "Somehow Ye Picked the Right Sponsor Anyway",
+  "short_summary": "Most of us picked sponsors for ridiculous reasons. They were funny. They answered the phone. They looked vaguely stable compared to the rest of us. Then over time something real happened: trust. Sponsors see patterns because they’ve already sailed through waters I haven’t reached yet. The guidance isn’t magic — it’s experience. Recovery keeps putting people in my path who can help chart safer routes if I stop ghosting the crew long enough to listen.",
+  "theme_tags": ["sponsorship", "trust", "connection", "gratitude", "higher_power"],
+  "punchlines": [
+    "Ye picked them for weird reasons. The guidance became real anyway.",
+    "They already survived storms ye’re just entering.",
+    "The crew can’t help if ye keep disappearin’ below deck."
+  ]
+},
+{
+  "id": "jft_03_14",
+  "month": 3,
+  "day": 14,
+  "source": "JFT",
+  "title": "Relationships Keep Exposing the Cracks",
+  "short_summary": "Character reveals itself in relationships faster than anywhere else. Not in speeches or self-image — in how I treat people when I’m tired, resentful, disappointed, or afraid. Inventory hurts because it forces me to stop editing myself into the innocent sailor every time. Recovery doesn’t just expose what others did to me. It shines lantern light on the part I keep conveniently cutting out of the story.",
+  "theme_tags": ["relationships", "inventory", "honesty", "accountability", "growth"],
+  "punchlines": [
+    "Character shows up in storms, not self-descriptions.",
+    "Inventory doesn’t repair the harbor — it repairs my side of the ship.",
+    "Stop editin’ yerself outta the wreckage report."
+  ]
+},
+{
     "id": "jft_03_15",
     "month": 3,
     "day": 15,
     "source": "JFT",
-    "title": "Belonging Isn't Assigned — You Have to Actually Show Up for It",
-    "short_summary": "Addiction's whole argument was: if anyone really knew you, they'd leave. So you kept people at arm's length and called it self-protection. Then you walked into a meeting and watched people who knew everything about each other — genuinely everything — still showing up, still calling, still staying. That's weird. That's also available to you. But not from the back of the room. You get it by going for coffee after. By talking to one person. By saying one true thing and noticing they didn't disappear. Belonging isn't something NA assigns you at the door. It's built slowly, in small moments, by people who decided to stop hiding.",
+    "title": "Belongin' Ain't Assigned — Ye Have to Show Up Fer It",
+    "short_summary": "Addiction's whole lie was this: if anyone truly knew ye, they'd abandon ship and leave ye driftin'. So ye kept folk at arm's length and called it self-protection. Then ye walked into a meeting and saw somethin' strange — people who knew each other's wreckage, secrets, and scars still kept showin' up, still callin', still stayin'. Odd, aye. And that same belongin' be available to ye too. But not from hidin' in the back like a stowaway. Ye find it by stayin' fer coffee, talkin' to one sailor, speakin' one honest truth, and noticin' they didn't vanish into the fog. Belongin' ain't handed to ye at the gangplank. It's built slowly, in small moments, by people brave enough to stop hidin'.",
     "theme_tags": ["belonging", "connection", "isolation", "fellowship", "vulnerability"],
     "punchlines": [
       "Addiction lied. People who actually know you don't always leave.",
       "You don't find the fellowship from the back of the room.",
       "Belonging is built one honest moment at a time. Start small."
     ]
+  },
+
+{
+  "id": "jft_03_16",
+  "month": 3,
+  "day": 16,
+  "source": "JFT",
+  "title": "Inventory Be Where the Lies Lose Their Wind",
+  "short_summary": "I once thought meself a strange and complicated sailor. Truth be, I was just followin' the same currents that kept me usin' and escapin'. Me nature weren't a mystery — it was a loop. And I called it identity. Inventory be where that illusion starts to crack. Not with thunder, but slowly, line by line, I begin to see patterns I can't unsee. The same fears, the same reactions, the same tricks to avoid lookin' inward. It ain't pretty, and it ain't heroic — but it's true. And truth beats confusion every time. Inventory don't tell me who I should be. It just strips away the lies about who I thought I was. That's enough to begin.",
+  "theme_tags": ["inventory", "self-awareness", "patterns", "identity", "honesty"],
+  "punchlines": [
+    "Turns out I weren't mysterious — just trapped in the same tide loops.",
+    "Me patterns kept steerin' the ship while I blamed the weather.",
+    "Inventory don't rebuild the vessel overnight. It just makes the leaks harder to deny."
+  ]
+},
+{
+  "id": "jft_03_17",
+  "month": 3,
+  "day": 17,
+  "source": "JFT",
+  "title": "Courage Be Doin' It Anyway",
+  "short_summary": "I once thought meself fearless. Truth be, I was just numb to the storm. The drink and the powder made everything feel manageable — even things I had no business facin'. That weren't courage. That was avoidance dressed up fine. Now I feel the wind again. Fear shows up often. Callin' someone feels heavy. Askin' for help feels worse. Honesty feels like standin' exposed on deck. Me mind calls it danger. It ain't — it's just new seas. Courage ain't somethin' I wait to feel. It's what happens when I act anyway while every voice says don't. It don't feel brave. It feels messy. But it still counts.",
+  "theme_tags": ["courage", "fear", "action", "growth", "honesty"],
+  "punchlines": [
+    "I weren't brave — I was too numb to notice the storm.",
+    "Me brain treats new waters like danger. It ain't exactly a trustworthy navigator.",
+    "Courage usually feels like shakin' hands while steppin' onto the deck anyway."
+  ]
+},
+{
+  "id": "jft_03_18",
+  "month": 3,
+  "day": 18,
+  "source": "JFT",
+  "title": "The Message Ain't That the Seas Are Calm",
+  "short_summary": "I once thought sharin' meant soundin' strong and steady, like the seas were always calm. But that weren't what helped me when I arrived. What helped was hearin' another sailor admit they weren't okay — and still hadn't abandoned ship. Life don't smooth out just 'cause I stopped usin'. Things still break. Crew still leave. Me own mind still turns on me. The difference now is I don't vanish when it happens. When I pretend all be well, I ain't helpin' anyone — I'm just performin'. The message ain't that recovery feels good. The message is that I stay aboard anyway.",
+  "theme_tags": ["honesty", "sharing", "connection", "reality", "recovery"],
+  "punchlines": [
+    "I don't need to sound steady. I just need to stay aboard.",
+    "Recovery ain't polished speeches — it's sailors refusin' to sink.",
+    "The message ain't that the seas got calm. It's that I stopped abandonin' ship."
+  ]
+},
+{
+  "id": "jft_03_19",
+  "month": 3,
+  "day": 19,
+  "source": "JFT",
+  "title": "Ye Don't Need a Fine Speech",
+  "short_summary": "I once thought I needed to sound wise, deep, and steady when it came me turn to speak. Then the moment came, and me mind emptied like a chest already looted. I'd compare meself to calm, spiritual sailors who sounded like they had their bearings. I had none o' that. I was just present. Still am. And that be the part that matters. No crew needs a perfect speech — they need somethin' real. A rough sentence. A thought that barely holds. A moment that sounds like their own stormy mind. This ain't a performance. It's recognition. And I already belong.",
+  "theme_tags": ["sharing", "honesty", "comparison", "connection", "identity"],
+  "punchlines": [
+    "The crew don't need perfection. They need honesty from the deck.",
+    "Silence feels safer until it starts turnin' into isolation.",
+    "I ain't here to perform wisdom. I'm here to stay connected and alive."
+  ]
+},
+
+  {
+    "id": "jft_03_20",
+    "month": 3,
+    "day": 20,
+    "source": "JFT",
+    "title": "I Ain't the Highest Power on This Ship",
+    "short_summary": "I didn't struggle with the idea of a higher power — I struggled with not bein' it meself. I trusted me own thinking, even after it smashed me into the same rocks over and over. Same choices. Same wreckage. Same cleanup. Eventually, it got hard to defend. Somethin' was clearly stronger than me — addiction proved that daily. So I lowered the bar. I didn't need to understand the seas or the stars. I just needed to accept me own navigation wasn't workin'. That maybe there was somethin' out there not tryin' to sink me. I can't define it cleanly. Some days I don't even like the idea. But I'm still afloat. And it sure as hell ain't because of me decisions.",
+    "theme_tags": ["higher-power", "humility", "powerlessness", "belief", "survival"],
+    "punchlines": [
+      "Me best ideas kept sailin' straight into reefs.",
+      "I stopped tryin' to be captain of the entire bloody ocean.",
+      "I don't need to explain the stars to navigate by 'em."
+    ]
+  },
+  {
+    "id": "jft_03_21",
+    "month": 3,
+    "day": 21,
+    "source": "JFT",
+    "title": "It Was Never Just the Rum",
+    "short_summary": "I once thought I only had a problem with the rum. Take away the rum, and the voyage be fixed. That illusion lasted about five minutes. The rum was just the loudest part of the storm, not the whole sea. Me thinking stayed the same. Me reactions stayed the same. The way I avoided, controlled, vanished, or drove others off deck — all of it remained, just without the drink to hide behind. That's when it grew uncomfortable. Because now it weren't somethin' I used. It was somethin' I lived. Callin' it a disease ain't about drama — it's about admittin' it's bigger than a bad habit and stronger than willpower. The Steps don't fix the sailor. They just give me a way to stop wreckin' the ship in the same ways.",
+    "theme_tags": ["disease", "addiction", "patterns", "recovery", "self-awareness"],
+    "punchlines": [
+      "The bottle left. The storm patterns stayed aboard.",
+      "I quit usin'. Me thinkin' forgot to come with me.",
+      "Addiction weren't a habit. It was the whole cursed navigation system."
+    ]
+  },
+  {
+    "id": "jft_03_22",
+    "month": 3,
+    "day": 22,
+    "source": "JFT",
+    "title": "Freedom Ain't Free, Matey",
+    "short_summary": "I used to sail like everything I needed had to come from other ships — crew, coin, attention, validation, whatever was near. If somethin' was missin', I'd look for someone to supply it. If they did, I stayed aboard. If they didn't, I jumped ship. Same pattern, new faces. Callin' it dependence sounds kinder than it was. I was lettin' others steer me life. Self-support ain't about lookin' strong — it's about not livin' off whatever port be closest. Payin' me own way — in coin, in feelings, in action — don't feel empowerin' at first. It feels heavy. Inconvenient. Less flexible. But it buys somethin' I never had: I don't have to bend me course around whoever's keepin' me afloat.",
+    "theme_tags": ["self-support", "responsibility", "independence", "patterns", "freedom"],
+    "punchlines": [
+      "Dependence kept lettin' strangers steer me course.",
+      "Freedom costs effort. Shipwrecks cost more.",
+      "Once I fund me own voyage, I stop sailin' for approval."
+    ]
+  },
+  {
+    "id": "jft_03_23",
+    "month": 3,
+    "day": 23,
+    "source": "JFT",
+    "title": "I Ain't the One Steerin' This Ship",
+    "short_summary": "I still try to steer the whole ship like I know the seas. Plans, outcomes, crew, timing — all of it. Then it crashes on the rocks and I act surprised. The idea of a higher power ain't about comfort — it's about position. I ain't the captain of everything. I do me part — show up, act, stay clean — and the rest ain't mine to command. I don't like that truth. I'd rather chart the course and force it to happen. But every time I've tried to run the whole voyage, I've made a worse wreck of it. This ain't about perfect trust. It's about steppin' down from a role I keep failin' at.",
+    "theme_tags": ["higher-power", "control", "surrender", "action", "humility"],
+    "punchlines": [
+      "Every time I try controllin' the tides, the ship takes damage.",
+      "Control feels safe right before the wreckage starts.",
+      "Turns out the ocean don't take orders from me."
+    ]
+  },
+  {
+    "id": "jft_03_24",
+    "month": 3,
+    "day": 24,
+    "source": "JFT",
+    "title": "The Past Still Calls. I Don't Have to Answer the Signal",
+    "short_summary": "Me past don't vanish just 'cause I dropped the bottle. It stays loud, like a ghost on the deck. It reminds me who I was, what I did, how I sailed before. Sometimes it sounds like truth. Most times it sounds like a sentence already passed. Shame be clever like that. It tells me I'm still the same sailor — just temporarily actin' different. And if I listen too long, I start believin' it and sailin' that way again. Letting go of the past ain't about eras'in it, nor fightin' it. It's about not livin' there no more. The facts don't change. But what I do today still carries more weight than what I did back then. Not 'cause it's noble — but 'cause it's now.",
+    "theme_tags": ["past", "shame", "identity", "present", "recovery"],
+    "punchlines": [
+      "The ghosts be loud, but they ain't holdin' the wheel anymore.",
+      "Shame keeps tryin' to convince me the storm never ended.",
+      "Me past explains the wreckage. It don't own today's voyage."
+    ]
+  },
+  {
+    "id": "jft_03_30",
+    "month": 3,
+    "day": 30,
+    "source": "JFT",
+    "title": "When I Stand at the Helm, the Ship Falls Apart",
+    "short_summary": "When I put meself at the center of the map, everythin' feels like it's aimed at me — against me, because of me. Every rough wave feels like a curse. Every loss feels like punishment. Every discomfort feels like it'll last forever. Then I get clean, seas calm for a bit, and I think I've mastered the voyage. That's the trap. The ocean don't stop bein' the ocean. Crew still leave. Ships still break. The wind don't bargain. The difference now is where I stand. If I stay at the helm tryin' to control it all, the ship falls apart again. If I step back — even a little — the weight shifts. Not the storm, just how it lands. Hope don't come from the seas obeyin' me. It comes from not needin' them to.",
+    "theme_tags": ["ego", "higher_power", "perspective", "acceptance", "hope"],
+    "punchlines": [
+      "Everything feels personal when ego grabs the compass.",
+      "The seas stayed rough. I just stopped challengin' every wave to a duel.",
+      "Hope began when I stopped demandin' calm waters."
+    ]
+  },
+  {
+    "id": "jft_04_04",
+    "month": 4,
+    "day": 4,
+    "source": "JFT",
+    "title": "No One's Comin' to Steer This Ship for Me",
+    "short_summary": "Arrr, I be actin' like I've no say — like the winds snatch me up and next thing I know I'm in trouble again. But nay… I've been the one at the helm all along. In recovery, the choices be mine — a blessin' and a curse, harrr. No one be draggin' me to shady ports. No one be makin' me spin tales to the ship's doctor. No one be tellin' me to poke the storm just to see if it bites. That be all me. I can gather the crew, consult me sponsor, put on a fine show of \"thinkin' it through\" — but I'm still the scallywag turnin' the wheel. Recovery didn't calm the seas, matey… it just took away me finest excuse: pretendin' I weren't the one steerin' this cursed ship.",
+    "theme_tags": ["responsibility", "choice", "accountability", "boundaries", "recovery"],
+    "punchlines": [
+      "Nobody hijacked me recovery. I turned the wheel meself.",
+      "Advice helps. Decisions still come from me own hands.",
+      "Recovery gave me choices and ruined me favorite excuses."
+    ]
   }
 
+,
+
+  {
+    "id": "jft_04_05",
+    "month": 4,
+    "day": 6,
+    "source": "JFT",
+    "title": "The Little Lies Be Gettin' Loud, Arrr",
+    "short_summary": "Arrr, I didn't board this recovery ship tryin' to be honest — I just didn't want to sink. But somethin' be shiftin'. The little tricks that once felt normal now feel… off. Pocketin' extra coin, cuttin' corners, slippin' by unnoticed like a proper rogue. Before, it were just how I sailed. Now it weighs heavier than a chest o' gold. Not 'cause I turned noble overnight — but 'cause I can't ignore it no more, harrr. That be the curse of growin'. No captain be watchin'. No ledger be kept. But I see it. And once I see it, I can't unsee it. Recovery didn't make me a saint — it just made me aware of the schemes I used to pull without feelin' a damn thing.",
+    "theme_tags": ["honesty", "self-awareness", "growth", "integrity", "change"],
+    "punchlines": [
+      "Nobody caught the lie — but me conscience finally did.",
+      "I didn't suddenly become noble. I just stopped sleepin' through me own schemes.",
+      "Growth be realizin' the tiny leaks still sink ships."
+    ]
+  },
+  {
+    "id": "jft_04_07",
+    "month": 4,
+    "day": 7,
+    "source": "JFT",
+    "title": "Me Past Weren't Wasted — It Be Hard Lessons from the Deep",
+    "short_summary": "Arrr, I spent many a night wishin' I could toss me past overboard — all the wreckage, the damage, the choices I can't undo. Felt like proof I'd sunk me life for good. But recovery be a strange tide, matey… it takes that same cursed past and turns it into somethin' useful. Not pretty. Not noble. Just useful. The parts I be most ashamed of? Those be the very tales another lost sailor needs to hear so they don't feel stranded alone. I don't share 'cause I'm proud — I share 'cause it's true. 'Cause I've sailed those dark waters. 'Cause I know the storm from the inside. Me past didn't vanish… it got repurposed. And somehow, the worst of it stopped bein' just wreckage and started bein' tools I can use to help another soul stay afloat.",
+    "theme_tags": ["past", "service", "shame", "purpose", "connection"],
+    "punchlines": [
+      "The wreckage became maps once I stopped hidin' it below deck.",
+      "Me past ain't glorious — just useful to lost sailors now.",
+      "The storms that nearly drowned me now help guide others to shore."
+    ]
+  },
+  {
+    "id": "jft_04_08",
+    "month": 4,
+    "day": 8,
+    "source": "JFT",
+    "title": "Happiness Ain't a Mood — It's Not Wantin' to Abandon Ship",
+    "short_summary": "Arrr, I once thought happiness meant smooth seas, full pockets, and not a single discomfort in sight. That illusion never held for long. In recovery, it looks different. Some days ain't great — but they ain't sinkin' me either. And here's the strange part… I ain't tryin' to abandon ship anymore. That be new. When I stop starin' at me own feelings like they be the whole ocean, and lend a hand to another sailor, somethin' shifts. Not fireworks. Not treasure. Just… calm waters. Steady sails. A voyage I can actually handle. It don't look impressive, but compared to the chaos I came from? It feels like freedom, matey. Happiness ain't somethin' I hunt no more — it sneaks aboard when I stop makin' everything about me.",
+    "theme_tags": ["happiness", "service", "ego", "contentment", "recovery"],
+    "punchlines": [
+      "Peace feels suspicious until ye've survived enough storms.",
+      "Happiness snuck aboard once I stopped tryin' to flee meself.",
+      "Calm seas felt boring until chaos stopped bein' home."
+    ]
+  },
+  {
+    "id": "jft_04_19",
+    "month": 4,
+    "day": 19,
+    "source": "JFT",
+    "title": "I Wanted the Treasure Without Sailin' for It",
+    "short_summary": "Arrr, I didn't come aboard recovery lookin' to work — I came wantin' the treasure. Peace without changin'. Crew without effort. A steady ship without showin' up to steer it. I'd watch other sailors build fine lives and think I deserved the same haul without sailin' the same waters. That be the truth no one likes to admit. Recovery don't hand out gold, matey — it shows ye how to earn it. Slow. Repetitive. Often dull as scrubbin' the deck. There be no secret shortcut. The life I want sits on the far side of consistency, not wishin'. And here's the real kicker… I already know what needs doin'. I just don't always feel like doin' it. Harrr.",
+    "theme_tags": ["action", "consistency", "effort", "denial", "growth"],
+    "punchlines": [
+      "I wanted treasure maps. Recovery handed me a mop and a schedule.",
+      "Knowin' the route don't move the ship — rowin' does.",
+      "The voyage changed when me actions finally did."
+    ]
+  },
+  {
+    "id": "jft_04_25",
+    "month": 4,
+    "day": 25,
+    "source": "JFT",
+    "title": "The Seas Stayed Rough — I Just Stopped Fleein'",
+    "short_summary": "Arrr, I once thought the problem was the seas themselves — too rough, too cruel, too much to face sober. So I fled from 'em. Again and again. Trouble is, runnin' never calmed the storm — it just sank me deeper. Now in recovery, the seas be the same. Crew still vanish. Winds still bite. Some days feel heavy for no clear reason. But here's the turn… I don't abandon ship anymore. I stay aboard. I feel the storm without callin' it the end of the voyage or jumpin' overboard. It don't make the seas gentle, matey — but it makes 'em real. And real be far less terrifying than the nightmares I used to conjure in me own head. Harrr.",
+    "theme_tags": ["reality", "acceptance", "presence", "growth", "recovery"],
+    "punchlines": [
+      "The ocean didn't soften. I just stopped divin' overboard every storm.",
+      "Runnin' deepened the wreckage. Stayin' taught me navigation.",
+      "Reality weren't the enemy — fleein' from it was."
+    ]
+  },
+  {
+  "id": "jft_05_22",
+  "month": 5,
+  "day": 22,
+  "source": "JFT",
+  "title": "The Storm Inside Me Finally Lost Some Wind",
+  "short_summary": "I once thought spiritual change would arrive like some cursed sea prophecy — thunder crackin’, heavens openin’, maybe me eyes glowin’ while I shouted wise nonsense from the mast. Instead, it came quiet-like. I stop pickin’ fights in me own skull. Every rough wave no longer feels like the end o’ the voyage. I laugh easier. Small treasures start matterin’ again — warm grub, a calm tide, another sailor checkin’ in on me. The strangest part? I become less miserable to sail beside. Recovery didn’t turn me into some holy sea wizard. It just stopped me from mutinyin’ against meself every hour o’ the day. And compared to the wreck I used to be… that already feels like black magic, matey.",
+  "theme_tags": ["spirituality", "growth", "ego", "recovery", "gratitude"],
+  "punchlines": [
+    "Turns out spiritual growth mostly means bein’ less unbearable aboard the ship.",
+    "Peace don’t arrive like cannon fire. It sneaks aboard quiet-like.",
+    "Recovery didn’t make me special, matey — it just stopped me fightin’ the whole ocean."
+  ]
+}
 ]

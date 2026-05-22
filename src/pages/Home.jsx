@@ -321,12 +321,6 @@ useEffect(() => {
   return () => clearInterval(id);
 }, []);
 
-useEffect(() => {
-  const id = setInterval(() => {
-    setRotatingSlogan(getSlogan({ groupKey: "3PM" }));
-  }, 8000);
-  return () => clearInterval(id);
-}, []);
 
 
 
