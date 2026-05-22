@@ -41,6 +41,7 @@ import { useGuidedToolForToday } from "../hooks/useGuidedToolForToday.js";
 import GuidedToolModal from "../components/GuidedToolModal.jsx";
 import { getSlogan } from "../utils/getSlogan.js";
 import homeIcon from "../assets/homeicon.png";
+import lanternImg from "../assets/lantern.png";
 
 const ICONS = {
   queen: ChessQueen,
@@ -477,41 +478,39 @@ useEffect(() => {
   <div className="absolute inset-0 rounded-2xl pointer-events-none border border-[#d6a84f]/20" />
   <div className="absolute top-0 left-4 right-4 h-px bg-gradient-to-r from-transparent via-[#f0c56e]/60 to-transparent" />
 
-  <div className="flex items-start gap-4">
+  {/* lantern — absolute right, peeking out */}
+  <img
+    src={lanternImg}
+    alt=""
+    className="absolute -right-3 top-0 h-full object-contain opacity-90 drop-shadow-[0_0_18px_rgba(198,165,107,0.4)] pointer-events-none"
+  />
+
+  <div className="flex items-center gap-3 pr-20">
     <img
       src={homeIcon}
       alt=""
-      className="h-16 w-16 shrink-0 object-contain drop-shadow-[0_0_10px_rgba(198,165,107,0.35)]"
+      className="h-20 w-20 shrink-0 object-contain drop-shadow-[0_0_14px_rgba(198,165,107,0.45)]"
     />
 
-    <div className="min-w-0 flex-1 space-y-2">
-      <h2 className="text-[20px] leading-tight font-semibold text-[#f3dfb1]">
-        {welcomeHeadline}
-      </h2>
-
+    <div className="min-w-0 space-y-1.5">
       <motion.p
         key={rotatingSlogan}
         initial={{ opacity: 0, y: 4 }}
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -4 }}
         transition={{ duration: 0.5 }}
-        className="text-[12px] leading-snug text-[#c6a56b] italic"
+        className="text-[11px] leading-snug text-[#c6a56b] italic"
       >
         {rotatingSlogan}
       </motion.p>
 
       {displayName && showHiLine && (
-        <p className="text-[12px] leading-snug text-[#7f858c]">
+        <p className="text-[11px] leading-snug text-[#7f858c]">
           Ahoy {displayName}. However yesterday went, ye still made it back aboard.
         </p>
       )}
     </div>
   </div>
-
-  {/* small handwritten-style note */}
-  <p className="mt-3 text-right text-[11px] italic text-[#b37b33]">
-    No emotional mutiny detected.
-  </p>
 </section>
 {/* NEXT MEETING — premium block */}
 <section className="relative overflow-hidden rounded-xl border border-[#6f5630]/25 bg-[#0f1012]/70 px-4 py-4 shadow-lg shadow-black/30">
