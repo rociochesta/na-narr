@@ -64,7 +64,7 @@ export default function Header3PM({ showMenu = true }) {
             <img
               src={disclaimerImg}
               alt="Disclaimer: NARR stands for NA Rocio Recovery"
-              className="w-full h-10 object-fill"
+              className="w-full h-auto object-contain"
             />
           </div>
 
