@@ -60,11 +60,11 @@ export default function Header3PM({ showMenu = true }) {
             </p>
           </div>
 
-          <div className="flex-1 min-w-0 flex items-center justify-center rotate-[-1deg]">
+          <div className="flex-1 min-w-0 rotate-[-1deg]">
             <img
               src={disclaimerImg}
               alt="Disclaimer: NARR stands for NA Rocio Recovery"
-              className="max-h-10 w-full object-contain"
+              className="w-full h-10 object-fill"
             />
           </div>
 
