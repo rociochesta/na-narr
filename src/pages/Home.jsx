@@ -39,6 +39,8 @@ import { getRandomToolPunchline } from "../utils/getToolPunchline.js";
 import MilestoneIcon from "../components/MilestoneIcon.jsx";
 import { useGuidedToolForToday } from "../hooks/useGuidedToolForToday.js";
 import GuidedToolModal from "../components/GuidedToolModal.jsx";
+import { getSlogan } from "../utils/getSlogan.js";
+import homeIcon from "../assets/homeicon.png";
 
 const ICONS = {
   queen: ChessQueen,
@@ -88,6 +90,7 @@ const isGuest = !memberId;
 
   const [toolDone, setToolDone] = useState(false);
   const [toolDoneLine, setToolDoneLine] = useState(null);
+  const [rotatingSlogan, setRotatingSlogan] = useState(() => getSlogan({ groupKey: "3PM" }));
 
   // punchline del ÚLTIMO milestone alcanzado (async vía JSON)
   const [lastPunch, setLastPunch] = useState(null);
@@ -311,8 +314,15 @@ useEffect(() => {
     setTimeUntilMeeting(getTimeUntilMeeting());
   }
 
-  update(); // primera vez
-  const id = setInterval(update, 30 * 1000); // cada 30s
+  update();
+  const id = setInterval(update, 30 * 1000);
+  return () => clearInterval(id);
+}, []);
+
+useEffect(() => {
+  const id = setInterval(() => {
+    setRotatingSlogan(getSlogan({ groupKey: "3PM" }));
+  }, 8000);
   return () => clearInterval(id);
 }, []);
 
@@ -452,28 +462,56 @@ useEffect(() => {
       <main className="flex-1">
         <div className="max-w-md mx-auto px-4 py-6 space-y-6">
           {/* Hero premium con welcome rotativo */}
-{/* Hero compacto */}
-<section className="relative rounded-xl border border-[#6f5630]/25 bg-[#0f1012]/70 px-3 py-3 flex items-start gap-3 overflow-hidden">
-  <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#c6a56b]/25 to-transparent" />
-  <div className="mt-0.5 flex h-8 w-8 items-center justify-center rounded-full bg-[#17120d] border border-[#c6a56b]/60 shrink-0">
-    <Sparkles size={18} className="text-[#d4b06a]" />
+{/* Welcome card / rotating slogan */}
+<section
+  className="
+    relative overflow-hidden
+    rounded-2xl
+    border border-[#8a642f]/45
+    bg-[#080b0d]
+    px-4 py-4
+    shadow-[0_12px_35px_rgba(0,0,0,0.55),inset_0_0_30px_rgba(198,165,107,0.06)]
+  "
+>
+  {/* brass edge glow */}
+  <div className="absolute inset-0 rounded-2xl pointer-events-none border border-[#d6a84f]/20" />
+  <div className="absolute top-0 left-4 right-4 h-px bg-gradient-to-r from-transparent via-[#f0c56e]/60 to-transparent" />
+
+  <div className="flex items-start gap-4">
+    <img
+      src={homeIcon}
+      alt=""
+      className="h-16 w-16 shrink-0 object-contain drop-shadow-[0_0_10px_rgba(198,165,107,0.35)]"
+    />
+
+    <div className="min-w-0 flex-1 space-y-2">
+      <h2 className="text-[20px] leading-tight font-semibold text-[#f3dfb1]">
+        {welcomeHeadline}
+      </h2>
+
+      <motion.p
+        key={rotatingSlogan}
+        initial={{ opacity: 0, y: 4 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -4 }}
+        transition={{ duration: 0.5 }}
+        className="text-[12px] leading-snug text-[#c6a56b] italic"
+      >
+        {rotatingSlogan}
+      </motion.p>
+
+      {displayName && showHiLine && (
+        <p className="text-[12px] leading-snug text-[#7f858c]">
+          Ahoy {displayName}. However yesterday went, ye still made it back aboard.
+        </p>
+      )}
+    </div>
   </div>
 
-  <div className="space-y-1">
-    <h2 className="text-sm font-semibold leading-snug text-[#e5d3ad]">
-      {welcomeHeadline}
-    </h2>
-    {welcomeSubline && (
-      <p className="text-[12px] text-[#8d9199] leading-snug">
-        {welcomeSubline}
-      </p>
-    )}
-    {displayName && showHiLine && (
-      <p className="text-[11px] text-[#4a4f58]">
-        Hi {displayName}. However yesterday went, you still made it here.
-      </p>
-    )}
-  </div>
+  {/* small handwritten-style note */}
+  <p className="mt-3 text-right text-[11px] italic text-[#b37b33]">
+    No emotional mutiny detected.
+  </p>
 </section>
 {/* NEXT MEETING — premium block */}
 <section className="relative overflow-hidden rounded-xl border border-[#6f5630]/25 bg-[#0f1012]/70 px-4 py-4 shadow-lg shadow-black/30">
