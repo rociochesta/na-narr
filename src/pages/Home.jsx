@@ -37,6 +37,7 @@ import {
 } from "../utils/getGroupUpcomingMilestones.js";
 import { getRandomToolPunchline } from "../utils/getToolPunchline.js";
 import MilestoneIcon from "../components/MilestoneIcon.jsx";
+import RecoveryMedallion from "../components/RecoveryMedallion.jsx";
 import { useGuidedToolForToday } from "../hooks/useGuidedToolForToday.js";
 import GuidedToolModal from "../components/GuidedToolModal.jsx";
 import { getSlogan } from "../utils/getSlogan.js";
@@ -597,23 +598,21 @@ useEffect(() => {
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#c6a56b]/30 to-transparent" />
 
         <div className="flex items-center justify-between text-[11px] uppercase tracking-[0.18em] text-[#6b7078] mb-1">
-          <span>Clean badge</span>
+          <span>Recovery medallion</span>
           <span className="text-[10px] px-2 py-0.5 rounded-full bg-[#17120d] border border-[#c6a56b]/40 text-[#c6a56b]">
             {daysClean} day{daysClean === 1 ? "" : "s"} in
           </span>
         </div>
 
         <div className="mt-1 flex items-center gap-3">
-          <div className="flex items-center justify-center">
-            <NeonBadge num={daysClean} />
-          </div>
+          <RecoveryMedallion days={daysClean} />
 
           <div className="flex flex-col">
             <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#e5d3ad]">
-              Days clean
+              {daysClean} days aboard
             </span>
             <span className="text-[11px] text-[#8d9199] mt-1">
-              This is how long you've been annoying your addiction on purpose.
+              Still afloat, matey. Yer addiction hates the view.
             </span>
             {cleanDateLabel && (
               <span className="text-[10px] text-[#4a4f58] mt-1">
