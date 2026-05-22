@@ -85,9 +85,9 @@ export default function ProfileMenu({ userProfile, onClose }) {
 
         <hr className="border-[#6f5630]/25 mb-2" />
 
-        {/* Opciones */}
+        {/* Opciones — commented for demo */}
         <nav className="flex flex-col gap-0.5 text-sm">
-          <button
+          {/* <button
             type="button"
             onClick={() => console.log("TODO: ir a perfil")}
             className="flex items-center gap-2 px-2 py-1.5 rounded-lg hover:bg-[#17120d] text-left text-[#8d9199] hover:text-[#e5d3ad] transition-colors"
@@ -105,7 +105,6 @@ export default function ProfileMenu({ userProfile, onClose }) {
             <span>Change clean date</span>
           </button>
 
-          {/* TODO: multi-group */}
           <button
             type="button"
             onClick={() => console.log("TODO: seleccionar grupo")}
@@ -131,10 +130,10 @@ export default function ProfileMenu({ userProfile, onClose }) {
           >
             <Info size={14} className="text-[#6f5630]" />
             <span>About 3PMers</span>
-          </button>
+          </button> */}
         </nav>
 
-        <hr className="border-[#6f5630]/25 my-2" />
+        {/* <hr className="border-[#6f5630]/25 my-2" />
 
         <button
           type="button"
@@ -143,7 +142,7 @@ export default function ProfileMenu({ userProfile, onClose }) {
         >
           <LogOut size={13} />
           <span>Log out</span>
-        </button>
+        </button> */}
       </div>
     </div>
   );

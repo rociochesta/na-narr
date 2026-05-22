@@ -811,14 +811,14 @@ useEffect(() => {
             "{jftEntry.punchlines[Math.floor(Math.random() * jftEntry.punchlines.length)]}"
           </p>
         )}
-        <div className="pt-2 flex justify-end">
+        {/* <div className="pt-2 flex justify-end">
           <Link
             to="/jft"
             className="text-[10px] text-[#6b7078] hover:text-[#c6a56b] underline underline-offset-4 transition-colors"
           >
             Read more
           </Link>
-        </div>
+        </div> */}
       </>
     )}
     {!jftLoading && !jftError && !jftEntry && (
@@ -1035,7 +1035,7 @@ useEffect(() => {
                       Start with one sentence. It doesn't have to be deep, just honest.
                     </p>
                   )}
-                  <div className="flex gap-2 pt-1">
+                  {/* <div className="flex gap-2 pt-1">
                     <Link
                       to="/gratitudes/new"
                       className="flex-1 text-[11px] text-center border border-[#c6a56b]/60 text-[#e5d3ad] rounded-lg py-1.5 hover:bg-[#c6a56b]/10 transition-colors"
@@ -1048,7 +1048,7 @@ useEffect(() => {
                     >
                       View all
                     </Link>
-                  </div>
+                  </div> */}
                 </div>
               )}
             </div>
@@ -1082,14 +1082,14 @@ useEffect(() => {
                       </p>
                     )}
                   </div>
-                  <div className="flex justify-end pt-1">
+                  {/* <div className="flex justify-end pt-1">
                     <Link
                       to="/my-why"
                       className="text-[11px] text-[#c6a56b] underline underline-offset-4 hover:text-[#d4b06a] transition-colors"
                     >
                       {savedWhy ? "Change my why" : "Write my why"}
                     </Link>
-                  </div>
+                  </div> */}
                 </div>
               )}
             </div>
@@ -1154,7 +1154,7 @@ useEffect(() => {
           </Link>
         </div>
       </main>
-          <BottomNav />
+      {/* <BottomNav /> */}
     </div>
   );
 }
