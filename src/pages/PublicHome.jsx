@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { Video, Anchor } from "lucide-react";
 import PublicHeader from "../components/PublicHeader.jsx";
 import { getTimeUntilMeeting } from "../utils/getTimeUntilMeeting.js";
-import naIcon from "../assets/naicon.png";
+import narrIcon from "../assets/narrrnewicon.png";
 import shipImg from "../assets/ship.png";
 
 const ZOOM_URL = "https://zoom.us/whatever";
@@ -47,9 +47,9 @@ export default function PublicHome() {
             <div className="absolute top-0 left-4 right-4 h-px bg-gradient-to-r from-transparent via-[#f0c56e]/60 to-transparent" />
 
             <img
-              src={naIcon}
-              alt=""
-              className="mx-auto h-20 w-20 md:h-24 md:w-24 object-cover rounded-full border border-[#c6a56b]/75 drop-shadow-[0_0_18px_rgba(198,165,107,0.45)]"
+              src={narrIcon}
+              alt="NARR"
+              className="mx-auto h-28 w-28 md:h-32 md:w-32 object-contain drop-shadow-[0_0_18px_rgba(198,165,107,0.45)]"
             />
 
             <h1 className="mt-4 text-2xl md:text-3xl font-semibold tracking-[0.08em] text-[#f3dfb1]">
