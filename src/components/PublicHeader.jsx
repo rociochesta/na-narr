@@ -1,7 +1,7 @@
 // src/components/PublicHeader.jsx
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import { Menu, X, Home, Coins, ShieldCheck, Info } from "lucide-react";
+import { Menu, X, Home, Coins, ShieldCheck, Info, LogIn, User } from "lucide-react";
 import naIcon from "../assets/naicon.png";
 
 const NAV_ITEMS = [
@@ -13,6 +13,16 @@ const NAV_ITEMS = [
 
 export default function PublicHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const hasProfile =
+    Boolean(window.localStorage.getItem("na_userProfile")) ||
+    Boolean(window.localStorage.getItem("na_memberId"));
+
+  const authItem = hasProfile
+    ? { to: "/dashboard", label: "My Home", icon: User }
+    : { to: "/login", label: "Log in", icon: LogIn };
+
+  const menuItems = [...NAV_ITEMS, authItem];
 
   const linkClass = ({ isActive }) =>
     `flex items-center gap-2 rounded-lg px-3 py-2 text-sm transition-colors ${
@@ -53,7 +63,7 @@ export default function PublicHeader() {
 
         {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-1 ml-auto">
-          {NAV_ITEMS.map(({ to, label, icon: Icon, end }) => (
+          {menuItems.map(({ to, label, icon: Icon, end }) => (
             <NavLink key={to} to={to} end={end} className={linkClass}>
               <Icon size={14} />
               <span>{label}</span>
@@ -86,7 +96,7 @@ export default function PublicHeader() {
       {/* Mobile dropdown */}
       {isMenuOpen && (
         <nav className="md:hidden border-t border-[#6f5630]/25 bg-[#090807]/98 px-4 py-2 space-y-0.5">
-          {NAV_ITEMS.map(({ to, label, icon: Icon, end }) => (
+          {menuItems.map(({ to, label, icon: Icon, end }) => (
             <NavLink
               key={to}
               to={to}

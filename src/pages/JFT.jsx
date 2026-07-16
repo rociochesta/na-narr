@@ -46,7 +46,7 @@ export default function JFT() {
           {/* Back link */}
           <div className="flex items-center justify-between mb-1">
             <Link
-              to="/"
+              to="/dashboard"
               className="inline-flex items-center gap-1 text-[11px] text-slate-400 hover:text-cyan-300 transition-colors"
             >
               <ChevronLeft size={14} />

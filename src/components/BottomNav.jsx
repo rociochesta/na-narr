@@ -5,7 +5,7 @@ import { Home, Hammer, UsersRound, User } from "lucide-react";
 
 export default function BottomNav() {
   const navItems = [
-    { to: "/", label: "Home", icon: Home },
+    { to: "/dashboard", label: "Home", icon: Home },
     { to: "/tools", label: "Tools", icon: Hammer },
     { to: "/group", label: "Group", icon: UsersRound },
     { to: "/me", label: "Me", icon: User },

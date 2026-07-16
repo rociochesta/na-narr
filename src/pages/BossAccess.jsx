@@ -27,7 +27,7 @@ export default function BossAccess() {
       <main className="w-full max-w-xs px-4 py-10 space-y-6">
 
         <Link
-          to="/"
+          to="/dashboard"
           className="inline-flex items-center gap-1 text-[11px] text-[#6b7078] hover:text-[#c6a56b] transition-colors"
         >
           <ArrowLeft size={14} />

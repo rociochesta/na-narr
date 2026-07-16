@@ -598,7 +598,7 @@ export default function AddGratitude() {
 
               <button
                 type="button"
-                onClick={() => navigate("/")}
+                onClick={() => navigate("/dashboard")}
                 className="
                   w-full text-sm font-semibold tracking-wide
                   border border-[#6f5630]/30

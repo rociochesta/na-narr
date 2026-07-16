@@ -41,21 +41,6 @@ function RequireProfile({ children }) {
   return children;
 }
 
-/**
- * "/" shows the public, pre-login home for visitors without a local
- * profile, and the full personalized Home once they're signed in.
- */
-function RootRoute() {
-  const hasProfile = localStorage.getItem("na_userProfile");
-  const memberId = localStorage.getItem("na_memberId");
-
-  if (!hasProfile && !memberId) {
-    return <PublicHome />;
-  }
-
-  return <Home />;
-}
-
 export default function App() {
   return (
     <BrowserRouter>
@@ -67,8 +52,17 @@ export default function App() {
         <Route path="/meeting-verification" element={<MeetingVerification />} />
         <Route path="/about" element={<About />} />
 
-        {/* Root: public home for visitors, personalized Home once signed in */}
-        <Route path="/" element={<RootRoute />} />
+        {/* Root: always the public home */}
+        <Route path="/" element={<PublicHome />} />
+
+        <Route
+          path="/dashboard"
+          element={
+            <RequireProfile>
+              <Home />
+            </RequireProfile>
+          }
+        />
 
         <Route
           path="/sober-date"
@@ -199,7 +193,7 @@ export default function App() {
         />
 
         {/* Aliases & fallbacks */}
-        <Route path="/home" element={<Navigate to="/" replace />} />
+        <Route path="/home" element={<Navigate to="/dashboard" replace />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>

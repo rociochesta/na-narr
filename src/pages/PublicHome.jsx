@@ -12,6 +12,10 @@ const ZOOM_URL = "https://zoom.us/whatever";
 export default function PublicHome() {
   const [timeUntilMeeting, setTimeUntilMeeting] = useState("");
 
+  const hasProfile =
+    Boolean(window.localStorage.getItem("na_userProfile")) ||
+    Boolean(window.localStorage.getItem("na_memberId"));
+
   useEffect(() => {
     function update() {
       setTimeUntilMeeting(getTimeUntilMeeting());
@@ -122,13 +126,27 @@ export default function PublicHome() {
           </section>
 
           <p className="text-center text-[11px] text-[#6b7078]">
-            Already part of the crew?{" "}
-            <Link
-              to="/login"
-              className="text-[#c6a56b] hover:text-[#d4b06a] underline underline-offset-4 transition-colors"
-            >
-              Log in
-            </Link>
+            {hasProfile ? (
+              <>
+                Welcome back.{" "}
+                <Link
+                  to="/dashboard"
+                  className="text-[#c6a56b] hover:text-[#d4b06a] underline underline-offset-4 transition-colors"
+                >
+                  Continue to my home
+                </Link>
+              </>
+            ) : (
+              <>
+                Already part of the crew?{" "}
+                <Link
+                  to="/login"
+                  className="text-[#c6a56b] hover:text-[#d4b06a] underline underline-offset-4 transition-colors"
+                >
+                  Log in
+                </Link>
+              </>
+            )}
           </p>
         </div>
       </main>

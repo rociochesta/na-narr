@@ -90,7 +90,7 @@ export default function SoberDate() {
       }
 
       // 3) back home
-      navigate("/");
+      navigate("/dashboard");
     } finally {
       setSaving(false);
     }
@@ -191,7 +191,7 @@ export default function SoberDate() {
 
                 <button
                   type="button"
-                  onClick={() => navigate("/")}
+                  onClick={() => navigate("/dashboard")}
                   className="w-full text-sm font-semibold tracking-wide rounded-xl py-2.5 border border-[#6f5630]/30 text-[#8d9199] hover:bg-[#17120d] hover:text-[#e5d3ad] transition-colors"
                 >
                   Back to ship

@@ -92,7 +92,7 @@ useEffect(() => {
         {/* Header */}
         <header className="flex items-center justify-between gap-3">
           <Link
-            to="/"
+            to="/dashboard"
             className="inline-flex items-center gap-1 text-[11px] text-[#6b7078] hover:text-[#c6a56b] transition-colors"
           >
             <ArrowLeft size={14} />

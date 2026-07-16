@@ -35,7 +35,7 @@ function handleGuest() {
     }).toString(),
   }).catch(() => {});
 
-  navigate("/");
+  navigate("/dashboard");
 }
 
   async function handleSubmit(e) {
@@ -100,7 +100,7 @@ function handleGuest() {
       }
 
       // 4) Go Home regardless
-      navigate("/");
+      navigate("/dashboard");
     } catch (err) {
       console.error("Login submit error:", err);
       setError("Something went wrong. Try again.");
