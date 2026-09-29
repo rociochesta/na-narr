@@ -2,8 +2,8 @@
 import React, { useState } from "react";
 import { Anchor, ShieldCheck } from "lucide-react";
 import PublicHeader from "../components/PublicHeader.jsx";
-import homeIcon from "../assets/homeicon.png";
-import shipLog from "../assets/shiplogo.png";
+import shipImg from "../assets/ship.png";
+import shipLog from "../assets/shiplog.png";
 
 const WORDS = ["NARR", "RANG", "RECOV", "HOPE", "UNITY", "CLEAN", "BRAVE", "RISE", "LIGHT", "PATH"];
 const EMAILJS_URL = "https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js";
@@ -87,7 +87,7 @@ export default function MeetingVerification() {
           <div className="absolute inset-0 rounded-2xl border border-[#d6a84f]/20 pointer-events-none" />
           <div className="absolute top-0 left-4 right-4 h-px bg-gradient-to-r from-transparent via-[#f0c56e]/60 to-transparent" />
           <div className="relative flex items-center gap-3 pr-16">
-            <img src={homeIcon} alt="" className="h-20 w-20 shrink-0 object-contain drop-shadow-[0_0_14px_rgba(198,165,107,0.45)]" />
+            <img src={shipLog} alt="" className="h-20 w-20 shrink-0 object-contain drop-shadow-[0_0_14px_rgba(198,165,107,0.45)]" />
             <div>
               <p className="text-[10px] uppercase tracking-[0.28em] text-[#c6a56b]">NARR Recovery Crew</p>
               <h1 className="mt-1 text-[23px] font-bold leading-tight tracking-tight text-[#f3dfb1]">Meeting verification</h1>
@@ -98,7 +98,7 @@ export default function MeetingVerification() {
         <section className="relative overflow-hidden rounded-2xl border border-[#8a642f]/45 bg-[#080b0d] px-5 py-5 shadow-[0_12px_35px_rgba(0,0,0,0.55),inset_0_0_30px_rgba(198,165,107,0.06)]">
           <div className="absolute inset-0 rounded-2xl border border-[#d6a84f]/20 pointer-events-none" />
           <div className="absolute top-0 left-4 right-4 h-px bg-gradient-to-r from-transparent via-[#f0c56e]/60 to-transparent" />
-          <img src={shipLog} alt="" className="absolute -right-6 top-0 h-32 w-40 object-cover opacity-20 pointer-events-none" />
+          <img src={shipImg} alt="" className="absolute -right-6 top-0 h-32 w-40 object-cover opacity-20 pointer-events-none" />
           <div className="relative">
             <div className="flex items-center gap-2 text-[#d4b06a]"><ShieldCheck size={17} /><h2 className="text-sm font-semibold">Log your attendance</h2></div>
             <p className="mt-2 mb-5 text-xs leading-relaxed text-[#8d9199]">Enter the code your meeting host shared for the date you attended. We’ll email your confirmation.</p>

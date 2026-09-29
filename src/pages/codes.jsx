@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight, Copy, LockKeyhole, Printer } from "lucide-react";
 import Header3PM from "../components/Header3PM.jsx";
-import homeIcon from "../assets/homeicon.png";
 import lanternImg from "../assets/lantern.png";
+import shipLog from "../assets/shiplog.png";
 import "./codes.css";
 
 const WORDS = ["NARR", "RANG", "RECOV", "HOPE", "UNITY", "CLEAN", "BRAVE", "RISE", "LIGHT", "PATH"];
@@ -74,7 +74,7 @@ export default function Codes({ requirePasswordOnOpen = false }) {
       {!unlocked ? (
         <main className="mx-auto flex min-h-[75vh] max-w-md items-center px-4 py-8">
           <form onSubmit={unlock} className="codes-panel w-full p-7 text-center">
-            <img src={homeIcon} alt="" className="mx-auto mb-4 h-20 w-20 object-contain" />
+            <img src={shipLog} alt="" className="mx-auto mb-4 h-20 w-20 object-contain" />
             <LockKeyhole size={20} className="mx-auto mb-3 text-[#c6a56b]" />
             <h1 className="text-xl font-semibold">Admin access</h1>
             <p className="mb-6 mt-2 text-sm text-[#9b8c72]">Enter your password to view the code sheet.</p>
