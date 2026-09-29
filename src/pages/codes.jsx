@@ -9,8 +9,9 @@ const WORDS = ["NARR", "RANG", "RECOV", "HOPE", "UNITY", "CLEAN", "BRAVE", "RISE
 // Keep aligned with MeetingVerification.jsx and the supplied code sheet.
 const getCode = (day) => WORDS[(day - 1) % WORDS.length] + ((day * 7 + 13) % 90 + 10);
 
-export default function Codes() {
+export default function Codes({ requirePasswordOnOpen = false }) {
   const [unlocked, setUnlocked] = useState(() => {
+    if (requirePasswordOnOpen) return false;
     try { return sessionStorage.getItem("narr_auth") === "1"; }
     catch { return false; }
   });
@@ -41,7 +42,9 @@ export default function Codes() {
       passwordInput.current?.focus();
       return;
     }
-    try { sessionStorage.setItem("narr_auth", "1"); } catch { /* Allow this visit without storage. */ }
+    if (!requirePasswordOnOpen) {
+      try { sessionStorage.setItem("narr_auth", "1"); } catch { /* Allow this visit without storage. */ }
+    }
     setPassword("");
     setError("");
     setUnlocked(true);

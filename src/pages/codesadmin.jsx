@@ -1,7 +1,7 @@
 import React from "react";
 import Codes from "./codes.jsx";
 
-// Share the themed sheet so both direct URLs use the same codes and behavior.
+// Always require a fresh password, even if /codes was unlocked this session.
 export default function CodesAdmin() {
-  return <Codes />;
+  return <Codes requirePasswordOnOpen />;
 }
