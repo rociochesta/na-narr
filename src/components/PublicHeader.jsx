@@ -63,14 +63,12 @@ export default function PublicHeader() {
 
         {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-1 ml-auto">
-          {menuItems.map(({ to, label, icon: Icon, end, external }) => {
-            const content = <><Icon size={14} /><span>{label}</span></>;
-            return external ? (
-              <a key={to} href={to} className={linkClass({ isActive: false })}>{content}</a>
-            ) : (
-              <NavLink key={to} to={to} end={end} className={linkClass}>{content}</NavLink>
-            );
-          })}
+          {menuItems.map(({ to, label, icon: Icon, end }) => (
+            <NavLink key={to} to={to} end={end} className={linkClass}>
+              <Icon size={14} />
+              <span>{label}</span>
+            </NavLink>
+          ))}
         </nav>
 
         {/* Mobile toggle */}
@@ -98,14 +96,18 @@ export default function PublicHeader() {
       {/* Mobile dropdown */}
       {isMenuOpen && (
         <nav className="md:hidden border-t border-[#6f5630]/25 bg-[#090807]/98 px-4 py-2 space-y-0.5">
-          {menuItems.map(({ to, label, icon: Icon, end, external }) => {
-            const content = <><Icon size={14} /><span>{label}</span></>;
-            return external ? (
-              <a key={to} href={to} onClick={() => setIsMenuOpen(false)} className={linkClass({ isActive: false })}>{content}</a>
-            ) : (
-              <NavLink key={to} to={to} end={end} onClick={() => setIsMenuOpen(false)} className={linkClass}>{content}</NavLink>
-            );
-          })}
+          {menuItems.map(({ to, label, icon: Icon, end }) => (
+            <NavLink
+              key={to}
+              to={to}
+              end={end}
+              onClick={() => setIsMenuOpen(false)}
+              className={linkClass}
+            >
+              <Icon size={14} />
+              <span>{label}</span>
+            </NavLink>
+          ))}
         </nav>
       )}
     </header>
