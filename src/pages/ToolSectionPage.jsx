@@ -3,6 +3,9 @@ import React, { useEffect, useMemo, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import Header3PM from "../components/Header3PM.jsx";
 import BottomNav from "../components/BottomNav.jsx";
+import useHomeTheme from "../hooks/useHomeTheme.js";
+import "./DashboardTheme.css";
+import "./ToolsTheme.css";
 
 const GROUP_LABELS = {
   "start-here": "Start here",
@@ -12,6 +15,7 @@ const GROUP_LABELS = {
 export default function ToolSectionPage() {
   const { sectionId } = useParams();
   const navigate = useNavigate();
+  const [theme] = useHomeTheme();
 
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
@@ -83,23 +87,23 @@ export default function ToolSectionPage() {
       <button
         type="button"
         onClick={() => navigate(`/tools/${sectionId}/${t.slug}`)}
-        className="text-left rounded-2xl border border-slate-800 bg-slate-900/80 px-4 py-3 hover:border-cyan-400/60 hover:bg-slate-900 transition-colors"
+        className="text-left rounded-2xl border border-[var(--dash-6f5630)] bg-[var(--dash-0f1012)]/80 px-4 py-3 hover:border-[var(--dash-c6a56b)]/60 hover:bg-[var(--dash-0f1012)] transition-colors"
       >
         <div className="flex items-center justify-between gap-2">
-          <p className="text-sm font-medium text-slate-100">{t.title}</p>
+          <p className="text-sm font-medium text-[var(--dash-e5d3ad)]">{t.title}</p>
           {t.estimatedSeconds ? (
-            <span className="text-[10px] px-2 py-0.5 rounded-full bg-slate-800 text-slate-300 whitespace-nowrap">
+            <span className="text-[10px] px-2 py-0.5 rounded-full bg-[var(--dash-6f5630)] text-[var(--dash-8d9199)] whitespace-nowrap">
               {Math.max(1, Math.ceil(t.estimatedSeconds / 60))} min
             </span>
           ) : null}
         </div>
 
         {t.subtitle ? (
-          <p className="text-[11px] text-slate-400 mt-1">{t.subtitle}</p>
+          <p className="text-[11px] text-[var(--dash-8d9199)] mt-1">{t.subtitle}</p>
         ) : null}
 
         {showTone && t.toneLine ? (
-          <p className="text-[11px] text-cyan-300 italic mt-2 border-l border-cyan-400/20 pl-2">
+          <p className="text-[11px] text-[var(--dash-c6a56b)] italic mt-2 border-l border-[var(--dash-c6a56b)]/20 pl-2">
             {t.toneLine}
           </p>
         ) : null}
@@ -108,21 +112,21 @@ export default function ToolSectionPage() {
   }
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-50 flex flex-col pb-16">
+    <div data-theme={theme} className="dashboard tools-page min-h-screen bg-[var(--dash-0b0c0f)] text-[var(--dash-e5d3ad)] flex flex-col pb-16">
       <Header3PM showMenu />
 
       <main className="flex-1">
-        <div className="max-w-md mx-auto px-4 py-6 space-y-5">
+        <div className="tools-content max-w-md mx-auto px-4 py-6 space-y-5">
           <button
             type="button"
             onClick={() => navigate("/tools")}
-            className="text-[11px] text-slate-400 underline underline-offset-2 hover:text-cyan-300"
+            className="text-[11px] text-[var(--dash-8d9199)] underline underline-offset-2 hover:text-[var(--dash-c6a56b)]"
           >
             ← Back to Toolbox
           </button>
 
           {loading ? (
-            <p className="text-[11px] text-slate-500 italic">Loading…</p>
+            <p className="text-[11px] text-[var(--dash-6b7078)] italic">Loading…</p>
           ) : error ? (
             <div className="rounded-2xl border border-rose-900/40 bg-rose-950/20 px-4 py-3">
               <p className="text-sm text-rose-300">Couldn't load this section.</p>
@@ -133,17 +137,17 @@ export default function ToolSectionPage() {
           ) : (
             <>
               {/* Section header */}
-              <section className="rounded-2xl border border-slate-800 bg-slate-900/60 px-4 py-4">
+              <section className="rounded-2xl border border-[var(--dash-6f5630)] bg-[var(--dash-0f1012)]/60 px-4 py-4">
                 <h1 className="text-lg font-semibold tracking-tight">
                   {section.title}
                 </h1>
                 {section.description ? (
-                  <p className="text-[12px] text-slate-300 mt-1">
+                  <p className="text-[12px] text-[var(--dash-8d9199)] mt-1">
                     {section.description}
                   </p>
                 ) : null}
                 {section.badge ? (
-                  <p className="text-[11px] text-slate-500 mt-2">
+                  <p className="text-[11px] text-[var(--dash-6b7078)] mt-2">
                     {section.badge}
                   </p>
                 ) : null}
@@ -152,7 +156,7 @@ export default function ToolSectionPage() {
               {/* Tool groups */}
               {grouped.map(({ key, label, tools: list }) => (
                 <section key={key} className="space-y-2">
-                  <p className="text-xs uppercase tracking-[0.16em] text-slate-500">
+                  <p className="text-xs uppercase tracking-[0.16em] text-[var(--dash-6b7078)]">
                     {label}
                   </p>
                   <div className="grid gap-2">

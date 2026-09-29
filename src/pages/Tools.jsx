@@ -16,6 +16,9 @@ import {
 import { motion, AnimatePresence } from "framer-motion";
 import Header3PM from "../components/Header3PM.jsx";
 import BottomNav from "../components/BottomNav.jsx";
+import useHomeTheme from "../hooks/useHomeTheme.js";
+import "./DashboardTheme.css";
+import "./ToolsTheme.css";
 import { getDaysClean } from "../utils/getDaysClean.js";
 import { useGuidedToolForToday } from "../hooks/useGuidedToolForToday.js";
 import { getRandomToolPunchline } from "../utils/getToolPunchline.js";
@@ -32,6 +35,7 @@ const ICONS = {
 
 export default function ToolsPage() {
   const navigate = useNavigate();
+  const [theme] = useHomeTheme();
   const location = useLocation(); // ✅ hook dentro del componente
 
   const [soberDate, setSoberDate] = useState(null);
@@ -152,15 +156,15 @@ useEffect(() => {
   
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-50 flex flex-col pb-16">
+    <div data-theme={theme} className="dashboard tools-page min-h-screen bg-[var(--dash-0b0c0f)] text-[var(--dash-e5d3ad)] flex flex-col pb-16">
       <Header3PM showMenu />
 
       <main className="flex-1">
-        <div className="max-w-md mx-auto px-4 py-6 space-y-6">
+        <div className="tools-content max-w-md mx-auto px-4 py-6 space-y-6">
           {/* Hero compacto */}
-        <section className="rounded-xl border border-slate-800 bg-slate-900/80 px-3 py-3 flex items-start gap-3">
-  <div className="mt-0.5 flex h-8 w-8 items-center justify-center rounded-full bg-slate-950/80 border border-cyan-400/60">
-    <Hammer size={18} className="text-cyan-300" />
+        <section className="rounded-xl border border-[var(--dash-6f5630)] bg-[var(--dash-0f1012)]/80 px-3 py-3 flex items-start gap-3">
+  <div className="mt-0.5 flex h-8 w-8 items-center justify-center rounded-full bg-[var(--dash-0b0c0f)]/80 border border-[var(--dash-c6a56b)]/60">
+    <Hammer size={18} className="text-[var(--dash-c6a56b)]" />
   </div>
 
   <div className="space-y-1">
@@ -169,7 +173,7 @@ useEffect(() => {
     </h2>
 
     {toolsWelcomeSubline && (
-      <p className="text-[12px] text-slate-300 leading-snug">
+      <p className="text-[12px] text-[var(--dash-8d9199)] leading-snug">
         {toolsWelcomeSubline}
       </p>
     )}
@@ -181,23 +185,23 @@ useEffect(() => {
           {/* TOOLBOX GRID */}
           <section className="space-y-3">
             <div className="flex items-center justify-between">
-              <h2 className="text-xs uppercase tracking-[0.16em] text-slate-500">
+              <h2 className="text-xs uppercase tracking-[0.16em] text-[var(--dash-6b7078)]">
                 Toolbox
               </h2>
-              <p className="text-[10px] text-slate-500">
+              <p className="text-[10px] text-[var(--dash-6b7078)]">
                 Use what helps. Leave what doesn&apos;t.
               </p>
             </div>
 
             {sectionsLoading ? (
-              <p className="text-[11px] text-slate-500 italic">Loading toolbox…</p>
+              <p className="text-[11px] text-[var(--dash-6b7078)] italic">Loading toolbox…</p>
             ) : sectionsError ? (
               <div className="rounded-2xl border border-rose-900/40 bg-rose-950/20 px-4 py-3">
                 <p className="text-sm text-rose-300">Couldn’t load toolbox.</p>
                 <p className="text-[11px] text-rose-200/70 mt-1">{sectionsError}</p>
               </div>
             ) : sections.length === 0 ? (
-              <p className="text-[11px] text-slate-500">No toolbox sections yet.</p>
+              <p className="text-[11px] text-[var(--dash-6b7078)]">No toolbox sections yet.</p>
             ) : (
               <div className="grid grid-cols-1 gap-3">
                 {sections.map((row) => {
@@ -208,27 +212,27 @@ useEffect(() => {
                       key={row.id}
                       type="button"
                       onClick={() => navigate(`/tools/${row.slug}`)}
-                      className="text-left rounded-2xl border border-slate-800 bg-slate-900/80 px-4 py-3 hover:border-cyan-400/60 hover:bg-slate-900 transition-colors"
+                      className="text-left rounded-2xl border border-[var(--dash-6f5630)] bg-[var(--dash-0f1012)]/80 px-4 py-3 hover:border-[var(--dash-c6a56b)]/60 hover:bg-[var(--dash-0f1012)] transition-colors"
                     >
                       <div className="flex items-start gap-3">
-                        <div className="mt-1 flex h-9 w-9 items-center justify-center rounded-full bg-slate-950/80 border border-slate-700">
-                          <Icon size={18} className="text-cyan-300" />
+                        <div className="mt-1 flex h-9 w-9 items-center justify-center rounded-full bg-[var(--dash-0b0c0f)]/80 border border-[var(--dash-6f5630)]">
+                          <Icon size={18} className="text-[var(--dash-c6a56b)]" />
                         </div>
 
                         <div className="flex-1 min-w-0">
                           <div className="flex items-center justify-between gap-2">
-                            <p className="text-sm font-medium text-slate-100 truncate">
+                            <p className="text-sm font-medium text-[var(--dash-e5d3ad)] truncate">
                               {row.title}
                             </p>
                             {row.badge ? (
-                              <span className="text-[10px] px-2 py-0.5 rounded-full bg-slate-800 text-slate-300 whitespace-nowrap">
+                              <span className="text-[10px] px-2 py-0.5 rounded-full bg-[var(--dash-6f5630)] text-[var(--dash-8d9199)] whitespace-nowrap">
                                 {row.badge}
                               </span>
                             ) : null}
                           </div>
 
                           {row.description ? (
-                            <p className="text-[11px] text-slate-400 mt-1">
+                            <p className="text-[11px] text-[var(--dash-8d9199)] mt-1">
                               {row.description}
                             </p>
                           ) : null}

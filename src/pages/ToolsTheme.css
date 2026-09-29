@@ -1,0 +1,38 @@
+.tools-content { padding-bottom: 50px; }
+.tools-content :is(section, button).border {
+  position: relative;
+  border-color: #8a642f73;
+  background: #080b0d;
+  box-shadow: 0 10px 26px #0005, inset 0 0 24px #c6a56b0f;
+}
+.tools-content button.border:hover {
+  border-color: var(--dash-c6a56b);
+  background: var(--dash-17120d);
+}
+.tools-page[data-theme="rangers"] .tools-content :is(section, button).border {
+  border-color: #168cd299;
+  background: #06182eed;
+  box-shadow: 0 0 14px #009cff25, inset 0 0 18px #009cff0d;
+}
+.tools-page[data-theme="rangers"] .tools-content button.border:hover {
+  border-color: #53d9ff;
+  background: #08203a;
+}
+.tools-page[data-theme="rangers"] .tools-content :is(section, button).border::after {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  border-radius: inherit;
+  pointer-events: none;
+  background:
+    linear-gradient(#65efff, #19adff) left top / 20px 2px,
+    linear-gradient(#65efff, #19adff) left top / 2px 20px,
+    linear-gradient(#19adff, #65efff) right bottom / 20px 2px,
+    linear-gradient(#19adff, #65efff) right bottom / 2px 20px;
+  background-repeat: no-repeat;
+  filter: drop-shadow(0 0 3px #22d5ff);
+}
+.tools-content button:focus-visible {
+  outline: 2px solid var(--dash-c6a56b);
+  outline-offset: 4px;
+}
