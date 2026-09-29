@@ -70,11 +70,11 @@ export default function Codes({ requirePasswordOnOpen = false }) {
 
   return (
     <div className="codes-page min-h-screen bg-[#0b0c0f] text-[#e5d3ad]">
-      <div className="codes-screen-only"><Header3PM showMenu={false} /></div>
+      <div className="codes-screen-only"></div>
       {!unlocked ? (
         <main className="mx-auto flex min-h-[75vh] max-w-md items-center px-4 py-8">
           <form onSubmit={unlock} className="codes-panel w-full p-7 text-center">
-            <img src={shipLog} alt="" className="mx-auto mb-4 h-20 w-20 object-contain" />
+            <img src={shipLog} alt="" className="mx-auto mb-4 h-28 w-28 sm:h-32 sm:w-32 object-contain" />
             <LockKeyhole size={20} className="mx-auto mb-3 text-[#c6a56b]" />
             <h1 className="text-xl font-semibold">Admin access</h1>
             <p className="mb-6 mt-2 text-sm text-[#9b8c72]">Enter your password to view the code sheet.</p>

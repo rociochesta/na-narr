@@ -83,12 +83,12 @@ export default function MeetingVerification() {
     <div className="min-h-screen bg-[#0b0c0f] text-[#e5d3ad] flex flex-col">
       <PublicHeader />
       <main className="w-full max-w-md mx-auto flex-1 px-4 py-6 space-y-6">
-        <section className="relative overflow-hidden rounded-2xl border border-[#8a642f]/45 bg-[#080b0d] px-4 py-5 shadow-[0_12px_35px_rgba(0,0,0,0.55),inset_0_0_30px_rgba(198,165,107,0.06)]">
+        <section className="relative overflow-hidden rounded-2xl border border-[#8a642f]/45 bg-[#080b0d] px-4 py-7 sm:px-5 shadow-[0_12px_35px_rgba(0,0,0,0.55),inset_0_0_30px_rgba(198,165,107,0.06)]">
           <div className="absolute inset-0 rounded-2xl border border-[#d6a84f]/20 pointer-events-none" />
           <div className="absolute top-0 left-4 right-4 h-px bg-gradient-to-r from-transparent via-[#f0c56e]/60 to-transparent" />
-          <div className="relative flex items-center gap-3 pr-16">
-            <img src={shipLog} alt="" className="h-20 w-20 shrink-0 object-contain drop-shadow-[0_0_14px_rgba(198,165,107,0.45)]" />
-            <div>
+          <div className="relative flex items-center gap-4">
+            <img src={shipLog} alt="" className="h-28 w-28 sm:h-32 sm:w-32 shrink-0 object-contain drop-shadow-[0_0_14px_rgba(198,165,107,0.45)]" />
+            <div className="min-w-0">
               <p className="text-[10px] uppercase tracking-[0.28em] text-[#c6a56b]">NARR Recovery Crew</p>
               <h1 className="mt-1 text-[23px] font-bold leading-tight tracking-tight text-[#f3dfb1]">Meeting verification</h1>
             </div>
