@@ -7,7 +7,7 @@ import naIcon from "../assets/naicon.png";
 const NAV_ITEMS = [
   { to: "/", label: "Home", icon: Home, end: true },
   { to: "/seventh-tradition", label: "7th Tradition", icon: Coins },
-  { to: "https://rangersverification.netlify.app/", label: "Meeting Verification", icon: ShieldCheck, external: true },
+  { to: "/meeting-verification", label: "Meeting Verification", icon: ShieldCheck },
   { to: "/about", label: "About", icon: Info },
 ];
 
