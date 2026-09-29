@@ -1,0 +1,73 @@
+html { scrollbar-gutter: stable; }
+.home-theme-header > div:nth-child(2) { max-width: 1320px; flex-wrap: wrap; }
+.home-theme-switch { display: flex; margin-left: auto; padding: 3px; border: 1px solid #766548; border-radius: 999px; background: #060e1b; }
+.home-theme-switch button { display: flex; align-items: center; justify-content: center; gap: 7px; min-height: 38px; padding: 7px 13px; border: 1px solid transparent; border-radius: 999px; color: #b6c8e5; font-size: 12px; cursor: pointer; }
+.home-theme-switch button[aria-pressed="true"] { border-color: #ffd56a; color: #ffe299; background: #242014; box-shadow: 0 0 12px #ffc83d55, inset 0 0 10px #ffc83d22; }
+.home-theme-switch button:focus-visible, .rangers-home a:focus-visible { outline: 2px solid #5cdbff; outline-offset: 4px; }
+.rangers-home { min-height: 100svh; color: #e5efff; background: #020b20 url('../assets/rangersbgdesktop.png') center top / cover no-repeat; }
+.rangers-home header { background: #030a17eb; border-bottom-color: #b1893b; }
+.rangers-main { max-width: 1100px; margin: auto; padding: 20px 24px 24px; text-align: center; }
+.rangers-logo { width: clamp(190px, 24vw, 320px); margin: 0 auto; filter: drop-shadow(0 0 16px #efb42630); }
+.rangers-title { width: min(680px, 90%); margin: 0 auto; }
+.rangers-hero > p { margin: 6px auto 0; max-width: 650px; font-size: clamp(14px, 1.4vw, 19px); text-shadow: 0 2px 8px #000; }
+.rangers-helmets { width: min(760px, 90%); margin: 10px auto -4px; filter: drop-shadow(0 8px 18px #0085ff44); }
+.rangers-meeting { position: relative; display: grid; grid-template-columns: 80px 1fr auto; align-items: center; gap: 8px 20px; max-width: 850px; margin: 0 auto; padding: 24px 32px 18px; text-align: left; border: 2px solid #149cff; border-radius: 24px 6px; background: linear-gradient(120deg, #031427f5, #010917f5); box-shadow: 0 0 7px #25caff, inset 0 0 28px #007fff26, 0 12px 30px #0009; }
+.rangers-bolt { width: 76px; height: 95px; color: #ffe080; fill: #dbab30; stroke-width: 1; filter: drop-shadow(0 0 12px #ffd45f88); grid-row: span 2; }
+.rangers-meeting h2 { color: #28d4ff; text-transform: uppercase; font-size: 13px; letter-spacing: .13em; font-weight: 700; }
+.rangers-countdown { color: #ffe5a3; font-size: clamp(28px, 3.8vw, 48px); font-weight: 800; line-height: 1.2; text-shadow: 0 0 15px #ffc32d66; margin: 5px 0; }
+.rangers-group { font-size: 14px; color: #a6bfe5; }
+.rangers-join { display: inline-flex; align-items: center; justify-content: center; gap: 10px; border: 2px solid #ffd35c; border-radius: 999px; padding: 12px 24px; color: #ffe393; font-weight: 700; box-shadow: 0 0 12px #ffc83d55; white-space: nowrap; }
+.rangers-join:hover { background: #ffd35c1c; }
+.rangers-motto { grid-column: 2 / -1; color: #60d7ff; font-style: italic; font-size: 14px; margin-top: 4px; }
+.rangers-footer { margin: 52px auto 0; padding: 12px; color: #afc4e4; font-size: 14px; text-shadow: 0 2px 5px #000; }
+.rangers-footer a { color: #ffdb7e; text-decoration: underline; text-underline-offset: 4px; }
+@media (min-width: 768px) {
+  .rangers-home { display: flex; flex-direction: column; }
+  .rangers-main { width: 100%; flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 10px 24px; }
+  .rangers-logo { width: auto; height: min(12svh, 110px); max-width: 100%; object-fit: contain; }
+  .rangers-title { width: auto; height: min(16svh, 145px); max-width: 100%; object-fit: contain; }
+  .rangers-helmets { width: auto; height: min(16svh, 145px); max-width: 100%; object-fit: contain; margin: 6px auto; }
+  .rangers-hero > p { font-size: 15px; margin-top: 4px; }
+  .rangers-meeting { width: min(850px, 100%); padding: 14px 26px; gap: 4px 18px; }
+  .rangers-bolt { width: 58px; height: 72px; }
+  .rangers-countdown { font-size: clamp(28px, 4.5svh, 40px); margin: 3px 0; }
+  .rangers-footer { margin: 12px auto 0; padding: 6px; }
+}
+@media (min-width: 768px) and (max-height: 650px) {
+  .rangers-logo { height: 8svh; }
+  .rangers-meeting { padding-block: 10px; }
+  .rangers-footer { margin-top: 6px; }
+}
+@media (min-width: 768px) and (max-width: 1150px) {
+  .home-theme-header nav { order: 3; width: 100%; justify-content: center; }
+}
+@media (max-width: 767px) {
+  .home-theme-header > div:nth-child(2) { gap: 8px; padding-inline: 12px; }
+  .home-theme-header > div:nth-child(2) > p { font-size: 12px; letter-spacing: .12em; }
+  .home-theme-header > div:nth-child(2) > button { margin-left: 0; }
+  .home-theme-switch button { padding: 7px 9px; gap: 4px; font-size: 11px; }
+  .rangers-home { background-image: url('../assets/rangersbgmobile.png'); }
+  .rangers-main { padding: 40px 16px 35px; }
+  .rangers-logo { width: 230px; max-width: 75%; }
+  .rangers-title { width: 100%; margin-top: 16px; }
+  .rangers-hero > p { max-width: 330px; margin-top: 16px; line-height: 1.6; }
+  .rangers-helmets { width: 100%; margin-top: 30px; margin-bottom: 15px; }
+  .rangers-meeting { grid-template-columns: 40px 1fr; gap: 10px; padding: 22px 18px; }
+  .rangers-bolt { width: 38px; height: 62px; grid-row: auto; }
+  .rangers-join { grid-column: 1 / -1; margin-top: 8px; }
+  .rangers-motto { grid-column: 1 / -1; text-align: center; font-size: 12px; }
+  .rangers-footer { margin-top: 55px; }
+}
+@media (max-width: 360px) { .home-theme-switch button svg { display: none; } }
+
+/* Shared logo anchor: content below it must not change its position. */
+.rangers-home .rangers-page-main { margin: 0 auto; padding-top: 20px; justify-content: flex-start; }
+.rangers-home .rangers-page-logo { display: block; width: auto; height: min(12svh, 110px); max-width: 100%; object-fit: contain; margin: 0 auto 12px; }
+@media (min-width: 768px) and (max-height: 650px) {
+  .rangers-home .rangers-page-main { padding-top: 10px; }
+  .rangers-home .rangers-page-logo { height: 8svh; }
+}
+@media (max-width: 767px) {
+  .rangers-home .rangers-page-main { padding-top: 26px; }
+  .rangers-home .rangers-page-logo { width: 230px; height: auto; max-width: 75%; }
+}

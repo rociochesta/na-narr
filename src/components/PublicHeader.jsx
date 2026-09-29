@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { Menu, X, Home, Coins, ShieldCheck, Info, LogIn, User } from "lucide-react";
+import ThemeSwitch from "./ThemeSwitch.jsx";
 import naIcon from "../assets/naicon.png";
 
 const NAV_ITEMS = [
@@ -11,7 +12,7 @@ const NAV_ITEMS = [
   { to: "/about", label: "About", icon: Info },
 ];
 
-export default function PublicHeader() {
+export default function PublicHeader({ onThemeChange }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const hasProfile =
@@ -33,13 +34,14 @@ export default function PublicHeader() {
 
   return (
     <header
-      className="
+      className={`
         sticky top-0 z-30
         border-b border-[#6f5630]/35
         bg-[#090807]/95
         backdrop-blur-xl
         shadow-[0_8px_30px_rgba(0,0,0,0.55)]
-      "
+        ${onThemeChange ? "home-theme-header" : ""}
+      `}
     >
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#c6a56b]/45 to-transparent" />
 
@@ -65,13 +67,14 @@ export default function PublicHeader() {
         <nav className="hidden md:flex items-center gap-1 ml-auto">
           {menuItems.map(({ to, label, icon: Icon, end }) => (
             <NavLink key={to} to={to} end={end} className={linkClass}>
-              <Icon size={14} />
+              {React.createElement(Icon, { size: 14 })}
               <span>{label}</span>
             </NavLink>
           ))}
         </nav>
 
         {/* Mobile toggle */}
+        {onThemeChange && <ThemeSwitch />}
         <button
           type="button"
           onClick={() => setIsMenuOpen((p) => !p)}
@@ -104,7 +107,7 @@ export default function PublicHeader() {
               onClick={() => setIsMenuOpen(false)}
               className={linkClass}
             >
-              <Icon size={14} />
+              {React.createElement(Icon, { size: 14 })}
               <span>{label}</span>
             </NavLink>
           ))}

@@ -6,10 +6,14 @@ import PublicHeader from "../components/PublicHeader.jsx";
 import { getTimeUntilMeeting } from "../utils/getTimeUntilMeeting.js";
 import narrIcon from "../assets/narrrnewicon.png";
 import shipImg from "../assets/ship.png";
+import RangersHome from "./RangersHome.jsx";
+import useHomeTheme from "../hooks/useHomeTheme.js";
+import "./RangersHome.css";
 
 const ZOOM_URL = "https://zoom.us/whatever";
 
 export default function PublicHome() {
+  const [theme, changeTheme] = useHomeTheme();
   const [timeUntilMeeting, setTimeUntilMeeting] = useState("");
 
   const hasProfile =
@@ -25,9 +29,13 @@ export default function PublicHome() {
     return () => clearInterval(id);
   }, []);
 
+  if (theme === "rangers") {
+    return <RangersHome timeUntilMeeting={timeUntilMeeting} hasProfile={hasProfile} zoomUrl={ZOOM_URL} onThemeChange={changeTheme} />;
+  }
+
   return (
     <div className="min-h-screen bg-[#0b0c0f] text-[#e5d3ad] flex flex-col">
-      <PublicHeader />
+      <PublicHeader theme={theme} onThemeChange={changeTheme} />
 
       <main className="flex-1">
         <div className="max-w-md md:max-w-2xl mx-auto px-4 py-8 md:py-12 space-y-6">

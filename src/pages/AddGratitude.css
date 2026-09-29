@@ -1,0 +1,38 @@
+.add-gratitude {
+  --dash-2a0f0f: #2a0f0f;
+  --dash-7a3535: #7a3535;
+}
+.gratitude-content { padding-bottom: 110px; }
+.add-gratitude[data-theme="pirate"] {
+  background: #0b0c0f;
+  color: #e5d3ad;
+}
+.add-gratitude[data-theme="pirate"] .gratitude-content > section,
+.add-gratitude[data-theme="pirate"] form > :is(div, section):not(.pt-1) {
+  border-color: #8a642f73;
+  background: #080b0d;
+  box-shadow: 0 12px 35px #0008, inset 0 0 30px #c6a56b0f;
+}
+.gratitude-log[data-theme="pirate"] .btn-icon {
+  color: #c6a56b;
+  border-color: #6f5630;
+}
+.gratitude-log[data-theme="pirate"] .btn-icon:hover {
+  color: #f3dfb1;
+  border-color: #c6a56b;
+  background: #c6a56b1a;
+}
+.add-gratitude[data-theme="rangers"] .gratitude-content > section,
+.add-gratitude[data-theme="rangers"] form > :is(div, section):not(.pt-1) {
+  border-color: #168cd299;
+  background-color: #06182eed;
+  box-shadow: 0 0 14px #009cff25, inset 0 0 18px #009cff0d;
+}
+.add-gratitude[data-theme="rangers"] button[type="submit"],
+.add-gratitude[data-theme="rangers"] button[aria-pressed="true"] {
+  box-shadow: 0 0 16px #009cff30;
+}
+.add-gratitude :is(button, a):focus-visible {
+  outline: 2px solid var(--dash-c6a56b);
+  outline-offset: 3px;
+}

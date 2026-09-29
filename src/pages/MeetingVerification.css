@@ -1,0 +1,26 @@
+.verification-main { width: min(100%, 760px); padding: 20px 24px 24px; }
+.verification-hero { text-align: center; margin-bottom: 22px; }
+.verification-eyebrow { color: #47d4ff; font-size: 11px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+.verification-hero h1 { margin: 4px 0; font-size: clamp(28px, 3.5vw, 42px); font-weight: 800; color: #ffe5a3; text-shadow: 0 0 20px #ffc32d44; }
+.verification-subtitle { color: #c5d7f2; font-size: 14px; }
+.verification-rangers .verification-panel { padding: 24px 28px; background: #031124ed; border: 1px solid #149cff; border-radius: 24px 6px; box-shadow: 0 0 9px #25caff66, inset 0 0 28px #007fff1a; }
+.verification-rangers .verification-panel > .absolute { display: none; }
+.verification-rangers .verification-panel h2 { color: #ffe393; font-size: 18px; }
+.verification-rangers .verification-panel h2 + p,
+.verification-rangers .verification-panel .relative > p { color: #a6bfe5; font-size: 13px; }
+.verification-rangers form { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.verification-rangers form > * { margin: 0; min-width: 0; }
+.verification-rangers label { color: #47d4ff; }
+.verification-rangers input { background: #020c1c; border-color: #245277; color: #e8f0ff; min-height: 48px; }
+.verification-rangers input::placeholder { color: #879db9; }
+.verification-rangers input:focus { border-color: #47d4ff; box-shadow: 0 0 0 3px #47d4ff22; }
+.verification-rangers form > button,
+.verification-rangers form > [role="status"] { grid-column: 1 / -1; }
+.verification-rangers form > button { background: linear-gradient(110deg, #ffe39a, #eab63e); border-color: #ffda71; color: #181307; box-shadow: 0 0 18px #ffcb3933; }
+.verification-rangers form > button:focus-visible { outline: 2px solid #47d4ff; outline-offset: 4px; }
+.verification-rangers .verification-motto { margin-top: 20px; color: #60d7ff; }
+@media (max-width: 767px) {
+  .verification-main { padding: 26px 16px; }
+  .verification-rangers .verification-panel { padding: 22px 20px; }
+  .verification-rangers form { grid-template-columns: 1fr; gap: 16px; }
+}

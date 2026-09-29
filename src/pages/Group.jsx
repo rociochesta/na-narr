@@ -3,6 +3,9 @@ import React, { useEffect, useState } from "react";
 import Header3PM from "../components/Header3PM.jsx";
 import BottomNav from "../components/BottomNav.jsx";
 import MilestoneIcon from "../components/MilestoneIcon.jsx";
+import useHomeTheme from "../hooks/useHomeTheme.js";
+import "./DashboardTheme.css";
+import "./Group.css";
 
 import { UsersRound, CalendarClock, MapPin, Video, Users } from "lucide-react";
 
@@ -15,6 +18,8 @@ import { getTimeUntilMeeting } from "../utils/getTimeUntilMeeting.js";
 import { getMilestoneDate } from "../utils/getMilestoneDate.js";
 
 export default function GroupPage() {
+  const [theme] = useHomeTheme();
+  const isRangers = theme === "rangers";
   const [groupMembers, setGroupMembers] = useState([]);
   const [timeUntilMeeting, setTimeUntilMeeting] = useState("");
 
@@ -91,30 +96,30 @@ export default function GroupPage() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-50 flex flex-col pb-16">
+    <div data-theme={theme} className="dashboard group-page min-h-screen bg-[var(--dash-0b0c0f)] text-[var(--dash-e5d3ad)] flex flex-col pb-16">
       <Header3PM />
 
       <main className="flex-1">
-        <div className="max-w-md mx-auto px-4 py-6 space-y-6">
+        <div className="group-content max-w-md mx-auto px-4 py-6 space-y-6">
           {/* HERO - INFO DEL GRUPO */}
-          <section className="relative overflow-hidden rounded-2xl border border-slate-800 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 px-4 py-5 shadow-xl shadow-black/40">
-            <div className="pointer-events-none absolute -right-10 -top-10 h-24 w-24 rounded-full bg-cyan-500/25 blur-3xl" />
-            <div className="pointer-events-none absolute -left-12 bottom-0 h-24 w-24 rounded-full bg-sky-400/15 blur-2xl" />
+          <section className="relative overflow-hidden rounded-2xl border border-[var(--dash-6f5630)] bg-gradient-to-br from-[var(--dash-0b0c0f)] via-[var(--dash-0f1012)] to-[var(--dash-0b0c0f)] px-4 py-5 shadow-xl shadow-black/40">
+            <div className="pointer-events-none absolute -right-10 -top-10 h-24 w-24 rounded-full bg-[var(--dash-c6a56b)]/25 blur-3xl" />
+            <div className="pointer-events-none absolute -left-12 bottom-0 h-24 w-24 rounded-full bg-[var(--dash-d4b06a)]/15 blur-2xl" />
 
             <div className="relative flex items-start gap-3">
-              <div className="mt-1 flex h-10 w-10 items-center justify-center rounded-full bg-slate-950/80 border border-cyan-400/70 shadow-inner shadow-black/50">
-                <UsersRound size={20} className="text-cyan-300" />
+              <div className="mt-1 flex h-10 w-10 items-center justify-center rounded-full bg-[var(--dash-0b0c0f)]/80 border border-[var(--dash-c6a56b)]/70 shadow-inner shadow-black/50">
+                <UsersRound size={20} className="text-[var(--dash-c6a56b)]" />
               </div>
 
               <div className="space-y-1">
                 <h1 className="text-lg font-semibold tracking-tight">
                   3PM Homegroup.
                 </h1>
-                <p className="text-sm text-slate-200">
+                <p className="text-sm text-[var(--dash-e5d3ad)]">
                   A daily Zoom meeting for people who didn&apos;t think
                   they&apos;d live long enough to be &quot;regulars&quot;.
                 </p>
-                <p className="text-[11px] text-slate-400">
+                <p className="text-[11px] text-[var(--dash-8d9199)]">
                   Show up messy. Cameras, off or on. We&apos;re not here for
                   posture, we&apos;re here to not use.
                 </p>
@@ -123,21 +128,21 @@ export default function GroupPage() {
           </section>
 
           {/* NEXT MEETING */}
-          <section className="relative overflow-hidden rounded-xl border border-slate-800 bg-slate-900/80 px-4 py-4 shadow-lg shadow-black/30">
+          <section className="relative overflow-hidden rounded-xl border border-[var(--dash-6f5630)] bg-[var(--dash-0f1012)]/80 px-4 py-4 shadow-lg shadow-black/30">
             <div className="flex items-center justify-between gap-3">
               <div className="space-y-1">
-                <p className="text-[11px] uppercase tracking-[0.16em] text-slate-500 flex items-center gap-1.5">
-                  <CalendarClock size={13} className="text-cyan-300" />
-                  <span>Next meeting</span>
+                <p className="text-[11px] uppercase tracking-[0.16em] text-[var(--dash-6b7078)] flex items-center gap-1.5">
+                  <CalendarClock size={13} className="text-[var(--dash-c6a56b)]" />
+                  <span>{isRangers ? "Next assembly" : "Next meeting"}</span>
                 </p>
 
-                <p className="text-sm font-medium text-slate-200">
+                <p className="text-sm font-medium text-[var(--dash-e5d3ad)]">
                   {timeUntilMeeting || "Calculating…"}
                 </p>
 
-                <p className="text-[11px] text-slate-400 flex items-center gap-2">
+                <p className="text-[11px] text-[var(--dash-8d9199)] flex items-center gap-2">
                   <span>Daily at 3PM (Edmonton)</span>
-                  <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-slate-800 text-[10px] text-slate-300 border border-slate-700">
+                  <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-[var(--dash-6f5630)] text-[10px] text-[var(--dash-8d9199)] border border-[var(--dash-6f5630)]">
                     <MapPin size={11} />
                     Zoom only
                   </span>
@@ -148,7 +153,7 @@ export default function GroupPage() {
                 href="https://zoom.us" // TODO: poner el link real de Zoom
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-1 rounded-full border border-cyan-400 px-3 py-1.5 text-[11px] font-medium text-cyan-100 hover:bg-cyan-400/10 transition-colors"
+                className="inline-flex items-center gap-1 rounded-full border border-[var(--dash-c6a56b)] px-3 py-1.5 text-[11px] font-medium text-[var(--dash-f3dfb1)] hover:bg-[var(--dash-c6a56b)]/10 transition-colors"
               >
                 <Video size={13} />
                 <span>Join Zoom</span>
@@ -157,26 +162,26 @@ export default function GroupPage() {
           </section>
 
           {/* GROUP MILESTONES THIS WEEK */}
-          <section className="rounded-2xl border border-slate-800 bg-slate-900/80 px-4 py-4 shadow-lg shadow-black/30 space-y-3">
+          <section className="rounded-2xl border border-[var(--dash-6f5630)] bg-[var(--dash-0f1012)]/80 px-4 py-4 shadow-lg shadow-black/30 space-y-3">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">
-                <Users size={14} className="text-cyan-300" />
-                <h2 className="text-xs uppercase tracking-[0.16em] text-slate-500">
+                <Users size={14} className="text-[var(--dash-c6a56b)]" />
+                <h2 className="text-xs uppercase tracking-[0.16em] text-[var(--dash-6b7078)]">
                   Group milestones this week
                 </h2>
               </div>
-              <span className="text-[10px] text-slate-500">
-                Your little cult of survival.
+              <span className="text-[10px] text-[var(--dash-6b7078)]">
+                {isRangers ? "Your recovery squad." : "Your recovery crew."}
               </span>
             </div>
 
             {groupMilestones.length === 0 ? (
-              <p className="text-[11px] text-slate-500">
+              <p className="text-[11px] text-[var(--dash-6b7078)]">
                 No chips this week yet. Don&apos;t worry, your turn to be
                 uncomfortable will come.
               </p>
             ) : (
-              <ul className="space-y-2 text-sm text-slate-200 mt-1">
+              <ul className="space-y-2 text-sm text-[var(--dash-e5d3ad)] mt-1">
                 {groupMilestones.map(({ member, milestone, daysToGo }) => (
                   <li
                     key={member.name + milestone.id}
@@ -195,12 +200,12 @@ export default function GroupPage() {
                         <span className="font-medium truncate">
                           {member.name}
                         </span>
-                        <span className="text-[11px] text-slate-400 whitespace-nowrap">
+                        <span className="text-[11px] text-[var(--dash-8d9199)] whitespace-nowrap">
                           {milestone.label}
                         </span>
                       </div>
 
-                      <p className="text-[11px] text-slate-400 mt-0.5">
+                      <p className="text-[11px] text-[var(--dash-8d9199)] mt-0.5">
                         {daysToGo === 0 ? (
                           <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-500/15 text-emerald-300 border border-emerald-400/60 text-[10px] font-semibold icon-shimmer">
                             <span>🎉</span>
@@ -220,29 +225,29 @@ export default function GroupPage() {
               </ul>
             )}
 
-            <p className="text-[10px] text-slate-500 pt-1">
+            <p className="text-[10px] text-[var(--dash-6b7078)] pt-1">
               This isn&apos;t a scoreboard. It&apos;s proof that people with
               your brain chemistry can still collect plastic chips.
             </p>
           </section>
 
           {/* EVERYONE'S NEXT CHIP */}
-          <section className="rounded-2xl border border-slate-800 bg-slate-900/80 px-4 py-4 shadow-lg shadow-black/30 space-y-3">
+          <section className="rounded-2xl border border-[var(--dash-6f5630)] bg-[var(--dash-0f1012)]/80 px-4 py-4 shadow-lg shadow-black/30 space-y-3">
             <div className="flex items-center justify-between">
-              <h2 className="text-xs uppercase tracking-[0.16em] text-slate-500">
+              <h2 className="text-xs uppercase tracking-[0.16em] text-[var(--dash-6b7078)]">
                 Everyone&apos;s next chip
               </h2>
-              <span className="text-[10px] text-slate-500">
+              <span className="text-[10px] text-[var(--dash-6b7078)]">
                 Different numbers. Same disease.
               </span>
             </div>
 
             {allNextMilestones.length === 0 ? (
-              <p className="text-[11px] text-slate-500">
+              <p className="text-[11px] text-[var(--dash-6b7078)]">
                 No data yet. The spreadsheet is probably offended.
               </p>
             ) : (
-              <ul className="space-y-2 text-sm text-slate-200 mt-1">
+              <ul className="space-y-2 text-sm text-[var(--dash-e5d3ad)] mt-1">
                 {allNextMilestones.map(({ member, milestone, daysToGo }) => (
                   <li
                     key={"all-" + member.name + milestone.id}
@@ -261,12 +266,12 @@ export default function GroupPage() {
                         <span className="font-medium truncate">
                           {member.name}
                         </span>
-                        <span className="text-[11px] text-slate-400 whitespace-nowrap">
+                        <span className="text-[11px] text-[var(--dash-8d9199)] whitespace-nowrap">
                           {milestone.label}
                         </span>
                       </div>
 
-                      <p className="text-[11px] text-slate-400 mt-0.5">
+                      <p className="text-[11px] text-[var(--dash-8d9199)] mt-0.5">
                         {daysToGo === 0 ? (
                           <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-500/15 text-emerald-300 border border-emerald-400/60 text-[10px] font-semibold icon-shimmer">
                             <span>🎉</span>
@@ -286,7 +291,7 @@ export default function GroupPage() {
               </ul>
             )}
 
-            <p className="text-[10px] text-slate-500 pt-1">
+            <p className="text-[10px] text-[var(--dash-6b7078)] pt-1">
               You don&apos;t have to catch up. You just have to not vanish.
             </p>
           </section>

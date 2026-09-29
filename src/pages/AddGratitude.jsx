@@ -1,9 +1,12 @@
 // src/pages/AddGratitude.jsx
-import React, { useMemo, useState } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { RefreshCcw, Eraser } from "lucide-react";
 import Header3PM from "../components/Header3PM.jsx";
 import BottomNav from "../components/BottomNav";
+import useHomeTheme from "../hooks/useHomeTheme.js";
+import "./DashboardTheme.css";
+import "./AddGratitude.css";
 
 
 const PROMPTS = [
@@ -27,6 +30,29 @@ const PROMPTS = [
   "What gave yer nervous system a brief ceasefire?",
   "What tiny thing reminded ye life ain't entirely cursed?",
   "What kept ye from lettin' the darkness captain the vessel today?"
+];
+
+const PROMPTSRANGERS = [
+  "What didn't trigger an emergency alert today?",
+  "What tiny thing kept your brain from hitting the self-destruct button?",
+  "Name one thing that stayed standing today.",
+  "What helped you choose recovery when the craving showed up?",
+  "What ridiculously small thing kept your systems online?",
+  "What kept chaos away from the command controls?",
+  "What made existence 2% less cursed today?",
+  "What did your addiction hate seeing you do today?",
+  "What tiny victory deserves a Ranger salute?",
+  "What kept you from abandoning the mission emotionally?",
+  "Name one thing you got through without a dramatic explosion.",
+  "What made reality slightly easier to face today?",
+  "What didn't go completely sideways?",
+  "What helped you stay grounded when the alarms got loud?",
+  "What tiny responsible act offended your inner chaos villain?",
+  "What moment made you feel slightly human again?",
+  "What didn't collapse, explode, or make you text your ex today?",
+  "What gave your nervous system a brief ceasefire?",
+  "What tiny thing reminded you life isn't entirely cursed?",
+  "What kept the darkness out of the command chair today?"
 ];
 
 // Generic / NA-friendly gratitude ideas
@@ -287,6 +313,47 @@ const SUGGESTIONS = [
 "I didn't have to fight fer survival today. That ain't nothin', harrr.",
 "I have a pillow, a blanket, and a tomorrow. I never used to plan fer tomorrows."
 ];
+const SUGGESTIONSRANGERS = [
+  "I didn't use today, even though my brain sounded every alarm.",
+  "I woke up clean. Mission Control logged that as a win.",
+  "I had coffee instead of a breakdown. Unusual but effective Ranger technology.",
+  "I said no to something I used to run toward.",
+  "Someone checked on me, and I let it mean they cared.",
+  "I slept without negotiating with substances. Suspiciously peaceful.",
+  "My brain requested chaos. I gave it water and a chair.",
+  "I felt feelings and didn't explode. The team is impressed.",
+  "I laughed at something that used to wreck my day. Character development.",
+  "I ate actual food instead of trying to run on emergency power.",
+  "I called for backup before everything caught fire.",
+  "My addiction is offended I'm still here. Honestly? Hilarious.",
+  "I noticed silence didn't hurt me. It was just quiet.",
+  "I remembered that not every thought needs a response.",
+  "I got through a craving without trophies, applause, or cocaine. Very rude to addiction.",
+  "I respected a boundary without treating it like a boss battle.",
+  "I stayed present even when disappearing felt easier.",
+  "I rested before I earned it. Revolutionary Ranger behavior.",
+  "I handled something badly, but not destructively. Progress counts.",
+  "I didn't message someone from an old episode I don't need to replay.",
+  "I had a roof over my head, and I noticed it.",
+  "I found a reason to stay when I used to look for an exit.",
+  "I didn't try to repair my entire life in one day.",
+  "My feelings arrived without warning, and I didn't evacuate.",
+  "I wasn't alone today, even though my brain claimed otherwise.",
+  "I surprised myself by caring, even a little.",
+  "I had a difficult thought without turning it into a five-part disaster.",
+  "I didn't create chaos just because calm felt unfamiliar.",
+  "I lived a little today instead of only getting through it. Apparently that's allowed.",
+  "I didn't ask the universe to launch me into space today. Plot twist.",
+  "I chose the present over a heavily edited memory of the past.",
+  "I didn't apologize for existing. Feels illegal; isn't.",
+  "I let someone help me without combusting from embarrassment.",
+  "I let a good moment stay good.",
+  "I showed up even when every alarm said to run.",
+  "I didn't quit on myself, even when the mission felt pointless.",
+  "I gave future-me permission to exist beyond today.",
+  "I didn't use just because discomfort entered the command center.",
+  "I remembered that not everything is a threat. Some people are just people.",
+  "I didn't use today. Addiction's expectations remain deeply disappointed."]
 
 // Humor categories (solo estas se muestran)
 const FUNNY_CATEGORIES = [
@@ -305,25 +372,20 @@ const NEUTRAL_CATEGORIES = [
   "Something that changed",
 ];
 
-function getRandomPrompt() {
-  const idx = Math.floor(Math.random() * PROMPTS.length);
-  return PROMPTS[idx];
-}
-
-function getRandomSuggestion() {
-  const idx = Math.floor(Math.random() * SUGGESTIONS.length);
-  return SUGGESTIONS[idx];
-}
-
 export default function AddGratitude() {
   const navigate = useNavigate();
+  const [theme] = useHomeTheme();
+  const isRangers = theme === "rangers";
+  const prompts = isRangers ? PROMPTSRANGERS : PROMPTS;
+  const suggestions = isRangers ? SUGGESTIONSRANGERS : SUGGESTIONS;
 
   const [text, setText] = useState("");
   const [selectedIndex, setSelectedIndex] = useState(null);
   const [error, setError] = useState("");
-  const [inspo, setInspo] = useState(() => getRandomSuggestion());
-
-  const prompt = useMemo(() => getRandomPrompt(), []);
+  const [suggestionSeed, setSuggestionSeed] = useState(() => Math.random());
+  const [promptSeed] = useState(() => Math.random());
+  const inspo = suggestions[Math.floor(suggestionSeed * suggestions.length)];
+  const prompt = prompts[Math.floor(promptSeed * prompts.length)];
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -331,7 +393,7 @@ export default function AddGratitude() {
 
     if (!text.trim()) {
       setError(
-        "Write at least one line, matey. It don't need to sound wise."
+        "empty"
       );
       return;
     }
@@ -390,26 +452,26 @@ export default function AddGratitude() {
 
     setText("");
     setSelectedIndex(null);
-    setInspo(getRandomSuggestion());
+    setSuggestionSeed(Math.random());
   };
 
   return (
-    <div className="min-h-screen bg-[#0b0c0f] text-[#e5d3ad] flex flex-col">
+    <div data-theme={theme} className="dashboard add-gratitude min-h-screen bg-[var(--dash-0b0c0f)] text-[var(--dash-e5d3ad)] flex flex-col">
       <Header3PM />
 
       <main className="flex-1">
-        <div className="max-w-md mx-auto px-4 py-6 space-y-5">
+        <div className="gratitude-content max-w-md mx-auto px-4 py-6 space-y-5">
 
           {/* Intro */}
-          <section className="relative bg-[#0f1012]/70 border border-[#6f5630]/25 rounded-2xl px-4 py-3 space-y-1 overflow-hidden">
-            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#c6a56b]/30 to-transparent" />
+          <section className="relative bg-[var(--dash-0f1012)]/70 border border-[var(--dash-6f5630)]/25 rounded-2xl px-4 py-3 space-y-1 overflow-hidden">
+            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[var(--dash-c6a56b)]/30 to-transparent" />
 
-            <p className="text-[11px] uppercase tracking-[0.20em] text-[#c6a56b]">
+            <p className="text-[11px] uppercase tracking-[0.20em] text-[var(--dash-c6a56b)]">
               NARR check-in
             </p>
 
-            <p className="text-xs text-[#8d9199]">
-              One sentence that proves ye didn&apos;t let addiction steer the ship today.
+            <p className="text-xs text-[var(--dash-8d9199)]">
+              {isRangers ? "One sentence that proves addiction didn’t take command today." : "One sentence that proves ye didn’t let addiction steer the ship today."}
             </p>
           </section>
 
@@ -417,17 +479,17 @@ export default function AddGratitude() {
           <form onSubmit={handleSubmit} className="space-y-5">
 
             {/* Textarea */}
-            <div className="bg-[#0f1012]/70 border border-[#6f5630]/25 rounded-2xl px-4 py-3 space-y-2">
+            <div className="bg-[var(--dash-0f1012)]/70 border border-[var(--dash-6f5630)]/25 rounded-2xl px-4 py-3 space-y-2">
 
               <div className="flex items-center justify-between">
                 <label
                   htmlFor="gratitudeText"
-                  className="block text-xs font-medium uppercase tracking-[0.18em] text-[#c6a56b]"
+                  className="block text-xs font-medium uppercase tracking-[0.18em] text-[var(--dash-c6a56b)]"
                 >
-                  What are ye grateful for?
+                  {isRangers ? "What are you grateful for?" : "What are ye grateful for?"}
                 </label>
 
-                <span className="text-[10px] text-[#6b7078]">
+                <span className="text-[10px] text-[var(--dash-6b7078)]">
                   It can be dumb. It still counts.
                 </span>
               </div>
@@ -441,18 +503,18 @@ export default function AddGratitude() {
                   placeholder={prompt}
                   className="
                     w-full
-                    bg-[#0b0c0f]
-                    border border-[#6f5630]/35
+                    bg-[var(--dash-0b0c0f)]
+                    border border-[var(--dash-6f5630)]/35
                     rounded-xl
                     px-3 py-2
                     pr-9
                     text-sm
-                    text-[#e5d3ad]
-                    placeholder:text-[#4a4f58]
+                    text-[var(--dash-e5d3ad)]
+                    placeholder:text-[var(--dash-4a4f58)]
                     focus:outline-none
-                    focus:border-[#c6a56b]/70
+                    focus:border-[var(--dash-c6a56b)]/70
                     focus:ring-1
-                    focus:ring-[#c6a56b]/40
+                    focus:ring-[var(--dash-c6a56b)]/40
                     resize-none
                     transition-colors
                   "
@@ -464,9 +526,9 @@ export default function AddGratitude() {
                     onClick={() => setText("")}
                     className="
                       absolute right-2 top-2
-                      text-[#6b7078]
-                      hover:text-[#c97070]
-                      hover:bg-[#2a0f0f]/50
+                      text-[var(--dash-6b7078)]
+                      hover:text-[var(--dash-c97070)]
+                      hover:bg-[var(--dash-2a0f0f)]/50
                       p-1 rounded
                       transition-colors
                     "
@@ -479,29 +541,30 @@ export default function AddGratitude() {
             </div>
 
             {/* Inspiration */}
-            <section className="bg-[#0f1012]/70 border border-[#6f5630]/25 rounded-2xl px-4 py-3 space-y-3">
+            <section className="bg-[var(--dash-0f1012)]/70 border border-[var(--dash-6f5630)]/25 rounded-2xl px-4 py-3 space-y-3">
 
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-xs font-medium uppercase tracking-[0.18em] text-[#c6a56b]">
+                  <p className="text-xs font-medium uppercase tracking-[0.18em] text-[var(--dash-c6a56b)]">
                     Need an idea?
                   </p>
 
-                  <p className="text-[11px] text-[#6b7078]">
-                    Tap until one feels true, matey.
+                  <p className="text-[11px] text-[var(--dash-6b7078)]">
+                    {isRangers ? "Tap until one feels true, Ranger." : "Tap until one feels true, matey."}
                   </p>
                 </div>
 
                 <button
                   type="button"
-                  onClick={() => setInspo(getRandomSuggestion())}
+                  onClick={() => setSuggestionSeed(Math.random())}
+                  aria-label="Show another gratitude idea"
                   className="
                     p-1.5 rounded-full
-                    border border-[#6f5630]/40
-                    bg-[#15171b]
-                    text-[#8d9199]
-                    hover:border-[#c6a56b]/70
-                    hover:text-[#d4b06a]
+                    border border-[var(--dash-6f5630)]/40
+                    bg-[var(--dash-15171b)]
+                    text-[var(--dash-8d9199)]
+                    hover:border-[var(--dash-c6a56b)]/70
+                    hover:text-[var(--dash-d4b06a)]
                     transition-colors
                   "
                 >
@@ -509,7 +572,7 @@ export default function AddGratitude() {
                 </button>
               </div>
 
-              <p className="text-sm text-[#e5d3ad] italic leading-snug">
+              <p className="text-sm text-[var(--dash-e5d3ad)] italic leading-snug">
                 "{inspo}"
               </p>
 
@@ -523,11 +586,11 @@ export default function AddGratitude() {
                   className="
                     text-[10px]
                     px-3 py-1
-                    border border-[#6f5630]/40
+                    border border-[var(--dash-6f5630)]/40
                     rounded-full
-                    text-[#8d9199]
-                    hover:border-[#c6a56b]/70
-                    hover:text-[#e5d3ad]
+                    text-[var(--dash-8d9199)]
+                    hover:border-[var(--dash-c6a56b)]/70
+                    hover:text-[var(--dash-e5d3ad)]
                     transition-colors
                   "
                 >
@@ -537,15 +600,15 @@ export default function AddGratitude() {
             </section>
 
             {/* Categories */}
-            <div className="bg-[#0f1012]/70 border border-[#6f5630]/25 rounded-2xl px-4 py-3 space-y-2">
+            <div className="bg-[var(--dash-0f1012)]/70 border border-[var(--dash-6f5630)]/25 rounded-2xl px-4 py-3 space-y-2">
 
               <div className="flex items-center justify-between">
-                <p className="text-xs font-medium uppercase tracking-[0.18em] text-[#c6a56b]">
+                <p className="text-xs font-medium uppercase tracking-[0.18em] text-[var(--dash-c6a56b)]">
                   Category (optional)
                 </p>
 
-                <span className="text-[10px] text-[#6b7078]">
-                  Tag the vibe fer future-ye.
+                <span className="text-[10px] text-[var(--dash-6b7078)]">
+                  {isRangers ? "Tag the moment for future-you." : "Tag the vibe fer future-ye."}
                 </span>
               </div>
 
@@ -556,6 +619,7 @@ export default function AddGratitude() {
                   return (
                     <button
                       key={label}
+                      aria-pressed={isSelected}
                       type="button"
                       onClick={() =>
                         setSelectedIndex((prev) =>
@@ -564,8 +628,8 @@ export default function AddGratitude() {
                       }
                       className={`text-xs rounded-lg border px-3 py-2 text-left transition-colors ${
                         isSelected
-                          ? "border-[#c6a56b]/80 bg-[#c6a56b]/10 text-[#e5d3ad] shadow-[0_0_14px_rgba(198,165,107,0.2)]"
-                          : "border-[#6f5630]/30 bg-[#0b0c0f] text-[#8d9199] hover:border-[#c6a56b]/50 hover:text-[#e5d3ad]"
+                          ? "border-[var(--dash-c6a56b)]/80 bg-[var(--dash-c6a56b)]/10 text-[var(--dash-e5d3ad)] shadow-[0_0_14px_rgba(198,165,107,0.2)]"
+                          : "border-[var(--dash-6f5630)]/30 bg-[var(--dash-0b0c0f)] text-[var(--dash-8d9199)] hover:border-[var(--dash-c6a56b)]/50 hover:text-[var(--dash-e5d3ad)]"
                       }`}
                     >
                       {label}
@@ -577,8 +641,8 @@ export default function AddGratitude() {
 
             {/* Error */}
             {error && (
-              <p className="text-xs text-[#c97070] bg-[#2a0f0f]/50 border border-[#7a3535]/50 rounded-md px-3 py-2">
-                {error}
+              <p className="text-xs text-[var(--dash-c97070)] bg-[var(--dash-2a0f0f)]/50 border border-[var(--dash-7a3535)]/50 rounded-md px-3 py-2">
+                {error === "empty" ? (isRangers ? "Write at least one line, Ranger. It doesn’t need to sound wise." : "Write at least one line, matey. It don’t need to sound wise.") : error}
               </p>
             )}
 
@@ -589,11 +653,11 @@ export default function AddGratitude() {
                 type="submit"
                 className={`w-full text-sm font-semibold tracking-wide border rounded-xl py-2.5 transition-colors ${
                   text.trim()
-                    ? "border-[#c6a56b]/80 text-[#e5d3ad] bg-[#c6a56b]/10 hover:bg-[#c6a56b]/18 shadow-[0_0_18px_rgba(198,165,107,0.15)]"
-                    : "border-[#6f5630]/30 text-[#6b7078] bg-[#0f1012] hover:border-[#c6a56b]/40 hover:text-[#8d9199]"
+                    ? "border-[var(--dash-c6a56b)]/80 text-[var(--dash-e5d3ad)] bg-[var(--dash-c6a56b)]/10 hover:bg-[var(--dash-c6a56b)]/18 shadow-[0_0_18px_rgba(198,165,107,0.15)]"
+                    : "border-[var(--dash-6f5630)]/30 text-[var(--dash-6b7078)] bg-[var(--dash-0f1012)] hover:border-[var(--dash-c6a56b)]/40 hover:text-[var(--dash-8d9199)]"
                 }`}
               >
-                Save to the log
+                {isRangers ? "Save to the mission log" : "Save to the log"}
               </button>
 
               <button
@@ -601,15 +665,15 @@ export default function AddGratitude() {
                 onClick={() => navigate("/dashboard")}
                 className="
                   w-full text-sm font-semibold tracking-wide
-                  border border-[#6f5630]/30
-                  text-[#8d9199]
+                  border border-[var(--dash-6f5630)]/30
+                  text-[var(--dash-8d9199)]
                   rounded-xl py-2.5
-                  hover:bg-[#17120d]
-                  hover:text-[#e5d3ad]
+                  hover:bg-[var(--dash-17120d)]
+                  hover:text-[var(--dash-e5d3ad)]
                   transition-colors
                 "
               >
-                Back to deck
+                {isRangers ? "Back to command center" : "Back to deck"}
               </button>
 
               <button
@@ -617,8 +681,8 @@ export default function AddGratitude() {
                 onClick={() => navigate("/gratitudes")}
                 className="
                   w-full text-[11px] font-medium
-                  text-[#c6a56b]
-                  hover:text-[#d4b06a]
+                  text-[var(--dash-c6a56b)]
+                  hover:text-[var(--dash-d4b06a)]
                   underline underline-offset-2
                   transition-colors
                 "
@@ -628,8 +692,8 @@ export default function AddGratitude() {
             </div>
           </form>
 
-          <p className="pt-2 text-[11px] text-center text-[#4a4f58]">
-            Small things still keep ships afloat, matey.
+          <p className="pt-2 text-[11px] text-center text-[var(--dash-4a4f58)]">
+            {isRangers ? "Small wins keep the mission moving, Ranger." : "Small things still keep ships afloat, matey."}
           </p>
         </div>
       </main>

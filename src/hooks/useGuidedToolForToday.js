@@ -1,5 +1,7 @@
 // src/hooks/useGuidedToolForToday.js
 import { useEffect, useState } from "react";
+import useHomeTheme from "./useHomeTheme.js";
+import { themedGuidedTool } from "../utils/themedGuidedTool.js";
 
 function pickIndex(tools, daysClean) {
   if (!tools || tools.length === 0) return null;
@@ -18,11 +20,24 @@ function pickIndex(tools, daysClean) {
 }
 
 export function useGuidedToolForToday({ hasSoberDate, daysClean }) {
+  const [theme] = useHomeTheme();
+  const [rangerTools, setRangerTools] = useState([]);
   const [tool, setTool] = useState(null);
   const [allTools, setAllTools] = useState([]);
   const [index, setIndex] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+
+  useEffect(() => {
+    let cancelled = false;
+    fetch("/data/guidedTodayToolsRangers.json")
+      .then((response) => response.ok ? response.json() : [])
+      .then((tools) => {
+        if (!cancelled) setRangerTools(Array.isArray(tools) ? tools : []);
+      })
+      .catch(() => { /* Keep the original tool if Ranger copy is unavailable. */ });
+    return () => { cancelled = true; };
+  }, []);
 
   useEffect(() => {
     let cancelled = false;
@@ -102,5 +117,9 @@ export function useGuidedToolForToday({ hasSoberDate, daysClean }) {
     };
   }, [hasSoberDate, daysClean]);
 
-  return { tool, allTools, index, loading, error };
+  return {
+    tool: themedGuidedTool(tool, rangerTools, theme),
+    allTools: allTools.map((entry) => themedGuidedTool(entry, rangerTools, theme)),
+    index, loading, error,
+  };
 }

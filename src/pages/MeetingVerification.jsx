@@ -1,9 +1,13 @@
 // src/pages/MeetingVerification.jsx
 import React, { useState } from "react";
-import { Anchor, ShieldCheck } from "lucide-react";
+import { Anchor, ShieldCheck, Zap } from "lucide-react";
 import PublicHeader from "../components/PublicHeader.jsx";
 import shipImg from "../assets/ship.png";
 import shipLog from "../assets/shiplog.png";
+import rangersLogo from "../assets/rangerslogo.png";
+import useHomeTheme from "../hooks/useHomeTheme.js";
+import "./RangersHome.css";
+import "./MeetingVerification.css";
 
 const WORDS = ["NARR", "RANG", "RECOV", "HOPE", "UNITY", "CLEAN", "BRAVE", "RISE", "LIGHT", "PATH"];
 const EMAILJS_URL = "https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js";
@@ -31,6 +35,8 @@ function loadEmailJs() {
 }
 
 export default function MeetingVerification() {
+  const [theme, changeTheme] = useHomeTheme();
+  const isRangers = theme === "rangers";
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [dateValue, setDateValue] = useState(() => localDate(new Date()));
@@ -80,9 +86,17 @@ export default function MeetingVerification() {
   }
 
   return (
-    <div className="min-h-screen bg-[#0b0c0f] text-[#e5d3ad] flex flex-col">
-      <PublicHeader />
-      <main className="w-full max-w-md mx-auto flex-1 px-4 py-6 space-y-6">
+    <div className={isRangers ? "rangers-home verification-rangers" : "min-h-screen bg-[#0b0c0f] text-[#e5d3ad] flex flex-col"}>
+      <PublicHeader theme={theme} onThemeChange={changeTheme} />
+      <main className={isRangers ? "verification-main rangers-page-main" : "w-full max-w-md mx-auto flex-1 px-4 py-6 space-y-6"}>
+        {isRangers ? (
+          <section className="verification-hero">
+            <img src={rangersLogo} alt="NARR" className="rangers-page-logo" />
+            <p className="verification-eyebrow">Every meeting matters</p>
+            <h1>Meeting verification</h1>
+            <p className="verification-subtitle">You showed up. Take your next step.</p>
+          </section>
+        ) : (
         <section className="relative overflow-hidden rounded-2xl border border-[#8a642f]/45 bg-[#080b0d] px-4 py-7 sm:px-5 shadow-[0_12px_35px_rgba(0,0,0,0.55),inset_0_0_30px_rgba(198,165,107,0.06)]">
           <div className="absolute inset-0 rounded-2xl border border-[#d6a84f]/20 pointer-events-none" />
           <div className="absolute top-0 left-4 right-4 h-px bg-gradient-to-r from-transparent via-[#f0c56e]/60 to-transparent" />
@@ -94,11 +108,12 @@ export default function MeetingVerification() {
             </div>
           </div>
         </section>
+        )}
 
-        <section className="relative overflow-hidden rounded-2xl border border-[#8a642f]/45 bg-[#080b0d] px-5 py-5 shadow-[0_12px_35px_rgba(0,0,0,0.55),inset_0_0_30px_rgba(198,165,107,0.06)]">
+        <section className="verification-panel relative overflow-hidden rounded-2xl border border-[#8a642f]/45 bg-[#080b0d] px-5 py-5 shadow-[0_12px_35px_rgba(0,0,0,0.55),inset_0_0_30px_rgba(198,165,107,0.06)]">
           <div className="absolute inset-0 rounded-2xl border border-[#d6a84f]/20 pointer-events-none" />
           <div className="absolute top-0 left-4 right-4 h-px bg-gradient-to-r from-transparent via-[#f0c56e]/60 to-transparent" />
-          <img src={shipImg} alt="" className="absolute -right-6 top-0 h-32 w-40 object-cover opacity-20 pointer-events-none" />
+          {!isRangers && <img src={shipImg} alt="" className="absolute -right-6 top-0 h-32 w-40 object-cover opacity-20 pointer-events-none" />}
           <div className="relative">
             <div className="flex items-center gap-2 text-[#d4b06a]"><ShieldCheck size={17} /><h2 className="text-sm font-semibold">Log your attendance</h2></div>
             <p className="mt-2 mb-5 text-xs leading-relaxed text-[#8d9199]">Enter the code your meeting host shared for the date you attended. We’ll email your confirmation.</p>
@@ -112,7 +127,7 @@ export default function MeetingVerification() {
             </form>
           </div>
         </section>
-        <p className="flex items-center justify-center gap-1.5 text-center text-[12px] text-[#7eb8c4]" style={{ fontFamily: "'Caveat', cursive" }}>We show up. That’s the whole toolkit. <Anchor size={12} /></p>
+        <p className="verification-motto flex items-center justify-center gap-1.5 text-center text-[12px] text-[#7eb8c4]" style={{ fontFamily: "'Caveat', cursive" }}>We show up. That’s the whole toolkit. {isRangers ? <Zap size={12} /> : <Anchor size={12} />}</p>
       </main>
     </div>
   );

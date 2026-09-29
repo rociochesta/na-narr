@@ -2,8 +2,11 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { Home, Hammer, UsersRound, User } from "lucide-react";
+import useHomeTheme from "../hooks/useHomeTheme.js";
+import "../pages/DashboardTheme.css";
 
 export default function BottomNav() {
+  const [theme] = useHomeTheme();
   const navItems = [
     { to: "/dashboard", label: "Home", icon: Home },
     { to: "/tools", label: "Tools", icon: Hammer },
@@ -13,7 +16,9 @@ export default function BottomNav() {
 
   return (
     <nav
-      className="
+      aria-label="Main navigation"
+      data-theme={theme}
+      className="member-bottom-nav
         fixed bottom-0 left-0 right-0 z-30
         bg-[#0b0c0f]/95
         border-t border-[#6f5630]/30
@@ -53,14 +58,13 @@ export default function BottomNav() {
                   />
                 )}
 
-                <Icon
-                  size={18}
-                  className={
+                {React.createElement(Icon, {
+                  size: 18,
+                  className:
                     label === "Tools"
                       ? "transition-transform duration-150 group-hover:-translate-y-0.5 group-hover:-rotate-6"
                       : "transition-transform duration-150 group-hover:-translate-y-0.5"
-                  }
-                />
+                })}
 
                 <span className="text-[10px] font-medium tracking-wide">
                   {label}

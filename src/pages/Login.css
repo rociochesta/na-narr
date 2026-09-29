@@ -1,0 +1,26 @@
+.login-main { width: min(100%, 560px); padding: 20px 24px 30px; }
+.login-hero { text-align: center; margin-bottom: 24px; }
+.login-eyebrow { color: #47d4ff; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .16em; }
+.login-hero h1 { font-size: clamp(30px, 3.5vw, 42px); font-weight: 800; color: #ffe5a3; margin: 4px 0 8px; text-shadow: 0 0 20px #ffc32d44; }
+.login-hero > p:last-child { color: #b7cbe8; }
+.login-rangers .login-panel { background: #031124ed; border: 1px solid #149cff; border-radius: 24px 6px; padding: 26px; box-shadow: 0 0 9px #25caff66, inset 0 0 28px #007fff1a; }
+.login-rangers .login-panel > .absolute { display: none; }
+.login-rangers .login-panel > div:not(.absolute) { color: #47d4ff; }
+.login-rangers .login-panel > div > span:last-child { color: #a6bfe5; }
+.login-rangers label { color: #47d4ff; font-size: 11px; }
+.login-rangers input:not([type="hidden"]) { background: #020c1c; border-color: #245277; color: #e8f0ff; min-height: 48px; }
+.login-rangers input::placeholder { color: #879db9; font-size: 12px; }
+.login-rangers input:focus { border-color: #47d4ff; box-shadow: 0 0 0 3px #47d4ff22; }
+.login-rangers form p:not([role="alert"]) { color: #a6bfe5; font-size: 12px; line-height: 1.6; }
+.login-rangers form button { min-height: 46px; }
+.login-rangers form button[type="submit"] { background: linear-gradient(110deg, #ffe39a, #eab63e); color: #181307; border-color: #ffda71; box-shadow: 0 0 18px #ffcb3933; }
+.login-rangers form button[type="button"] { border-color: #245277; background: #05162b; color: #c5d7f2; }
+.login-rangers form button[type="button"]:hover { border-color: #47d4ff; }
+.login-rangers button:disabled { cursor: not-allowed; opacity: .5; }
+.login-rangers button:focus-visible, .login-rangers a:focus-visible { outline: 2px solid #47d4ff; outline-offset: 4px; }
+.login-rangers .login-skip { justify-content: center; margin-top: 18px; }
+.login-rangers .login-skip a { color: #ffe393; padding: 8px; font-size: 13px; }
+@media (max-width: 767px) {
+  .login-main { padding: 26px 16px; }
+  .login-rangers .login-panel { padding: 22px 20px; }
+}

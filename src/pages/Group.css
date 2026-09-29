@@ -1,0 +1,31 @@
+.group-content { padding-bottom: 50px; }
+.group-content > section {
+  position: relative;
+  border-color: #8a642f73;
+  background: #080b0d;
+  box-shadow: 0 12px 35px #0008, inset 0 0 30px #c6a56b0f;
+}
+.group-page[data-theme="rangers"] .group-content > section {
+  border-color: #168cd299;
+  background: #06182eed;
+  box-shadow: 0 0 14px #009cff25, inset 0 0 18px #009cff0d;
+}
+.group-page[data-theme="rangers"] .group-content > section::after {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  border-radius: inherit;
+  pointer-events: none;
+  background:
+    linear-gradient(#65efff, #19adff) left top / 24px 2px,
+    linear-gradient(#65efff, #19adff) left top / 2px 24px,
+    linear-gradient(#19adff, #65efff) right bottom / 24px 2px,
+    linear-gradient(#19adff, #65efff) right bottom / 2px 24px;
+  background-repeat: no-repeat;
+  filter: drop-shadow(0 0 4px #22d5ff);
+}
+.group-content > section > .flex { flex-wrap: wrap; gap: 8px; }
+.group-content a:focus-visible {
+  outline: 2px solid var(--dash-c6a56b);
+  outline-offset: 4px;
+}

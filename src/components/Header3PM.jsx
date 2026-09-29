@@ -1,22 +1,25 @@
 // src/components/Header3PM.jsx
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { User } from "lucide-react";
 import ProfileMenu from "./ProfileMenu.jsx";
 import naIcon from "../assets/naicon.png";
 import disclaimerImg from "../assets/disclaimer.png";
+import ThemeSwitch from "./ThemeSwitch.jsx";
+import useHomeTheme from "../hooks/useHomeTheme.js";
+import "../pages/DashboardTheme.css";
 
 export default function Header3PM({ showMenu = true }) {
-  const [userProfile, setUserProfile] = useState(null);
-  const [isProfileMenuOpen, setIsProfileMenuOpen] = useState(false);
-
-  useEffect(() => {
+  const [theme] = useHomeTheme();
+  const [userProfile] = useState(() => {
     try {
       const raw = window.localStorage.getItem("na_userProfile");
-      if (raw) setUserProfile(JSON.parse(raw));
+      return raw ? JSON.parse(raw) : null;
     } catch (err) {
       console.error("Error loading sailor profile:", err);
+      return null;
     }
-  }, []);
+  });
+  const [isProfileMenuOpen, setIsProfileMenuOpen] = useState(false);
 
   const userInitial =
     (userProfile?.display_name || userProfile?.name || "")
@@ -27,7 +30,8 @@ export default function Header3PM({ showMenu = true }) {
   return (
     <>
       <header
-        className="
+        data-theme={theme}
+        className="member-header
           sticky top-0 z-20
           border-b border-[#6f5630]/35
           bg-[#090807]/95
@@ -60,18 +64,21 @@ export default function Header3PM({ showMenu = true }) {
             </p>
           </div>
 
-          <div className="flex-1 min-w-0 rotate-[-1deg]">
+          {!showMenu && <div className="flex-1 min-w-0 rotate-[-1deg]">
             <img
               src={disclaimerImg}
               alt="Disclaimer: NARR stands for NA Rocio Recovery"
               className="w-full h-auto object-contain"
             />
-          </div>
+          </div>}
+
+          {showMenu && <ThemeSwitch />}
 
           {/* Profile button */}
           {showMenu && (
             <button
               type="button"
+              aria-label="Open profile menu"
               onClick={() => setIsProfileMenuOpen(true)}
               className="
                 h-10 w-10 shrink-0 rounded-full

@@ -1,0 +1,1043 @@
+[
+{
+  "id": "water-before-thoughts",
+  "title": "Hydrate before you treat every thought like an emergency alert.",
+  "how": [
+    "Fill a glass. Even Rangers need water.",
+    "Drink half of it slowly. This mission has no countdown.",
+    "Wait 30 seconds before responding to the alarm going off in your head."
+  ],
+  "why": "When your body is running low, ordinary problems can feel like world-ending threats.",
+  "punchlines": [
+    "The command center is fine. You were just dehydrated."
+  ]
+},
+{
+  "id": "eat-something",
+  "title": "Refuel before your brain declares a crisis.",
+  "how": [
+    "Eat something with actual fuel in it.",
+    "Don’t take orders from the hungry alarm system in your head.",
+    "Wait 10 minutes, then reassess the catastrophe."
+  ],
+  "why": "Low fuel can make small problems feel like world-ending threats.",
+  "punchlines": [
+    "Your command center isn’t under attack. It needed lunch."
+  ]
+},
+{
+  "id": "sit-down",
+  "title": "Ranger, take a seat. That’s an order from your nervous system.",
+  "how": [
+    "Find a safe place to sit.",
+    "Let the chair hold your weight. You don’t have to hold everything.",
+    "Notice your feet on the floor and the support beneath you."
+  ],
+  "why": "A moment of stillness can help your body register that the alarm has passed.",
+  "punchlines": [
+    "Resting is a mission step, not a system failure."
+  ]
+},
+{
+  "id": "phone-90",
+  "title": "Put the emergency broadcast device down for 90 seconds.",
+  "how": [
+    "Place your phone face down.",
+    "Look at something that isn’t a screen.",
+    "Notice the urge to pick it up. You can let that urge pass."
+  ],
+  "why": "Constant alerts make it harder for your nervous system to settle.",
+  "punchlines": [
+    "Not every notification is a call to save the universe."
+  ]
+},
+{
+  "id": "breathe-real",
+  "title": "Ranger, reset your breathing.",
+  "how": [
+    "Inhale for 4, hold for 2, then exhale for 6. Keep it comfortable.",
+    "Repeat 3 times.",
+    "Check in with your body before returning to the mission."
+  ],
+  "why": "Slowing your breathing can give your body a chance to settle.",
+  "punchlines": [
+    "Sometimes the power move is one ordinary breath."
+  ]
+},
+{
+  "id": "stretch-once",
+  "title": "Run a quick systems check. Unclench one muscle.",
+  "how": [
+    "Find one spot that’s tense—your shoulders, jaw, or hands.",
+    "Stretch it gently for 8 to 12 seconds.",
+    "Notice whether you’ve been holding your breath."
+  ],
+  "why": "A small movement can help you notice and release some tension.",
+  "punchlines": [
+    "Your shoulders don’t need to stay in battle position."
+  ]
+},
+{
+  "id": "touch-cold",
+  "title": "Use a cold signal to interrupt the alarm.",
+  "how": [
+    "Hold a cool glass, splash cool water on your hands, or pick up a cold can.",
+    "Pay attention to how it feels for a few seconds.",
+    "Let your thoughts wait while you focus on that sensation."
+  ],
+  "why": "A clear physical sensation can help bring your attention back to the present.",
+  "punchlines": [
+    "The mission can wait while your system reconnects."
+  ]
+},
+{
+  "id": "shower-reset",
+  "title": "Step into the decontamination chamber. Yes, the shower.",
+  "how": [
+    "Turn on the water at a comfortable temperature.",
+    "Notice how it feels on your shoulders and back.",
+    "Put on something clean when you’re done."
+  ],
+  "why": "A simple change in sensation and routine can help mark a fresh start.",
+  "punchlines": [
+    "No dramatic transformation sequence required. Soap will do."
+  ]
+},
+{
+  "id": "sit-still",
+  "title": "Pause the mission for one minute.",
+  "how": [
+    "Set a one-minute timer.",
+    "Sit somewhere comfortable and let your thoughts come and go.",
+    "When the timer ends, choose your next small step."
+  ],
+  "why": "A brief pause can give you space before you act on an overwhelming thought.",
+  "punchlines": [
+    "One quiet minute still counts as showing up for the team."
+  ]
+},
+
+  {
+    "id": "notice-safe",
+    "title": "Scan the room for one safe signal.",
+    "how": [
+      "Look around without searching for a threat.",
+      "Pick one ordinary object that feels neutral or safe.",
+      "Let your brain register that this moment contains more than alarms."
+    ],
+    "why": "Noticing something safe can help bring your attention back to where you are.",
+    "punchlines": [
+      "That chair has a better track record than half your old crushes."
+    ]
+  },
+  {
+    "id": "text-hi",
+    "title": "Send a signal to another Ranger. Just say hi.",
+    "how": [
+      "Open a chat with someone you trust.",
+      "Type “hey” without drafting an apology for existing.",
+      "Press send. Mission complete."
+    ],
+    "why": "A small message can reopen a connection when reaching out feels hard.",
+    "punchlines": [
+      "No distress beacon required. Two letters count."
+    ]
+  },
+  {
+    "id": "ask-and-listen",
+    "title": "Ask a teammate how they are—and listen to the answer.",
+    "how": [
+      "Ask how they’re doing.",
+      "Let them speak without preparing your reply.",
+      "Stay with their answer without trying to fix everything."
+    ],
+    "why": "Listening makes room for connection without taking control.",
+    "punchlines": [
+      "You don’t need a rescue speech. Your attention is enough."
+    ]
+  },
+  {
+    "id": "truth-once",
+    "title": "Tell one small truth without triggering the drama alarm.",
+    "how": [
+      "Choose something small you usually hide.",
+      "Say it plainly to someone you trust.",
+      "Notice what actually happens after you say it."
+    ],
+    "why": "Sharing a manageable truth can make shame feel less isolating.",
+    "punchlines": [
+      "The command center survived one honest sentence."
+    ]
+  },
+  {
+    "id": "receive-kindness",
+    "title": "Accept one kind word without deflecting it.",
+    "how": [
+      "Notice when someone says or does something kind.",
+      "Say “thank you” without arguing.",
+      "Give yourself a moment to let it land."
+    ],
+    "why": "Receiving care is part of connection, even when it feels unfamiliar.",
+    "punchlines": [
+      "You don’t have to earn every bit of warmth on the team."
+    ]
+  },
+  {
+    "id": "say-idk",
+    "title": "Say “I don’t know” when you don’t know.",
+    "how": [
+      "Pause before answering.",
+      "Notice the urge to sound certain.",
+      "Choose an honest answer."
+    ],
+    "why": "You can ask for help more easily when you don’t have to pretend.",
+    "punchlines": [
+      "Even Mission Control checks the manual."
+    ]
+  },
+  {
+    "id": "no-apology",
+    "title": "Save one “sorry” for something that needs an apology.",
+    "how": [
+      "Notice when you apologize just for taking up space.",
+      "Try “thank you,” “excuse me,” or a direct request instead.",
+      "Stay in the conversation."
+    ],
+    "why": "Your needs and your voice can exist without an apology.",
+    "punchlines": [
+      "You’re a member of the team, not an unauthorized visitor."
+    ]
+  },
+  {
+    "id": "tiny-share",
+    "title": "Share one small truth at the meeting.",
+    "how": [
+      "Choose one feeling, fear, or habit you can name.",
+      "Say one sentence. No heroic speech needed.",
+      "Let that be enough for today."
+    ],
+    "why": "A small, honest share can help someone else feel less alone too.",
+    "punchlines": [
+      "One sentence still counts as showing up."
+    ]
+  },
+  {
+    "id": "sit-with-people",
+    "title": "Take a seat near the team.",
+    "how": [
+      "Choose a seat near someone instead of hiding in the far corner.",
+      "Notice any nervousness without treating it as an order.",
+      "Stay for a few minutes."
+    ],
+    "why": "Being near others can be a small first step toward connection.",
+    "punchlines": [
+      "You don’t have to lead the team. Just take a seat."
+    ]
+  },
+  {
+    "id": "finish-listening",
+    "title": "Let your teammate finish before you reply.",
+    "how": [
+      "Notice the answer you’re rehearsing.",
+      "Bring your attention back to their words.",
+      "Wait until they finish, then respond."
+    ],
+    "why": "People feel more heard when your attention stays with them.",
+    "punchlines": [
+      "Your reply doesn’t need a dramatic entrance."
+    ]
+  },
+  {
+    "id": "ask-help-early",
+    "title": "Call for backup before the alarms are blaring.",
+    "how": [
+      "Name one thing that’s getting difficult.",
+      "Tell someone you trust what’s happening.",
+      "Ask for one specific kind of help."
+    ],
+    "why": "Support is easier to use when you reach for it early.",
+    "punchlines": [
+      "Calling for backup is how teams work."
+    ]
+  },
+  {
+    "id": "show-up-early",
+    "title": "Arrive a little early. Give yourself room to settle.",
+    "how": [
+      "Choose where you’re going.",
+      "Leave with a few extra minutes if you can.",
+      "Use that time to breathe and find your place."
+    ],
+    "why": "A little extra time can make an arrival feel less rushed.",
+    "punchlines": [
+      "No need to teleport in at the last second."
+    ]
+  },
+  {
+    "id": "wait-24",
+    "title": "Pause a non-urgent decision for 24 hours.",
+    "how": [
+      "Notice when an impulse feels urgent.",
+      "If it can safely wait, write it down instead of acting now.",
+      "Revisit it tomorrow with a clearer head."
+    ],
+    "why": "Time can help separate an impulse from a decision you want to keep.",
+    "punchlines": [
+      "Not every flashing light needs the launch button."
+    ]
+  },
+  {
+    "id": "next-controllable",
+    "title": "Choose the next mission you can actually finish.",
+    "how": [
+      "Pick one small task within your control.",
+      "Skip the cinematic version of the plan.",
+      "Finish the real task in front of you."
+    ],
+    "why": "A completed small step can make the next one easier to see.",
+    "punchlines": [
+      "Progress doesn’t need a transformation sequence."
+    ]
+  },
+  {
+    "id": "move-body",
+    "title": "Move your body for 30 seconds.",
+    "how": [
+      "Choose a comfortable movement.",
+      "Walk, stretch, or shake out your hands for 30 seconds.",
+      "Notice how you feel afterward without demanding a miracle."
+    ],
+    "why": "Brief movement can help you shift your attention and release some tension.",
+    "punchlines": [
+      "A lap around the room counts as a mission."
+    ]
+  },
+  {
+    "id": "boring-task",
+    "title": "Complete one ordinary maintenance task.",
+    "how": [
+      "Pick a small chore nobody makes a movie about.",
+      "Do it imperfectly.",
+      "Mark it done and move on."
+    ],
+    "why": "Small routines help keep daily life manageable.",
+    "punchlines": [
+      "The command center runs on boring maintenance too."
+    ]
+  },
+  {
+    "id": "shoes-door",
+    "title": "Set tomorrow’s boots by the launch door.",
+    "how": [
+      "Put your shoes where you’ll see them tomorrow.",
+      "Set out one other thing you’ll need.",
+      "Let tomorrow-you have an easier start."
+    ],
+    "why": "A little preparation can reduce the effort needed to begin.",
+    "punchlines": [
+      "Boots first. Motivation can report for duty later."
+    ]
+  },
+  {
+    "id": "delete-number",
+    "title": "Remove one contact that pulls you toward relapse.",
+    "how": [
+      "Choose a contact you no longer want easy access to.",
+      "Delete or block it if that feels right for your recovery.",
+      "Reach out to a safer contact if the urge to reconnect shows up."
+    ],
+    "why": "Making an unwanted connection harder to reach can give you more room to choose.",
+    "punchlines": [
+      "Not every old signal deserves a place in your communicator."
+    ]
+  },
+  {
+    "id": "throw-away-old-life",
+    "title": "Clear out one object tied to an old pattern.",
+    "how": [
+      "Choose one item you’re ready to let go of.",
+      "Discard it or move it out of your space.",
+      "Notice how the room feels afterward."
+    ],
+    "why": "Changing your surroundings can support a change you’re already making.",
+    "punchlines": [
+      "You don’t need to keep a museum of every old battle."
+    ]
+  },
+  {
+    "id": "slow-one-thing",
+    "title": "Complete one mission at half speed.",
+    "how": [
+      "Choose one task you usually rush.",
+      "Let your breathing set the pace instead of the alarm in your head.",
+      "Finish it without turning it into a race."
+    ],
+    "why": "Slowing one task can help you notice when urgency is coming from stress.",
+    "punchlines": [
+      "There’s no bonus power-up for doing the dishes at warp speed."
+    ]
+  },
+  {
+    "id": "rest-early",
+    "title": "Schedule a recharge before your battery hits zero.",
+    "how": [
+      "Notice an early sign that you’re tired.",
+      "Step away for a short break if you can.",
+      "Return when you have a little more capacity."
+    ],
+    "why": "Short breaks can be easier to take than recovering after you’re exhausted.",
+    "punchlines": [
+      "Even the command center has a charging station."
+    ]
+  },
+  {
+    "id": "not-today",
+    "title": "Tell one old pattern: “Not today.”",
+    "how": [
+      "Name the habit, craving, or situation pulling at you.",
+      "Say “not today,” aloud or to yourself.",
+      "Take one step away from it or toward support."
+    ],
+    "why": "A clear decision can give you something to act on in this moment.",
+    "punchlines": [
+      "“Not today” is a complete mission objective."
+    ]
+  },
+  {
+    "id": "donot-answer-traps",
+    "title": "You don’t have to answer every incoming signal.",
+    "how": [
+      "Notice how you feel when the message appears.",
+      "Put your phone down while you decide whether to respond.",
+      "Reply later, set a boundary, or leave it unanswered."
+    ],
+    "why": "Taking time before replying gives you room to choose your response.",
+    "punchlines": [
+      "A notification is a signal, not an order from Mission Control."
+    ]
+  },
+  {
+    "id": "pause-defense",
+    "title": "Pause before launching your full defense sequence.",
+    "how": [
+      "Notice the urge to explain everything at once.",
+      "Take one breath before answering.",
+      "Give a short response now, or ask for time to think."
+    ],
+    "why": "A pause can help you respond to what was said instead of reacting to an old fear.",
+    "punchlines": [
+      "You don’t need a twelve-page mission report for every question."
+    ]
+  },
+  {
+    "id": "no-essay",
+    "title": "Say no without writing a mission report.",
+    "how": [
+      "State your answer clearly.",
+      "Add an explanation only if you want to.",
+      "Let the other person have their reaction."
+    ],
+    "why": "A boundary can be clear without a long defense.",
+    "punchlines": [
+      "“No” fits in one transmission."
+    ]
+  },
+  {
+    "id": "walk-away-thought",
+    "title": "Don’t hand a harsh thought the command controls.",
+    "how": [
+      "Notice when a thought turns cruel or absolute.",
+      "Name it as a thought, not a fact.",
+      "Move, breathe, or talk to someone before deciding what to do next."
+    ],
+    "why": "Creating a little distance from a thought can help you choose your next action.",
+    "punchlines": [
+      "Not every thought gets clearance to run the mission."
+    ]
+  },
+  {
+    "id": "exit-room",
+    "title": "Call a timeout before the conversation overheats.",
+    "how": [
+      "Say you need a short break.",
+      "Step into another room and give yourself time to settle.",
+      "Return to the conversation when you’re ready."
+    ],
+    "why": "Stepping away briefly can make a difficult conversation easier to continue.",
+    "punchlines": [
+      "A timeout can save the team from a completely unnecessary explosion."
+    ]
+  },
+  {
+    "id": "protect-morning",
+    "title": "Give yourself ten minutes before the alerts begin.",
+    "how": [
+      "Leave messages and notifications alone for ten minutes.",
+      "Do one small thing that belongs to you.",
+      "Choose your first move before the world starts assigning missions."
+    ],
+    "why": "A few quiet minutes can give you room to start the day on your own terms.",
+    "punchlines": [
+      "The universe can wait ten minutes. It has before."
+    ]
+  },
+  {
+    "id": "no-explanations",
+    "title": "State one boundary without opening a debate.",
+    "how": [
+      "Say what you can or cannot do.",
+      "Keep it clear and brief.",
+      "Repeat it if needed instead of building a longer defense."
+    ],
+    "why": "A boundary is easier to hold when you know what you mean by it.",
+    "punchlines": [
+      "Mission parameters do not require a public hearing."
+    ]
+  },
+  {
+    "id": "donot-bleed",
+    "title": "Save your energy for people who show up too.",
+    "how": [
+      "Notice one relationship that leaves you drained.",
+      "Choose what you can give without exhausting yourself.",
+      "Spend some of that energy on yourself or someone who supports you."
+    ],
+    "why": "Your energy matters, and care does not have to flow in only one direction.",
+    "punchlines": [
+      "You can be on the team without powering the entire command center."
+    ]
+  },
+  {
+    "id": "take-space",
+    "title": "Stand like you belong on the team.",
+    "how": [
+      "Notice if you’re making yourself physically smaller.",
+      "Set your feet comfortably and relax your shoulders.",
+      "Let yourself occupy the space you’re already in."
+    ],
+    "why": "A small change in posture can help you notice how you’re treating yourself.",
+    "punchlines": [
+      "You don’t need clearance to exist in the room."
+    ]
+  },
+  {
+    "id": "visible-date",
+    "title": "Put your clean date where you can see it.",
+    "how": [
+      "Choose a private place you look at often.",
+      "Write your clean date there, if tracking it helps you.",
+      "Let it remind you of the day you’re choosing now."
+    ],
+    "why": "A visible reminder can help reconnect you with your recovery goal.",
+    "punchlines": [
+      "No victory speech required. The date speaks for itself."
+    ]
+  },
+  {
+    "id": "mirror-neutral",
+    "title": "Look in the mirror without activating the critique scanner.",
+    "how": [
+      "Look at your face for a few seconds.",
+      "Name one neutral thing you see, without judging it.",
+      "Step away when you’re ready."
+    ],
+    "why": "You can practice seeing yourself without turning every glance into an evaluation.",
+    "punchlines": [
+      "The mirror is equipment, not a tribunal."
+    ]
+  },
+  {
+    "id": "clean-clothes",
+    "title": "Change into clean gear.",
+    "how": [
+      "Choose something clean and comfortable.",
+      "Put it on without waiting to feel motivated.",
+      "Notice whether the change makes this moment a little easier."
+    ],
+    "why": "A simple act of care can be a useful first step when the day feels heavy.",
+    "punchlines": [
+      "Sometimes the transformation sequence is just clean laundry."
+    ]
+  },
+  {
+    "id": "sit-to-stay",
+    "title": "Take your seat at the command center.",
+    "how": [
+      "Place both feet on the floor.",
+      "Sit in a way that feels supported.",
+      "Notice that you’re here, in this moment."
+    ],
+    "why": "Paying attention to your body can help you feel more present.",
+    "punchlines": [
+      "You belong here, even on a difficult day."
+    ]
+  },
+  {
+    "id": "name-not-symptoms",
+    "title": "Use your name, not just your status report.",
+    "how": [
+      "Notice when you describe yourself only by what you’re struggling with.",
+      "Say your name, aloud or to yourself.",
+      "Name one other thing that is true about you."
+    ],
+    "why": "What you’re experiencing is part of your story, not your entire identity.",
+    "punchlines": [
+      "You are a person, not a list of system alerts."
+    ]
+  },
+  {
+    "id": "one-new-decision",
+    "title": "Make one choice that breaks an old pattern.",
+    "how": [
+      "Notice a familiar choice that hasn’t helped you.",
+      "Pick one small alternative you can try today.",
+      "Do it without requiring a perfect result."
+    ],
+    "why": "Trying a different action gives you a chance to build a different routine.",
+    "punchlines": [
+      "Character development can start with one tiny decision."
+    ]
+  },
+  {
+    "id": "future-self-choice",
+    "title": "Let future-you suggest the next move.",
+    "how": [
+      "Ask what tomorrow-you might appreciate.",
+      "Choose the smallest useful version of that action.",
+      "Give it 30 seconds."
+    ],
+    "why": "Thinking one step ahead can make a choice feel clearer.",
+    "punchlines": [
+      "Future-you would probably appreciate a little backup."
+    ]
+  },
+  {
+    "id": "becoming-sentence",
+    "title": "Say one sentence about who you’re becoming.",
+    "how": [
+      "Choose a sentence that feels possible, even if you don’t fully believe it yet.",
+      "Say it aloud or write it down.",
+      "Let it stand without arguing with it."
+    ],
+    "why": "Putting a goal into words can help you remember what you’re working toward.",
+    "punchlines": [
+      "The first draft of a new identity can be one sentence."
+    ]
+  },
+  {
+    "id": "bridge-day",
+    "title": "Treat today as one checkpoint, not the final battle.",
+    "how": [
+      "Stop trying to judge your whole life by this afternoon.",
+      "Choose one next step for today.",
+      "Let that step be enough for now."
+    ],
+    "why": "One day gives you information, not a final verdict on your progress.",
+    "punchlines": [
+      "You don’t have to complete the entire campaign today."
+    ]
+  },
+  {
+    "id": "neutral-win",
+    "title": "Count a quiet day as a win.",
+    "how": [
+      "Notice a moment when nothing dramatic is happening.",
+      "Resist the urge to dismiss it as boring.",
+      "Call the steadiness a success."
+    ],
+    "why": "A peaceful day is worth noticing, even when it doesn’t feel exciting.",
+    "punchlines": [
+      "No explosions in the command center? Excellent work."
+    ]
+  },
+  {
+    "id": "craving-out-loud",
+    "title": "Tell a teammate about the craving.",
+    "how": [
+      "Name the craving plainly.",
+      "Tell someone you trust, such as a sponsor or recovery friend.",
+      "Say what kind of support would help right now."
+    ],
+    "why": "Talking about a craving can help you get support before acting on it.",
+    "punchlines": [
+      "You can call for backup before the battle starts."
+    ]
+  },
+  {
+    "id": "eat-sugar",
+    "title": "Try a small treat before making a big decision.",
+    "how": [
+      "Choose a snack or something sweet you enjoy.",
+      "Give yourself a few minutes to eat it.",
+      "Check in with the craving again afterward."
+    ],
+    "why": "A small comfort can give you time to pause and choose your next step.",
+    "punchlines": [
+      "A snack is a much smaller plot twist than a relapse."
+    ]
+  },
+  {
+    "id": "change-rooms",
+    "title": "Change locations. Give the scene a reset.",
+    "how": [
+      "Stand up.",
+      "Move to another room or step outside if you can.",
+      "Choose one thing to notice in the new space."
+    ],
+    "why": "Changing your surroundings can interrupt a familiar routine.",
+    "punchlines": [
+      "The same chair doesn’t need to host every episode."
+    ]
+  },
+  {
+    "id": "feet-on-ground",
+    "title": "Plant both feet on the command center floor.",
+    "how": [
+      "Place both feet flat on the ground.",
+      "Notice the pressure beneath them.",
+      "Name where you are right now."
+    ],
+    "why": "Focusing on a physical sensation can bring your attention back to the present.",
+    "punchlines": [
+      "Ground contact confirmed. You’re here."
+    ]
+  },
+  {
+    "id": "count-backwards",
+    "title": "Run a ten-second countdown.",
+    "how": [
+      "Start at ten.",
+      "Count backward slowly.",
+      "When you reach zero, choose one small next action."
+    ],
+    "why": "A simple counting task can give your attention somewhere else to go.",
+    "punchlines": [
+      "Zero means pause, not launch."
+    ]
+  },
+  {
+    "id": "sit-through",
+    "title": "Notice the craving without taking its orders.",
+    "how": [
+      "Name it: “I’m having a craving.”",
+      "Notice where you feel it in your body for a moment.",
+      "Choose a safe next step, including calling someone if you need backup."
+    ],
+    "why": "An urge can be present without deciding what you do next.",
+    "punchlines": [
+      "An alarm can sound without you pressing the launch button."
+    ]
+  },
+  {
+    "id": "dont-fantasize",
+    "title": "Check the unedited version of that memory.",
+    "how": [
+      "Notice when the past starts looking like a highlight reel.",
+      "Recall one real consequence that the highlight reel leaves out.",
+      "Bring your attention back to what you want today."
+    ],
+    "why": "Remembering the whole experience can help you make a choice based on reality.",
+    "punchlines": [
+      "The trailer left out the part where everything caught fire."
+    ]
+  },
+  {
+    "id": "physical-distance",
+    "title": "Put some space between you and the trigger.",
+    "how": [
+      "Move away from the person, place, or object if you can.",
+      "You don’t need to debate the decision.",
+      "Go somewhere you can take your next step safely."
+    ],
+    "why": "Distance can give you more room to decide what to do.",
+    "punchlines": [
+      "A strategic retreat is still a Ranger move."
+    ]
+  },
+  {
+    "id": "cravings-weather",
+    "title": "Treat this craving like weather, not a command.",
+    "how": [
+      "Notice the urge without predicting what it means.",
+      "Remind yourself that its intensity can change.",
+      "Focus on the next manageable stretch of time and call for backup if needed."
+    ],
+    "why": "You can respond to a craving one moment at a time.",
+    "punchlines": [
+      "You don’t have to control the weather to choose where you stand."
+    ]
+  },
+ {
+    "id": "touch-reality",
+    "title": "Make contact with something real.",
+    "how": [
+      "Place your hand on a solid object nearby.",
+      "Notice its texture, temperature, and weight.",
+      "Bring your attention back to the room you’re in."
+    ],
+    "why": "A physical sensation can help you reconnect with the present.",
+    "punchlines": [
+      "Reality check: the table is here. The imagined disaster isn’t."
+    ]
+  },
+  {
+    "id": "name-feeling",
+    "title": "Identify the feeling before it takes over the controls.",
+    "how": [
+      "Notice the first emotion you can name.",
+      "Say “I feel...” without explaining your whole history.",
+      "Let the feeling be there without judging yourself for it."
+    ],
+    "why": "Naming a feeling can make it easier to decide what you need.",
+    "punchlines": [
+      "That’s a feeling, not a mission command."
+    ]
+  },
+  {
+    "id": "cry-no-apology",
+    "title": "Let yourself cry without filing an apology.",
+    "how": [
+      "If tears come, let them.",
+      "Breathe and notice what you need.",
+      "Offer yourself the same patience you’d give a teammate."
+    ],
+    "why": "Crying is a human response to a hard moment.",
+    "punchlines": [
+      "Even Rangers cry. The helmet just hides the evidence."
+    ]
+  },
+  {
+    "id": "stop-lie",
+    "title": "Pause when your story stops being true.",
+    "how": [
+      "Notice when you start saying what sounds good instead of what happened.",
+      "Stop and take a breath.",
+      "Correct yourself if you’re ready, or say you need a moment."
+    ],
+    "why": "You can choose honesty even after a sentence has started.",
+    "punchlines": [
+      "Mid-sentence course corrections are allowed at Mission Control."
+    ]
+  },
+  {
+    "id": "let-silence-be",
+    "title": "Don’t turn a quiet signal into a disaster report.",
+    "how": [
+      "Notice the story you’re making up about someone’s silence.",
+      "Say “I don’t know what this means yet.”",
+      "Give the space time before deciding what to do."
+    ],
+    "why": "Silence alone doesn’t tell you what another person thinks.",
+    "punchlines": [
+      "No reply is not a secret message from the universe."
+    ]
+  },
+  {
+    "id": "bruise-not-prophecy",
+    "title": "Treat this disappointment as today’s hurt, not tomorrow’s forecast.",
+    "how": [
+      "Name what disappointed you.",
+      "Notice when your thoughts jump from this event to “always” or “never.”",
+      "Ask what you need for this moment."
+    ],
+    "why": "One painful event does not predict every event that follows.",
+    "punchlines": [
+      "One bad episode doesn’t decide the whole season."
+    ]
+  },
+  {
+    "id": "feel-unedited",
+    "title": "Notice the feeling before writing the whole episode.",
+    "how": [
+      "Name the emotion you feel right now.",
+      "Set aside diagnoses and predictions for a moment.",
+      "Notice the feeling without needing to explain it."
+    ],
+    "why": "A feeling and the story you tell about it are different things.",
+    "punchlines": [
+      "One feeling does not need a five-season backstory."
+    ]
+  },
+  {
+    "id": "donot-trust-loneliness",
+    "title": "Don’t let loneliness write the future report.",
+    "how": [
+      "Notice a prediction you’re making while you feel alone.",
+      "Say “That’s a fear, not a forecast.”",
+      "Reach out to someone before making a big decision."
+    ],
+    "why": "Feeling alone now does not tell you what connection will be possible later.",
+    "punchlines": [
+      "Loneliness has terrible forecasting equipment."
+    ]
+  },
+  {
+    "id": "before-storyline",
+    "title": "Notice the sadness before the storyline begins.",
+    "how": [
+      "Name where you feel sadness in your body.",
+      "Catch the first “this means my life will always...” thought.",
+      "Return to what you know about this moment."
+    ],
+    "why": "Sadness is real; the future your mind predicts from it is uncertain.",
+    "punchlines": [
+      "A sad scene doesn’t reveal the series finale."
+    ]
+  },
+  {
+    "id": "grief-chair",
+    "title": "Give grief a seat without handing it the controls.",
+    "how": [
+      "Name what or whom you miss.",
+      "Allow a moment for the sadness.",
+      "Choose one gentle thing you need afterward."
+    ],
+    "why": "You can make room for grief while still caring for yourself.",
+    "punchlines": [
+      "Grief can be in the room. It doesn’t have to run Mission Control."
+    ]
+  },
+  {
+    "id": "escort-emotions",
+    "title": "Let the feeling pass through without making it your identity.",
+    "how": [
+      "Notice what you’re feeling.",
+      "Try “I’m feeling this” instead of “I am this.”",
+      "Stay with yourself as the feeling changes."
+    ],
+    "why": "An emotion is something you experience, not everything you are.",
+    "punchlines": [
+      "A system alert is not your character profile."
+    ]
+  },
+  {
+    "id": "dont-stalk",
+    "title": "Close the old profile before you enter the time loop.",
+    "how": [
+      "Notice the urge to check someone from your past.",
+      "Close the app for now.",
+      "Do one thing that connects you to your present life."
+    ],
+    "why": "Checking old connections can keep your attention on a situation you’re trying to leave.",
+    "punchlines": [
+      "The archive does not need another inspection tonight."
+    ]
+  },
+  {
+    "id": "unplug-30",
+    "title": "Put your communicator on quiet for 30 minutes.",
+    "how": [
+      "Silence notifications or set your device aside.",
+      "Choose something away from the screen.",
+      "Check back when the 30 minutes are up."
+    ],
+    "why": "A short break can give your attention a rest from incoming alerts.",
+    "punchlines": [
+      "Mission Control will survive one quiet half-hour."
+    ]
+  },
+  {
+    "id": "dont-chase-closure",
+    "title": "You don’t have to reopen the case for one more answer.",
+    "how": [
+      "Notice the urge to ask for another explanation.",
+      "Write down what you hope the answer would give you.",
+      "Wait before deciding whether contact would help."
+    ],
+    "why": "An answer from someone else may not provide the relief you’re looking for.",
+    "punchlines": [
+      "Some files can stay closed, even without a perfect ending."
+    ]
+  },
+  {
+    "id": "throw-relapse-object",
+    "title": "Remove one object that pulls you toward relapse.",
+    "how": [
+      "Choose an item you associate with using.",
+      "Dispose of it safely or ask someone you trust to help.",
+      "Notice what it’s like to have that space back."
+    ],
+    "why": "Removing an unwanted reminder can make your space more supportive of recovery.",
+    "punchlines": [
+      "You don’t need souvenirs from every old battle."
+    ]
+  },
+  {
+    "id": "dont-revisit-drowning",
+    "title": "Update a plan you made in survival mode.",
+    "how": [
+      "Identify one old decision made under pressure.",
+      "Ask whether it still serves you now.",
+      "Choose one small adjustment with the information you have today."
+    ],
+    "why": "A choice that helped you through one period does not have to guide every period after it.",
+    "punchlines": [
+      "Old emergency instructions can be revised."
+    ]
+  },
+  {
+    "id": "close-one-tab",
+    "title": "Close one open tab in your head.",
+    "how": [
+      "Pick one unfinished task or repeating thought.",
+      "Finish it, schedule it, or decide to let it go.",
+      "Notice that you don’t have to hold it right now."
+    ],
+    "why": "Giving one loose end a place can free up some attention.",
+    "punchlines": [
+      "Mission Control was not designed for 87 open tabs."
+    ]
+  },
+  {
+    "id": "drop-argument",
+    "title": "End the argument that’s only happening in your head.",
+    "how": [
+      "Notice when you start rehearsing your side.",
+      "Ask whether there is a real conversation to have.",
+      "If not, bring your attention to something you’re doing now."
+    ],
+    "why": "Rehearsing an argument can take energy without resolving anything.",
+    "punchlines": [
+      "You can leave the imaginary debate without losing it."
+    ]
+  },
+  {
+    "id": "leave-parasites",
+    "title": "Step back from a connection that drains you.",
+    "how": [
+      "Notice how you feel after spending time with this person.",
+      "Choose one limit on your time or availability.",
+      "Put that energy toward someone or something supportive."
+    ],
+    "why": "You can care about someone and still set limits that protect your wellbeing.",
+    "punchlines": [
+      "Being on a team doesn’t mean being its unlimited battery."
+    ]
+  },
+  {
+    "id": "stop-self-diagnosis",
+    "title": "Pause the self-diagnosis scanner.",
+    "how": [
+      "Notice when you start searching for one label to explain everything.",
+      "Write down what you actually experienced instead.",
+      "Bring your questions to a qualified professional if you want help understanding them."
+    ],
+    "why": "Describing what’s happening can be more useful than trying to settle every question alone.",
+    "punchlines": [
+      "You’re a person, not a fault code."
+    ]
+  },
+  {
+    "id": "chaos-not-personality",
+    "title": "Try calm without calling it boring.",
+    "how": [
+      "Notice when a peaceful moment feels unfamiliar.",
+      "Resist creating a problem just to change the feeling.",
+      "Stay with the quiet for one more minute."
+    ],
+    "why": "Something unfamiliar can still be good for you.",
+    "punchlines": [
+      "No alarms today? That’s a successful shift at Mission Control."
+    ]
+  }
+]

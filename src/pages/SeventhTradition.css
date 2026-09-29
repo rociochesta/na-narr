@@ -1,0 +1,33 @@
+.tradition-page { min-height: 100svh; --tradition-accent: #c6a56b; --tradition-text: #e5d3ad; --tradition-muted: #b5a58a; --tradition-border: #6f563080; --tradition-panel: #080b0df5; color: var(--tradition-text); }
+.tradition-pirate { background: #0b0c0f; }
+.tradition-rangers { --tradition-accent: #47d4ff; --tradition-text: #e8f0ff; --tradition-muted: #a6bfe5; --tradition-border: #149cff; --tradition-panel: #031124ed; }
+.tradition-main { width: min(100%, 800px); margin: auto; padding: 24px 24px 30px; text-align: center; }
+.tradition-logo { height: 100px; max-width: 80%; object-fit: contain; margin: 0 auto 12px; }
+.tradition-eyebrow { color: var(--tradition-accent); font-size: 11px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+.tradition-hero h1 { margin: 4px 0; font-size: clamp(32px, 4vw, 48px); font-weight: 800; color: #ffe5a3; text-shadow: 0 0 20px #ffc32d44; }
+.tradition-intro { color: var(--tradition-text); font-size: 16px; text-shadow: 0 2px 6px #000; }
+.tradition-panel { margin-top: 24px; padding: 26px; border: 1px solid var(--tradition-border); border-radius: 22px; background: var(--tradition-panel); text-align: left; box-shadow: 0 12px 30px #0007; }
+.tradition-rangers .tradition-panel { border-radius: 24px 6px; box-shadow: 0 0 9px #25caff66, inset 0 0 28px #007fff1a; }
+.tradition-panel-heading { display: flex; align-items: center; gap: 16px; }
+.tradition-icon { display: grid; place-items: center; flex-shrink: 0; width: 48px; height: 48px; border: 1px solid #ffd35c88; border-radius: 14px; color: #ffe393; background: #ffd35c0d; }
+.tradition-panel h2 { font-size: 22px; font-weight: 700; margin-top: 4px; line-height: 1.3; }
+.tradition-copy { color: var(--tradition-muted); margin-top: 16px; font-size: 14px; line-height: 1.7; }
+.tradition-values { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 22px 0; }
+.tradition-values > div { border-top: 1px solid var(--tradition-border); padding-top: 16px; }
+.tradition-values svg { color: var(--tradition-accent); margin-bottom: 8px; }
+.tradition-panel h3 { font-size: 14px; font-weight: 600; }
+.tradition-values p, .tradition-status p { margin-top: 4px; color: var(--tradition-muted); font-size: 13px; line-height: 1.5; }
+.tradition-status { display: flex; align-items: center; gap: 14px; padding: 16px; border: 1px solid #ffd35c66; border-radius: 12px; background: #ffd35c08; }
+.tradition-status svg { color: #ffe393; flex-shrink: 0; }
+.tradition-status h3 { color: #ffe393; }
+.tradition-back { display: inline-flex; align-items: center; gap: 8px; margin-top: 22px; padding: 8px; color: #ffe393; font-size: 14px; }
+.tradition-back:hover { text-decoration: underline; text-underline-offset: 4px; }
+.tradition-back:focus-visible { outline: 2px solid var(--tradition-accent); outline-offset: 4px; }
+@media (max-width: 767px) {
+  .tradition-main { padding: 26px 16px; }
+  .tradition-panel { padding: 20px; }
+  .tradition-panel h2 { font-size: 19px; }
+  .tradition-logo { height: 90px; }
+  .tradition-values { gap: 14px; }
+}
+@media (max-width: 360px) { .tradition-values { grid-template-columns: 1fr; } }

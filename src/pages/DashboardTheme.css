@@ -1,0 +1,87 @@
+.dashboard {
+  --dash-080b0d: #080b0d;
+  --dash-0b0c0f: #0b0c0f;
+  --dash-0f1012: #0f1012;
+  --dash-15171b: #15171b;
+  --dash-17120d: #17120d;
+  --dash-1e2025: #1e2025;
+  --dash-4a4f58: #4a4f58;
+  --dash-5a98a4: #5a98a4;
+  --dash-6aa8b4: #6aa8b4;
+  --dash-6b7078: #6b7078;
+  --dash-6f5630: #6f5630;
+  --dash-7eb8c4: #7eb8c4;
+  --dash-7f858c: #7f858c;
+  --dash-8a642f: #8a642f;
+  --dash-8d9199: #8d9199;
+  --dash-c6a56b: #c6a56b;
+  --dash-c97070: #c97070;
+  --dash-d4b06a: #d4b06a;
+  --dash-d6a84f: #d6a84f;
+  --dash-e5d3ad: #e5d3ad;
+  --dash-f0c56e: #f0c56e;
+  --dash-f3dfb1: #f3dfb1;
+}
+.dashboard-content { padding-bottom: 110px; }
+.dashboard[data-theme="rangers"] {
+  --dash-080b0d: #041326; --dash-0b0c0f: #020b1a; --dash-0f1012: #06182e;
+  --dash-15171b: #08203a; --dash-17120d: #081d35; --dash-1e2025: #657d99;
+  --dash-4a4f58: #899fbc; --dash-6b7078: #9bb4d5; --dash-7f858c: #aac2e0;
+  --dash-8d9199: #bbcee7; --dash-6f5630: #168cd2; --dash-8a642f: #23adff;
+  --dash-c6a56b: #53d9ff; --dash-d6a84f: #32c8ff; --dash-f0c56e: #67dcff;
+  --dash-e5d3ad: #e3efff; --dash-d4b06a: #ffdc82; --dash-f3dfb1: #ffe7aa;
+  --dash-5a98a4: #4fcfff; --dash-6aa8b4: #63cfff; --dash-7eb8c4: #72dcff;
+  background: linear-gradient(#020b1a44, #020b1ae8), url('../assets/rangersbgdesktop.png') center top / cover fixed;
+}
+.dashboard[data-theme="rangers"] .dashboard-content { max-width: 448px; }
+.dashboard[data-theme="rangers"] :is(.dashboard-content > section:nth-child(-n+2), .dashboard-content > section:nth-child(n+3) > div) {
+  position: relative;
+  border: 1px solid #168cd299;
+  border-radius: 12px;
+  box-shadow: 0 0 14px #009cff25, inset 0 0 18px #009cff0d, 0 10px 26px #0005;
+}
+.dashboard[data-theme="rangers"] :is(.dashboard-content > section:nth-child(-n+2), .dashboard-content > section:nth-child(n+3) > div)::after {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  pointer-events: none;
+  border-radius: 10px;
+  background:
+    linear-gradient(#65efff, #19adff) left top / 34px 2px,
+    linear-gradient(#65efff, #19adff) left top / 2px 34px,
+    linear-gradient(#65efff, #19adff) right top / 34px 2px,
+    linear-gradient(#65efff, #19adff) right top / 2px 34px,
+    linear-gradient(#19adff, #65efff) left bottom / 34px 2px,
+    linear-gradient(#19adff, #65efff) left bottom / 2px 34px,
+    linear-gradient(#19adff, #65efff) right bottom / 34px 2px,
+    linear-gradient(#19adff, #65efff) right bottom / 2px 34px;
+  background-repeat: no-repeat;
+  filter: drop-shadow(0 0 3px #22d5ff) drop-shadow(0 0 6px #008cff);
+}
+.dashboard-energy { position: absolute; left: 20px; top: 25px; width: 44px; height: 62px; color: #ffdf7d; fill: #deb749; stroke-width: 1; filter: drop-shadow(0 0 10px #ffc83155); }
+.member-header > div:nth-child(2) { max-width: 448px; flex-wrap: wrap; gap: 8px; }
+.member-header .home-theme-switch button { padding: 6px 8px; font-size: 11px; gap: 4px; }
+.member-header .home-theme-switch svg { width: 13px; }
+.member-header[data-theme="rangers"] { background: #020d20f5; border-color: #149cff88; }
+.member-header[data-theme="rangers"] > .absolute { background: linear-gradient(to right, transparent, #36ccff, transparent); }
+.member-header[data-theme="rangers"] button[aria-label="Open profile menu"] { color: #64dcff; background: #05172a; border-color: #149cff; }
+.member-bottom-nav { padding-bottom: env(safe-area-inset-bottom); }
+.member-bottom-nav[data-theme="rangers"] { background: #020e20f5; border-color: #149cff; box-shadow: 0 -3px 20px #008cff33; }
+.member-bottom-nav[data-theme="rangers"] > .absolute { background: linear-gradient(to right, transparent, #42dfff, transparent); box-shadow: 0 0 8px #19baff; }
+.member-bottom-nav[data-theme="rangers"] > div:last-child { max-width: 448px; }
+.member-bottom-nav[data-theme="rangers"] a { color: #98b6db; min-width: 44px; min-height: 44px; justify-content: center; }
+.member-bottom-nav[data-theme="rangers"] a[aria-current="page"], .member-bottom-nav[data-theme="rangers"] a:hover { color: #5fe3ff; }
+.member-bottom-nav[data-theme="rangers"] a[aria-current="page"] svg { filter: drop-shadow(0 0 6px #18bfff); }
+.member-bottom-nav[data-theme="rangers"] a > .absolute { background: #4cddff; box-shadow: 0 0 8px #19baff; }
+.member-bottom-nav a:focus-visible { outline: 2px solid #59dfff; outline-offset: 4px; border-radius: 6px; }
+@media (max-width: 767px) {
+  .dashboard[data-theme="rangers"] { background-image: linear-gradient(#020b1a44, #020b1ae8), url('../assets/rangersbgmobile.png'); }
+  .member-header > div:nth-child(2) { gap: 8px; }
+  .member-header .home-theme-switch button { padding: 6px 8px; font-size: 11px; gap: 4px; }
+  .member-header .home-theme-switch svg { width: 13px; }
+}
+@media (max-width: 420px) {
+  .member-header > div:nth-child(2) > div:nth-child(2) > p:last-child { display: none; }
+  .member-header > div:nth-child(2) > div:nth-child(2) > p:first-child { font-size: 12px; letter-spacing: .1em; }
+  .member-header > div:nth-child(2) > div:first-child { width: 30px; height: 30px; }
+}

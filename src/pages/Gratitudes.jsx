@@ -4,10 +4,14 @@ import { useNavigate } from "react-router-dom";
 import { SquareX, Copy, Share2 } from "lucide-react";
 import Header3PM from "../components/Header3PM";
 import BottomNav from "../components/BottomNav";
+import useHomeTheme from "../hooks/useHomeTheme.js";
+import "./DashboardTheme.css";
+import "./AddGratitude.css";
 
 
 export default function Gratitudes() {
   const navigate = useNavigate();
+  const [theme] = useHomeTheme();
   const [entries, setEntries] = useState([]);
   const [copiedDate, setCopiedDate] = useState(null);
   const [glowCopyDate, setGlowCopyDate] = useState(null);
@@ -131,18 +135,18 @@ export default function Gratitudes() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-50 flex flex-col">
+    <div data-theme={theme} className="dashboard gratitude-log min-h-screen bg-[var(--dash-0b0c0f)] text-[var(--dash-e5d3ad)] flex flex-col">
       <Header3PM />
 
       <main className="flex-1">
         <div className="max-w-md mx-auto px-4 py-6 space-y-4">
           {/* resumen arriba */}
-          <div className="flex items-center justify-between text-[11px] text-slate-500">
+          <div className="flex items-center justify-between text-[11px] text-[var(--dash-6b7078)]">
             <span>{entries.length} saved gratitudes</span>
           </div>
 
           {entries.length === 0 && (
-            <div className="mt-4 bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-sm text-slate-300">
+            <div className="mt-4 bg-[var(--dash-0f1012)] border border-[var(--dash-6f5630)] rounded-lg px-4 py-3 text-sm text-[var(--dash-8d9199)]">
               No gratitudes yet. You can start with one small thing that
               didn&apos;t implode.
             </div>
@@ -156,13 +160,13 @@ export default function Gratitudes() {
               return (
                 <section key={dateKey} className="space-y-2">
                   <div className="flex items-center justify-between">
-                    <h2 className="text-xs uppercase tracking-[0.16em] text-slate-500">
+                    <h2 className="text-xs uppercase tracking-[0.16em] text-[var(--dash-6b7078)]">
                       {dateKey}
                     </h2>
 
                     <div className="flex items-center gap-2">
                       {copiedDate === dateKey && (
-                        <span className="text-[10px] text-cyan-300">
+                        <span className="text-[10px] text-[var(--dash-c6a56b)]">
                           Copied
                         </span>
                       )}
@@ -173,8 +177,8 @@ export default function Gratitudes() {
                         onClick={() => copyListForDate(dateKey)}
                         className={`btn-icon ${
                           glowCopyDate === dateKey
-                            ? "btn-icon-glow-cyan border-cyan-400 text-cyan-200 bg-cyan-500/10"
-                            : "hover:border-cyan-300 hover:text-cyan-200"
+                            ? "btn-icon-glow-cyan border-[var(--dash-c6a56b)] text-[var(--dash-d4b06a)] bg-[var(--dash-c6a56b)]/10"
+                            : "hover:border-[var(--dash-c6a56b)] hover:text-[var(--dash-d4b06a)]"
                         }`}
                         aria-label="Copy to clipboard"
                       >
@@ -204,25 +208,25 @@ export default function Gratitudes() {
                       return (
                         <article
                           key={item.id}
-                          className="relative bg-slate-900 border border-slate-800 rounded-lg px-4 py-3 space-y-2"
+                          className="relative bg-[var(--dash-0f1012)] border border-[var(--dash-17120d)] rounded-lg px-4 py-3 space-y-2"
                         >
                           {/* DELETE BUTTON */}
                           <button
                             type="button"
                             onClick={() => deleteEntry(item.id)}
                             title="Delete"
-                            className="absolute right-2 top-2 text-slate-600 hover:text-rose-400 transition-colors"
+                            className="absolute right-2 top-2 text-[var(--dash-6f5630)] hover:text-rose-400 transition-colors"
                           >
                             <SquareX size={16} />
                           </button>
 
                           {/* categoría como pill */}
-                          <span className="inline-flex items-center text-[10px] px-2 py-1 rounded-full border border-slate-600 text-slate-300">
+                          <span className="inline-flex items-center text-[10px] px-2 py-1 rounded-full border border-[var(--dash-6f5630)] text-[var(--dash-8d9199)]">
                             {label}
                           </span>
 
                           {/* texto de gratitude */}
-                          <p className="text-sm text-slate-100 whitespace-pre-wrap">
+                          <p className="text-sm text-[var(--dash-e5d3ad)] whitespace-pre-wrap">
                             {item.text}
                           </p>
                         </article>
@@ -239,14 +243,14 @@ export default function Gratitudes() {
             <button
               type="button"
               onClick={() => navigate("/gratitudes/new")}
-              className="w-full text-sm font-semibold tracking-wide border border-cyan-400 text-cyan-100 rounded-xl py-2.5 hover:bg-cyan-400/10 transition-colors"
+              className="w-full text-sm font-semibold tracking-wide border border-[var(--dash-c6a56b)] text-[var(--dash-e5d3ad)] rounded-xl py-2.5 hover:bg-[var(--dash-c6a56b)]/10 transition-colors"
             >
               Add new gratitude
             </button>
             <button
               type="button"
               onClick={() => navigate("/dashboard")}
-              className="w-full text-sm font-semibold tracking-wide border border-slate-600 text-slate-200 rounded-xl py-2.5 hover:bg-slate-800/80 transition-colors"
+              className="w-full text-sm font-semibold tracking-wide border border-[var(--dash-6f5630)] text-[var(--dash-e5d3ad)] rounded-xl py-2.5 hover:bg-[var(--dash-17120d)]/80 transition-colors"
             >
               Back to home
             </button>

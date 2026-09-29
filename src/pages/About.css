@@ -1,0 +1,7 @@
+.about-links { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; margin-top: 22px; }
+.about-links a { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 10px 16px; border: 1px solid #ffd35c77; border-radius: 999px; color: #ffe393; font-size: 13px; }
+.about-links a:hover { background: #ffd35c15; }
+.about-links a:focus-visible { outline: 2px solid var(--tradition-accent); outline-offset: 4px; }
+.about-links a + a { border-color: var(--tradition-border); color: var(--tradition-accent); }
+.about-page .tradition-intro { max-width: 580px; margin-inline: auto; }
+@media (max-width: 767px) { .about-page .tradition-intro { font-size: 14px; line-height: 1.6; } }

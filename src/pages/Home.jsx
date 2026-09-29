@@ -43,6 +43,9 @@ import GuidedToolModal from "../components/GuidedToolModal.jsx";
 import { getSlogan } from "../utils/getSlogan.js";
 import homeIcon from "../assets/homeicon.png";
 import lanternImg from "../assets/lantern.png";
+import homeIconRanger from "../assets/homeiconranger.png";
+import useHomeTheme from "../hooks/useHomeTheme.js";
+import "./DashboardTheme.css";
 
 const ICONS = {
   queen: ChessQueen,
@@ -53,10 +56,12 @@ import BottomNav from "../components/BottomNav";
 import { AnimatePresence } from "framer-motion";
 import { getTimeUntilMeeting } from "../utils/getTimeUntilMeeting.js";
 
-import { Video, RefreshCcw, Anchor } from "lucide-react";
+import { Video, RefreshCcw, Anchor, Zap } from "lucide-react";
 import shipImg from "../assets/ship.png";
 
 export default function Home() {
+  const [theme] = useHomeTheme();
+  const isRangers = theme === "rangers";
   const navigate = useNavigate();
 
   const [soberDate, setSoberDate] = useState(null);
@@ -452,38 +457,38 @@ useEffect(() => {
   const hasGroup = Boolean(userProfile?.groupCode);
 
   return (
-    <div className="min-h-screen bg-[#0b0c0f] text-[#e5d3ad] flex flex-col">
+    <div data-theme={theme} className="dashboard min-h-screen bg-[var(--dash-0b0c0f)] text-[var(--dash-e5d3ad)] flex flex-col">
       <Header3PM />
 
       {/* Main content */}
       <main className="flex-1">
-        <div className="max-w-md mx-auto px-4 py-6 space-y-6">
+        <div className="dashboard-content max-w-md mx-auto px-4 py-6 space-y-6">
           {/* Hero premium con welcome rotativo */}
 {/* Welcome card / rotating slogan */}
 <section
   className="
     relative overflow-hidden
     rounded-2xl
-    border border-[#8a642f]/45
-    bg-[#080b0d]
+    border border-[var(--dash-8a642f)]/45
+    bg-[var(--dash-080b0d)]
     px-4 py-4
     shadow-[0_12px_35px_rgba(0,0,0,0.55),inset_0_0_30px_rgba(198,165,107,0.06)]
   "
 >
   {/* brass edge glow */}
-  <div className="absolute inset-0 rounded-2xl pointer-events-none border border-[#d6a84f]/20" />
-  <div className="absolute top-0 left-4 right-4 h-px bg-gradient-to-r from-transparent via-[#f0c56e]/60 to-transparent" />
+  <div className="absolute inset-0 rounded-2xl pointer-events-none border border-[var(--dash-d6a84f)]/20" />
+  <div className="absolute top-0 left-4 right-4 h-px bg-gradient-to-r from-transparent via-[var(--dash-f0c56e)]/60 to-transparent" />
 
   {/* lantern — absolute right, peeking out */}
-  <img
+  {!isRangers && <img
     src={lanternImg}
     alt=""
     className="absolute -right-3 top-0 h-full object-contain opacity-90 drop-shadow-[0_0_18px_rgba(198,165,107,0.4)] pointer-events-none"
-  />
+  />}
 
-  <div className="flex items-center gap-3 pr-20">
+  <div className={isRangers ? "relative flex items-center gap-4" : "flex items-center gap-3 pr-20"}>
     <img
-      src={homeIcon}
+      src={isRangers ? homeIconRanger : homeIcon}
       alt=""
       className="h-20 w-20 shrink-0 object-contain drop-shadow-[0_0_14px_rgba(198,165,107,0.45)]"
     />
@@ -496,23 +501,23 @@ useEffect(() => {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -4 }}
           transition={{ duration: 0.5 }}
-          className="text-[11px] leading-snug text-[#c6a56b] italic flex-1"
+          className="text-[11px] leading-snug text-[var(--dash-c6a56b)] italic flex-1"
         >
           {rotatingSlogan}
         </motion.p>
         <button
           type="button"
           onClick={() => setRotatingSlogan(getSlogan({ groupKey: "3PM" }))}
-          className="shrink-0 text-[#6f5630] hover:text-[#c6a56b] transition-colors mt-0.5"
+          className="shrink-0 text-[var(--dash-6f5630)] hover:text-[var(--dash-c6a56b)] transition-colors mt-0.5"
           title="Next slogan"
         >
           <RefreshCcw size={11} />
         </button>
       </div>
 
-      {displayName && showHiLine && (
-        <p className="text-[11px] leading-snug text-[#7f858c]">
-          Ahoy {displayName}. However yesterday went, ye still made it back aboard.
+      {displayName && (isRangers || showHiLine) && (
+        <p className="text-[11px] leading-snug text-[var(--dash-7f858c)]">
+          {isRangers ? `Welcome back, ${displayName}. However yesterday went, you're here today.` : `Ahoy ${displayName}. However yesterday went, ye still made it back aboard.`}
         </p>
       )}
     </div>
@@ -523,36 +528,36 @@ useEffect(() => {
   className="
     relative overflow-hidden
     rounded-2xl
-    border border-[#8a642f]/45
-    bg-[#080b0d]
+    border border-[var(--dash-8a642f)]/45
+    bg-[var(--dash-080b0d)]
     px-5 py-5
     shadow-[0_12px_35px_rgba(0,0,0,0.55),inset_0_0_30px_rgba(198,165,107,0.06)]
   "
 >
   {/* same brass edge glow as hero */}
-  <div className="absolute inset-0 rounded-2xl pointer-events-none border border-[#d6a84f]/20" />
-  <div className="absolute top-0 left-4 right-4 h-px bg-gradient-to-r from-transparent via-[#f0c56e]/60 to-transparent" />
+  <div className="absolute inset-0 rounded-2xl pointer-events-none border border-[var(--dash-d6a84f)]/20" />
+  <div className="absolute top-0 left-4 right-4 h-px bg-gradient-to-r from-transparent via-[var(--dash-f0c56e)]/60 to-transparent" />
 
   {/* ship — absolute left, fading into background */}
-  <img
+  {isRangers ? <Zap className="dashboard-energy" aria-hidden="true" /> : <img
     src={shipImg}
     alt=""
     className="absolute left-0 top-0 h-full w-36 object-cover object-right opacity-30 pointer-events-none"
     style={{ maskImage: "linear-gradient(to right, transparent, black 60%)", WebkitMaskImage: "linear-gradient(to right, transparent, black 60%)" }}
-  />
+  />}
 
   {/* content — offset right to clear ship */}
-  <div className="relative pl-28">
-    <p className="text-[10px] uppercase tracking-[0.28em] text-[#c6a56b] mb-1">
-      Next meeting
+  <div className={isRangers ? "relative pl-14" : "relative pl-28"}>
+    <p className="text-[10px] uppercase tracking-[0.28em] text-[var(--dash-c6a56b)] mb-1">
+      {isRangers ? "Next assembly" : "Next meeting"}
     </p>
 
-    <div className="flex items-end justify-between gap-3">
+    <div className="flex items-end justify-between gap-3 flex-wrap">
       <div>
-        <p className="text-[28px] font-bold leading-none text-[#f3dfb1] tracking-tight">
+        <p className="text-[28px] font-bold leading-none text-[var(--dash-f3dfb1)] tracking-tight">
           {timeUntilMeeting}
         </p>
-        <p className="text-[11px] text-[#6b7078] mt-1">
+        <p className="text-[11px] text-[var(--dash-6b7078)] mt-1">
           NARR Homegroup • Daily
         </p>
       </div>
@@ -561,7 +566,7 @@ useEffect(() => {
         href="https://zoom.us/whatever"
         target="_blank"
         rel="noreferrer"
-        className="shrink-0 inline-flex items-center gap-1.5 rounded-full border border-[#c6a56b]/60 bg-[#15171b] px-3 py-1.5 text-[11px] font-medium text-[#d4b06a] hover:bg-[#c6a56b]/10 hover:border-[#c6a56b]/80 transition-colors"
+        className="shrink-0 inline-flex items-center gap-1.5 rounded-full border border-[var(--dash-c6a56b)]/60 bg-[var(--dash-15171b)] px-3 py-1.5 text-[11px] font-medium text-[var(--dash-d4b06a)] hover:bg-[var(--dash-c6a56b)]/10 hover:border-[var(--dash-c6a56b)]/80 transition-colors"
       >
         <Video size={13} />
         <span>Join Zoom</span>
@@ -574,12 +579,12 @@ useEffect(() => {
     className="relative mt-4 pl-4"
     style={{ fontFamily: "'Caveat', cursive" }}
   >
-    <p className="text-[15px] leading-tight text-[#7eb8c4] rotate-[-0.8deg]">
+    <p className="text-[15px] leading-tight text-[var(--dash-7eb8c4)] rotate-[-0.8deg]">
       We show up.
     </p>
-    <p className="text-[13px] leading-tight text-[#6aa8b4] rotate-[-0.5deg] flex items-center gap-1.5">
+    <p className="text-[13px] leading-tight text-[var(--dash-6aa8b4)] rotate-[-0.5deg] flex items-center gap-1.5">
       We show up. That's the whole toolkit.
-      <Anchor size={11} className="text-[#5a98a4] mb-0.5" />
+      <Anchor size={11} className="text-[var(--dash-5a98a4)] mb-0.5" />
     </p>
   </div>
 </section>
@@ -592,14 +597,14 @@ useEffect(() => {
 <section>
   {hasSoberDate ? (
     <div className="relative">
-      <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-[#c6a56b]/20 via-[#6f5630]/10 to-[#c6a56b]/10 blur-xl opacity-60 pointer-events-none" />
+      <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-[var(--dash-c6a56b)]/20 via-[var(--dash-6f5630)]/10 to-[var(--dash-c6a56b)]/10 blur-xl opacity-60 pointer-events-none" />
 
-      <div className="relative overflow-hidden rounded-3xl border border-[#6f5630]/30 bg-[#0f1012]/90 px-5 py-5 shadow-xl shadow-black/40">
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#c6a56b]/30 to-transparent" />
+      <div className="relative overflow-hidden rounded-3xl border border-[var(--dash-6f5630)]/30 bg-[var(--dash-0f1012)]/90 px-5 py-5 shadow-xl shadow-black/40">
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[var(--dash-c6a56b)]/30 to-transparent" />
 
-        <div className="flex items-center justify-between text-[11px] uppercase tracking-[0.18em] text-[#6b7078] mb-1">
+        <div className="flex items-center justify-between text-[11px] uppercase tracking-[0.18em] text-[var(--dash-6b7078)] mb-1">
           <span>Recovery medallion</span>
-          <span className="text-[10px] px-2 py-0.5 rounded-full bg-[#17120d] border border-[#c6a56b]/40 text-[#c6a56b]">
+          <span className="text-[10px] px-2 py-0.5 rounded-full bg-[var(--dash-17120d)] border border-[var(--dash-c6a56b)]/40 text-[var(--dash-c6a56b)]">
             {daysClean} day{daysClean === 1 ? "" : "s"} in
           </span>
         </div>
@@ -608,14 +613,14 @@ useEffect(() => {
           <RecoveryMedallion days={daysClean} />
 
           <div className="flex flex-col">
-            <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#e5d3ad]">
+            <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--dash-e5d3ad)]">
               {daysClean} days aboard
             </span>
-            <span className="text-[11px] text-[#8d9199] mt-1">
+            <span className="text-[11px] text-[var(--dash-8d9199)] mt-1">
               Still afloat, matey. Yer addiction hates the view.
             </span>
             {cleanDateLabel && (
-              <span className="text-[10px] text-[#4a4f58] mt-1">
+              <span className="text-[10px] text-[var(--dash-4a4f58)] mt-1">
                 Since {cleanDateLabel}. Your old dealer is bored.
               </span>
             )}
@@ -624,9 +629,9 @@ useEffect(() => {
 
         {nextMilestone && (
           <div className="flex justify-end mt-3">
-            <span className="inline-flex items-center rounded-full border border-[#6f5630]/35 bg-[#17120d] px-2.5 py-0.5 text-[10px] text-[#6b7078]">
+            <span className="inline-flex items-center rounded-full border border-[var(--dash-6f5630)]/35 bg-[var(--dash-17120d)] px-2.5 py-0.5 text-[10px] text-[var(--dash-6b7078)]">
               Next milestone: {nextMilestone.label}
-              <span className="ml-1 text-[#4a4f58]">
+              <span className="ml-1 text-[var(--dash-4a4f58)]">
                 ({nextMilestone.days - daysClean} day
                 {nextMilestone.days - daysClean === 1 ? "" : "s"} left)
               </span>
@@ -636,21 +641,21 @@ useEffect(() => {
 
         <Link
           to="/sober-date"
-          className="inline-flex items-center gap-1 text-[10px] text-[#6b7078] hover:text-[#c6a56b] underline underline-offset-2 mt-3 transition-colors"
+          className="inline-flex items-center gap-1 text-[10px] text-[var(--dash-6b7078)] hover:text-[var(--dash-c6a56b)] underline underline-offset-2 mt-3 transition-colors"
         >
           Change date
         </Link>
       </div>
     </div>
   ) : (
-    <div className="rounded-2xl border border-dashed border-[#6f5630]/35 bg-[#0f1012]/70 px-5 py-4 space-y-2">
-      <p className="text-sm text-[#8d9199]">
+    <div className="rounded-2xl border border-dashed border-[var(--dash-6f5630)]/35 bg-[var(--dash-0f1012)]/70 px-5 py-4 space-y-2">
+      <p className="text-sm text-[var(--dash-8d9199)]">
         Set your clean date so we can start counting the days you
         didn't self-destruct on purpose.
       </p>
       <Link
         to="/sober-date"
-        className="inline-flex mt-2 text-xs font-medium text-[#c6a56b] hover:text-[#d4b06a] underline underline-offset-4 transition-colors"
+        className="inline-flex mt-2 text-xs font-medium text-[var(--dash-c6a56b)] hover:text-[var(--dash-d4b06a)] underline underline-offset-4 transition-colors"
       >
         Set clean date
       </Link>
@@ -661,25 +666,25 @@ useEffect(() => {
 
 {/* TODAY'S TOOL — versión premium con micro-animación */}
 <section>
-<div className="relative overflow-hidden rounded-2xl border border-[#6f5630]/25 bg-[#0f1012]/70 px-4 py-4 shadow-lg shadow-black/40">
-    <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#c6a56b]/25 to-transparent" />
-    <div className="pointer-events-none absolute -right-10 -top-14 h-24 w-24 rounded-full bg-[#c6a56b]/8 blur-3xl" />
+<div className="relative overflow-hidden rounded-2xl border border-[var(--dash-6f5630)]/25 bg-[var(--dash-0f1012)]/70 px-4 py-4 shadow-lg shadow-black/40">
+    <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[var(--dash-c6a56b)]/25 to-transparent" />
+    <div className="pointer-events-none absolute -right-10 -top-14 h-24 w-24 rounded-full bg-[var(--dash-c6a56b)]/8 blur-3xl" />
 
     <button
       type="button"
       onClick={() => setIsToolOpen((p) => !p)}
-      className="relative z-10 w-full flex items-center justify-between text-xs uppercase tracking-[0.18em] text-[#6b7078]"
+      className="relative z-10 w-full flex items-center justify-between text-xs uppercase tracking-[0.18em] text-[var(--dash-6b7078)]"
     >
       <div className="flex items-center gap-2">
-        <div className="h-5 w-5 flex items-center justify-center rounded-full bg-[#17120d] border border-[#c6a56b]/40">
-          <Wrench size={11} className="text-[#c6a56b]" />
+        <div className="h-5 w-5 flex items-center justify-center rounded-full bg-[var(--dash-17120d)] border border-[var(--dash-c6a56b)]/40">
+          <Wrench size={11} className="text-[var(--dash-c6a56b)]" />
         </div>
-        <span>Today's tool</span>
+        <span>{isRangers ? "Today's mission" : "Today's tool"}</span>
       </div>
       {isToolOpen ? (
-        <ChevronUp size={14} className="text-[#6b7078]" />
+        <ChevronUp size={14} className="text-[var(--dash-6b7078)]" />
       ) : (
-        <ChevronDown size={14} className="text-[#6b7078]" />
+        <ChevronDown size={14} className="text-[var(--dash-6b7078)]" />
       )}
     </button>
 
@@ -692,21 +697,21 @@ useEffect(() => {
         transition={{ duration: 0.22 }}
         className="relative z-10 space-y-3 pt-3"
       >
-        <p className="text-[11px] text-[#6b7078]">
+        <p className="text-[11px] text-[var(--dash-6b7078)]">
           One tiny action to shift the whole day.
         </p>
 
         {toolLoading ? (
-          <p className="text-[11px] text-[#4a4f58] italic">
+          <p className="text-[11px] text-[var(--dash-4a4f58)] italic">
             Loading today's tool…
           </p>
         ) : toolError ? (
-          <p className="text-[11px] text-[#c97070]">
+          <p className="text-[11px] text-[var(--dash-c97070)]">
             Couldn't load today's tool.
           </p>
         ) : (
           <>
-            <p className={`text-sm leading-snug font-medium ${toolDone ? "text-[#d4b06a]" : "text-[#e5d3ad]"}`}>
+            <p className={`text-sm leading-snug font-medium ${toolDone ? "text-[var(--dash-d4b06a)]" : "text-[var(--dash-e5d3ad)]"}`}>
               {todaysToolTitle}
             </p>
 
@@ -726,14 +731,14 @@ useEffect(() => {
                       initial={{ opacity: 0, scale: 0.6 }}
                       animate={{ opacity: 1, scale: 1 }}
                       exit={{ opacity: 0, scale: 0.6 }}
-                      className="absolute inset-0 rounded-full bg-[#c6a56b]/20 blur-sm"
+                      className="absolute inset-0 rounded-full bg-[var(--dash-c6a56b)]/20 blur-sm"
                     />
                   )}
                 </AnimatePresence>
                 <span className={`relative inline-flex items-center gap-1 rounded-full border px-3 py-1.5 text-[10px] font-medium transition-colors ${
                   toolDone
-                    ? "border-[#c6a56b]/70 bg-[#c6a56b]/10 text-[#e5d3ad]"
-                    : "border-[#6f5630]/40 text-[#8d9199] hover:border-[#c6a56b]/60 hover:text-[#e5d3ad]"
+                    ? "border-[var(--dash-c6a56b)]/70 bg-[var(--dash-c6a56b)]/10 text-[var(--dash-e5d3ad)]"
+                    : "border-[var(--dash-6f5630)]/40 text-[var(--dash-8d9199)] hover:border-[var(--dash-c6a56b)]/60 hover:text-[var(--dash-e5d3ad)]"
                 }`}>
                   <span className="text-[11px]">{toolDone ? "✓" : "○"}</span>
                   <span>{toolDone ? "Done for today" : "I did this"}</span>
@@ -742,8 +747,10 @@ useEffect(() => {
             </div>
 
             {toolDone && toolDoneLine && (
-              <p className="text-[11px] text-[#c6a56b] italic pt-2 border-l border-[#c6a56b]/30 pl-2">
-                {toolDoneLine}
+              <p className="text-[11px] text-[var(--dash-c6a56b)] italic pt-2 border-l border-[var(--dash-c6a56b)]/30 pl-2">
+                {todaysTool?.punchlines?.includes(toolDoneLine)
+                  ? toolDoneLine
+                  : todaysTool?.punchlines?.[0] || toolDoneLine}
               </p>
             )}
 
@@ -752,9 +759,9 @@ useEffect(() => {
                 <button
                   type="button"
                   onClick={() => setIsToolGuideOpen(true)}
-                  className="inline-flex items-center gap-1 text-[10px] text-[#6b7078] underline underline-offset-2 hover:text-[#c6a56b] transition-colors"
+                  className="inline-flex items-center gap-1 text-[10px] text-[var(--dash-6b7078)] underline underline-offset-2 hover:text-[var(--dash-c6a56b)] transition-colors"
                 >
-                  <span className="inline-flex items-center justify-center w-4 h-4 rounded-full border border-[#6f5630]/40 text-[9px]">
+                  <span className="inline-flex items-center justify-center w-4 h-4 rounded-full border border-[var(--dash-6f5630)]/40 text-[9px]">
                     ?
                   </span>
                   <span>How do I do this?</span>
@@ -774,18 +781,18 @@ useEffect(() => {
         {/* JFT – Premium teaser (sin CTA) */}
 {/* JFT – Premium teaser con fecha + link suave */}
 <section className="pt-2">
-  <div className="relative overflow-hidden rounded-2xl border border-[#6f5630]/25 bg-[#0f1012]/70 px-4 py-4 shadow-lg shadow-black/30">
-    <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#c6a56b]/25 to-transparent" />
+  <div className="relative overflow-hidden rounded-2xl border border-[var(--dash-6f5630)]/25 bg-[var(--dash-0f1012)]/70 px-4 py-4 shadow-lg shadow-black/30">
+    <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[var(--dash-c6a56b)]/25 to-transparent" />
 
     <div className="flex items-center justify-between mb-1">
       <div className="flex items-center gap-2">
-        <BookOpen size={14} className="text-[#c6a56b]" />
-        <span className="text-xs uppercase tracking-[0.18em] text-[#6b7078]">
+        <BookOpen size={14} className="text-[var(--dash-c6a56b)]" />
+        <span className="text-xs uppercase tracking-[0.18em] text-[var(--dash-6b7078)]">
           Just for Today
         </span>
       </div>
       {!jftLoading && !jftError && jftEntry && (
-        <span className="text-[10px] px-2 py-0.5 rounded-full bg-[#17120d] border border-[#6f5630]/35 text-[#6b7078]">
+        <span className="text-[10px] px-2 py-0.5 rounded-full bg-[var(--dash-17120d)] border border-[var(--dash-6f5630)]/35 text-[var(--dash-6b7078)]">
           {String(jftEntry.month).padStart(2, "0")}/
           {String(jftEntry.day).padStart(2, "0")}
         </span>
@@ -793,33 +800,33 @@ useEffect(() => {
     </div>
 
     {jftLoading && (
-      <p className="text-[11px] text-[#4a4f58] italic">Loading…</p>
+      <p className="text-[11px] text-[var(--dash-4a4f58)] italic">Loading…</p>
     )}
     {jftError && (
-      <p className="text-[11px] text-[#c97070]">
+      <p className="text-[11px] text-[var(--dash-c97070)]">
         Couldn't load today's meditation.
       </p>
     )}
 
     {!jftLoading && !jftError && jftEntry && (
       <>
-        <p className="text-sm font-medium text-[#e5d3ad] leading-snug line-clamp-1">
+        <p className="text-sm font-medium text-[var(--dash-e5d3ad)] leading-snug line-clamp-1">
           {jftEntry.title}
         </p>
         {Array.isArray(jftEntry.punchlines) && jftEntry.punchlines.length > 0 && (
-          <p className="text-[11px] text-[#c6a56b] italic mt-1 line-clamp-1">
+          <p className="text-[11px] text-[var(--dash-c6a56b)] italic mt-1 line-clamp-1">
             "{jftEntry.punchlines[Math.floor(Math.random() * jftEntry.punchlines.length)]}"
           </p>
         )}
         <div className="pt-2 flex justify-end">
-          <span className="text-[10px] text-[#6b7078] hover:text-[#c6a56b] underline underline-offset-4 transition-colors cursor-pointer">
+          <span className="text-[10px] text-[var(--dash-6b7078)] hover:text-[var(--dash-c6a56b)] underline underline-offset-4 transition-colors cursor-pointer">
             Read more
           </span>
         </div>
       </>
     )}
     {!jftLoading && !jftError && !jftEntry && (
-      <p className="text-[11px] text-[#4a4f58]">No entry for today.</p>
+      <p className="text-[11px] text-[var(--dash-4a4f58)]">No entry for today.</p>
     )}
   </div>
 </section>
@@ -831,15 +838,15 @@ useEffect(() => {
 
             {/* YOUR MILESTONES */}
             {hasSoberDate && (
-              <div className="relative bg-[#0f1012]/70 border border-[#6f5630]/25 rounded-xl px-4 py-3 space-y-2">
-                <div className="absolute top-0 left-0 right-0 h-px rounded-t-xl bg-gradient-to-r from-transparent via-[#c6a56b]/20 to-transparent" />
+              <div className="relative bg-[var(--dash-0f1012)]/70 border border-[var(--dash-6f5630)]/25 rounded-xl px-4 py-3 space-y-2">
+                <div className="absolute top-0 left-0 right-0 h-px rounded-t-xl bg-gradient-to-r from-transparent via-[var(--dash-c6a56b)]/20 to-transparent" />
                 <button
                   type="button"
                   onClick={() => setIsMilestonesOpen((p) => !p)}
-                  className="w-full flex items-center justify-between text-xs uppercase tracking-[0.18em] text-[#6b7078]"
+                  className="w-full flex items-center justify-between text-xs uppercase tracking-[0.18em] text-[var(--dash-6b7078)]"
                 >
                   <div className="flex items-center gap-2">
-                    <Target size={13} className="text-[#c6a56b]" />
+                    <Target size={13} className="text-[var(--dash-c6a56b)]" />
                     <span>Your milestones</span>
                   </div>
                   {isMilestonesOpen ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
@@ -855,12 +862,12 @@ useEffect(() => {
                     className="space-y-2 pt-1"
                   >
                     {reachedMilestones.length === 0 ? (
-                      <p className="text-[11px] text-[#4a4f58]">
+                      <p className="text-[11px] text-[var(--dash-4a4f58)]">
                         Your first milestone is the white chip (24 hours). You're closer than you think.
                       </p>
                     ) : (
                       <>
-                        <ul className="space-y-1 text-sm text-[#e5d3ad]">
+                        <ul className="space-y-1 text-sm text-[var(--dash-e5d3ad)]">
                           {reachedMilestones.map((m) => {
                             const isTodayMilestone = m.days === daysClean;
                             return (
@@ -869,7 +876,7 @@ useEffect(() => {
                                   <MilestoneIcon milestone={m} isToday={isTodayMilestone} />
                                   <span>{m.label}</span>
                                 </span>
-                                <span className="text-[#6b7078]">
+                                <span className="text-[var(--dash-6b7078)]">
                                   {getMilestoneDate(soberDate, m.days)}
                                 </span>
                               </li>
@@ -877,7 +884,7 @@ useEffect(() => {
                           })}
                         </ul>
                         {lastPunch && (
-                          <p className="text-[11px] text-[#c6a56b] italic pt-1">
+                          <p className="text-[11px] text-[var(--dash-c6a56b)] italic pt-1">
                             "{lastPunch}"
                           </p>
                         )}
@@ -885,7 +892,7 @@ useEffect(() => {
                     )}
 
                     {nextMilestone && (
-                      <p className="text-[11px] text-[#4a4f58] pt-1 flex items-center gap-1.5">
+                      <p className="text-[11px] text-[var(--dash-4a4f58)] pt-1 flex items-center gap-1.5">
                         Next: <MilestoneIcon milestone={nextMilestone} />
                         {nextMilestone.label} •{" "}
                         {nextMilestone.days - daysClean} day{nextMilestone.days - daysClean === 1 ? "" : "s"} to go.
@@ -893,7 +900,7 @@ useEffect(() => {
                     )}
 
                     <p className="pt-1">
-                      <Link to="/chips" className="text-[11px] text-[#c6a56b] underline underline-offset-4 hover:text-[#d4b06a] transition-colors">
+                      <Link to="/chips" className="text-[11px] text-[var(--dash-c6a56b)] underline underline-offset-4 hover:text-[var(--dash-d4b06a)] transition-colors">
                         What do the chips mean?
                       </Link>
                     </p>
@@ -904,15 +911,15 @@ useEffect(() => {
 
             {/* GROUP MILESTONES */}
             {groupMilestones.length > 0 && (
-              <div className="relative bg-[#0f1012]/70 border border-[#6f5630]/25 rounded-xl px-4 py-3 space-y-2">
-                <div className="absolute top-0 left-0 right-0 h-px rounded-t-xl bg-gradient-to-r from-transparent via-[#c6a56b]/20 to-transparent" />
+              <div className="relative bg-[var(--dash-0f1012)]/70 border border-[var(--dash-6f5630)]/25 rounded-xl px-4 py-3 space-y-2">
+                <div className="absolute top-0 left-0 right-0 h-px rounded-t-xl bg-gradient-to-r from-transparent via-[var(--dash-c6a56b)]/20 to-transparent" />
                 <button
                   type="button"
                   onClick={() => setIsGroupOpen((p) => !p)}
-                  className="w-full flex items-center justify-between text-xs uppercase tracking-[0.18em] text-[#6b7078]"
+                  className="w-full flex items-center justify-between text-xs uppercase tracking-[0.18em] text-[var(--dash-6b7078)]"
                 >
                   <div className="flex items-center gap-2">
-                    <Users size={13} className="text-[#c6a56b]" />
+                    <Users size={13} className="text-[var(--dash-c6a56b)]" />
                     <span>Group milestones this week</span>
                   </div>
                   {isGroupOpen ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
@@ -920,11 +927,11 @@ useEffect(() => {
 
                 {isGroupOpen && (
                   <div className="space-y-2 pt-1">
-                    <span className="inline-block text-[10px] px-2 py-0.5 rounded-full bg-[#17120d] border border-[#6f5630]/30 text-[#8d9199]">
+                    <span className="inline-block text-[10px] px-2 py-0.5 rounded-full bg-[var(--dash-17120d)] border border-[var(--dash-6f5630)]/30 text-[var(--dash-8d9199)]">
                       your homegroup
                     </span>
 
-                    <ul className="space-y-1 text-sm text-[#e5d3ad] mt-1">
+                    <ul className="space-y-1 text-sm text-[var(--dash-e5d3ad)] mt-1">
                       {groupMilestones.map(({ member, milestone, daysToGo }) => (
                         <li key={member.name + milestone.id} className="flex gap-2">
                           <span className={`text-base mt-[2px] ${daysToGo === 0 ? "icon-shimmer" : ""}`}>
@@ -933,9 +940,9 @@ useEffect(() => {
                           <div className="flex-1">
                             <div className="flex justify-between">
                               <span className="font-medium">{member.name}</span>
-                              <span className="text-[11px] text-[#6b7078]">{milestone.label}</span>
+                              <span className="text-[11px] text-[var(--dash-6b7078)]">{milestone.label}</span>
                             </div>
-                            <p className="text-[11px] text-[#6b7078]">
+                            <p className="text-[11px] text-[var(--dash-6b7078)]">
                               {daysToGo === 0 ? (
                                 <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-500/15 text-emerald-300 border border-emerald-400/60 text-[10px] font-semibold icon-shimmer">
                                   <span>🎉</span><span>today</span>
@@ -952,17 +959,17 @@ useEffect(() => {
                     <button
                       type="button"
                       onClick={() => setShowAllGroup((p) => !p)}
-                      className="mt-3 w-full text-[11px] text-[#6b7078] hover:text-[#c6a56b] underline underline-offset-2 transition-colors"
+                      className="mt-3 w-full text-[11px] text-[var(--dash-6b7078)] hover:text-[var(--dash-c6a56b)] underline underline-offset-2 transition-colors"
                     >
                       {showAllGroup ? "Hide full milestone tracker" : "View all upcoming milestones"}
                     </button>
 
                     {showAllGroup && (
-                      <div className="mt-3 border-t border-[#6f5630]/20 pt-3 space-y-2">
-                        <h4 className="text-[10px] uppercase tracking-[0.18em] text-[#6b7078]">
+                      <div className="mt-3 border-t border-[var(--dash-6f5630)]/20 pt-3 space-y-2">
+                        <h4 className="text-[10px] uppercase tracking-[0.18em] text-[var(--dash-6b7078)]">
                           Everyone's next chip
                         </h4>
-                        <ul className="space-y-1 text-sm text-[#e5d3ad]">
+                        <ul className="space-y-1 text-sm text-[var(--dash-e5d3ad)]">
                           {allNextMilestones.map(({ member, milestone, daysToGo }) => (
                             <li key={"all-" + member.name + milestone.id} className="flex gap-2">
                               <span className={`text-base mt-[2px] ${daysToGo === 0 ? "icon-shimmer" : ""}`}>
@@ -971,9 +978,9 @@ useEffect(() => {
                               <div className="flex-1">
                                 <div className="flex justify-between">
                                   <span className="font-medium">{member.name}</span>
-                                  <span className="text-[11px] text-[#6b7078]">{milestone.label}</span>
+                                  <span className="text-[11px] text-[var(--dash-6b7078)]">{milestone.label}</span>
                                 </div>
-                                <p className="text-[11px] text-[#6b7078]">
+                                <p className="text-[11px] text-[var(--dash-6b7078)]">
                                   {daysToGo === 0 ? (
                                     <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-500/15 text-emerald-300 border border-emerald-400/60 text-[10px] font-semibold icon-shimmer">
                                       <span>🎉</span><span>today</span>
@@ -986,13 +993,13 @@ useEffect(() => {
                             </li>
                           ))}
                         </ul>
-                        <p className="text-[10px] text-[#4a4f58]">
+                        <p className="text-[10px] text-[var(--dash-4a4f58)]">
                           Different milestones. Same urge to bolt. Still showed up at NARR.
                         </p>
                       </div>
                     )}
 
-                    <p className="text-[10px] text-[#4a4f58]">
+                    <p className="text-[10px] text-[var(--dash-4a4f58)]">
                       This isn't a competition. It's proof that people like you are still doing this.
                     </p>
                   </div>
@@ -1001,80 +1008,80 @@ useEffect(() => {
             )}
 
             {/* GRATITUDES */}
-            <div className="relative bg-[#0f1012]/70 border border-[#6f5630]/25 rounded-xl px-4 py-3 space-y-2">
-              <div className="absolute top-0 left-0 right-0 h-px rounded-t-xl bg-gradient-to-r from-transparent via-[#c6a56b]/20 to-transparent" />
+            <div className="relative bg-[var(--dash-0f1012)]/70 border border-[var(--dash-6f5630)]/25 rounded-xl px-4 py-3 space-y-2">
+              <div className="absolute top-0 left-0 right-0 h-px rounded-t-xl bg-gradient-to-r from-transparent via-[var(--dash-c6a56b)]/20 to-transparent" />
               <button
                 type="button"
                 onClick={() => setIsGratsOpen((p) => !p)}
-                className="w-full flex items-center justify-between text-xs uppercase tracking-[0.18em] text-[#6b7078]"
+                className="w-full flex items-center justify-between text-xs uppercase tracking-[0.18em] text-[var(--dash-6b7078)]"
               >
                 <div className="flex items-center gap-2">
-                  <Sparkles size={14} className="text-[#c6a56b]" />
+                  <Sparkles size={14} className="text-[var(--dash-c6a56b)]" />
                   <span>Gratitudes</span>
                 </div>
                 {isGratsOpen ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
               </button>
 
               {isGratsOpen && (
-                <div className="border-t border-[#6f5630]/20 pt-2 space-y-2">
+                <div className="border-t border-[var(--dash-6f5630)]/20 pt-2 space-y-2">
                   {gratitudeStats?.thisWeek > 0 && (
-                    <p className="text-[10px] text-[#4a4f58] mb-1">
+                    <p className="text-[10px] text-[var(--dash-4a4f58)] mb-1">
                       You've added {gratitudeStats.thisWeek} gratitude{gratitudeStats.thisWeek === 1 ? "" : "s"} this week.
                     </p>
                   )}
                   {lastGratitude ? (
-                    <div className="border-l border-[#c6a56b]/30 pl-3">
-                      <p className="text-[11px] text-[#6b7078] mb-1">Your latest gratitude:</p>
-                      <p className="text-sm text-[#e5d3ad] leading-snug">"{lastGratitude}"</p>
+                    <div className="border-l border-[var(--dash-c6a56b)]/30 pl-3">
+                      <p className="text-[11px] text-[var(--dash-6b7078)] mb-1">Your latest gratitude:</p>
+                      <p className="text-sm text-[var(--dash-e5d3ad)] leading-snug">"{lastGratitude}"</p>
                     </div>
                   ) : (
-                    <p className="text-sm text-[#8d9199]">
+                    <p className="text-sm text-[var(--dash-8d9199)]">
                       Start with one sentence. It doesn't have to be deep, just honest.
                     </p>
                   )}
                   <div className="flex gap-2 pt-1">
-                    <span className="flex-1 text-[11px] text-center border border-[#c6a56b]/60 text-[#e5d3ad] rounded-lg py-1.5 hover:bg-[#c6a56b]/10 transition-colors cursor-pointer">
+                    <Link to="/gratitudes/new" className="flex-1 text-[11px] text-center border border-[var(--dash-c6a56b)]/60 text-[var(--dash-e5d3ad)] rounded-lg py-1.5 hover:bg-[var(--dash-c6a56b)]/10 transition-colors cursor-pointer">
                       Add gratitude
-                    </span>
-                    <span className="flex-1 text-[11px] text-center border border-[#6f5630]/30 text-[#8d9199] rounded-lg py-1.5 hover:bg-[#17120d] hover:text-[#e5d3ad] transition-colors cursor-pointer">
+                    </Link>
+                    <Link to="/gratitudes" className="flex-1 text-[11px] text-center border border-[var(--dash-6f5630)]/30 text-[var(--dash-8d9199)] rounded-lg py-1.5 hover:bg-[var(--dash-17120d)] hover:text-[var(--dash-e5d3ad)] transition-colors cursor-pointer">
                       View all
-                    </span>
+                    </Link>
                   </div>
                 </div>
               )}
             </div>
 
             {/* MY WHY */}
-            <div className="relative bg-[#0f1012]/70 border border-[#6f5630]/25 rounded-xl px-4 py-3 space-y-2">
-              <div className="absolute top-0 left-0 right-0 h-px rounded-t-xl bg-gradient-to-r from-transparent via-[#c6a56b]/20 to-transparent" />
+            <div className="relative bg-[var(--dash-0f1012)]/70 border border-[var(--dash-6f5630)]/25 rounded-xl px-4 py-3 space-y-2">
+              <div className="absolute top-0 left-0 right-0 h-px rounded-t-xl bg-gradient-to-r from-transparent via-[var(--dash-c6a56b)]/20 to-transparent" />
               <button
                 type="button"
                 onClick={() => setIsWhyOpen((p) => !p)}
-                className="w-full flex items-center justify-between text-xs uppercase tracking-[0.18em] text-[#6b7078]"
+                className="w-full flex items-center justify-between text-xs uppercase tracking-[0.18em] text-[var(--dash-6b7078)]"
               >
                 <div className="flex items-center gap-2">
-                  <Flame size={14} className="text-[#c6a56b]" />
+                  <Flame size={14} className="text-[var(--dash-c6a56b)]" />
                   <span>My why</span>
                 </div>
                 {isWhyOpen ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
               </button>
 
               {isWhyOpen && (
-                <div className="border-t border-[#6f5630]/20 pt-2 space-y-2">
-                  <div className="border-l border-[#c6a56b]/30 pl-3">
+                <div className="border-t border-[var(--dash-6f5630)]/20 pt-2 space-y-2">
+                  <div className="border-l border-[var(--dash-c6a56b)]/30 pl-3">
                     {savedWhy ? (
                       <>
-                        <p className="text-[11px] text-[#6b7078] mb-1">The sentence you don't want to forget:</p>
-                        <p className="text-sm text-[#e5d3ad] italic leading-snug">"{savedWhy}"</p>
+                        <p className="text-[11px] text-[var(--dash-6b7078)] mb-1">The sentence you don't want to forget:</p>
+                        <p className="text-sm text-[var(--dash-e5d3ad)] italic leading-snug">"{savedWhy}"</p>
                       </>
                     ) : (
-                      <p className="text-sm text-[#8d9199]">
+                      <p className="text-sm text-[var(--dash-8d9199)]">
                         Save one line future you can read when everything in your head says "use".
                       </p>
                     )}
                   </div>
                   <div className="flex justify-end pt-1">
-                    <span className="text-[11px] text-[#c6a56b] underline underline-offset-4 hover:text-[#d4b06a] transition-colors cursor-pointer">
+                    <span className="text-[11px] text-[var(--dash-c6a56b)] underline underline-offset-4 hover:text-[var(--dash-d4b06a)] transition-colors cursor-pointer">
                       {savedWhy ? "Change my why" : "Write my why"}
                     </span>
                   </div>
@@ -1083,15 +1090,15 @@ useEffect(() => {
             </div>
 
             {/* OLDCOMERS */}
-            <div className="relative bg-[#0f1012]/70 border border-[#6f5630]/25 rounded-xl px-4 py-3 space-y-2">
-              <div className="absolute top-0 left-0 right-0 h-px rounded-t-xl bg-gradient-to-r from-transparent via-[#c6a56b]/20 to-transparent" />
+            <div className="relative bg-[var(--dash-0f1012)]/70 border border-[var(--dash-6f5630)]/25 rounded-xl px-4 py-3 space-y-2">
+              <div className="absolute top-0 left-0 right-0 h-px rounded-t-xl bg-gradient-to-r from-transparent via-[var(--dash-c6a56b)]/20 to-transparent" />
               <button
                 type="button"
                 onClick={() => setIsOldOpen((p) => !p)}
-                className="w-full flex items-center justify-between text-xs uppercase tracking-[0.18em] text-[#6b7078]"
+                className="w-full flex items-center justify-between text-xs uppercase tracking-[0.18em] text-[var(--dash-6b7078)]"
               >
                 <div className="flex items-center gap-2">
-                  <Award size={13} className="text-[#d4b06a]" />
+                  <Award size={13} className="text-[var(--dash-d4b06a)]" />
                   <span>The Oldcomers</span>
                 </div>
                 {isOldOpen ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
@@ -1099,26 +1106,26 @@ useEffect(() => {
 
               {isOldOpen && (
                 <>
-                  <ul className="space-y-2 text-sm text-[#e5d3ad] pt-1">
+                  <ul className="space-y-2 text-sm text-[var(--dash-e5d3ad)] pt-1">
                     {OLDCOMERS.map((person) => {
                       const Icon = ICONS[person.icon] || Medal;
                       return (
                         <li
                           key={person.name}
-                          className="flex items-center justify-between bg-[#0b0c0f] border border-[#6f5630]/20 rounded-lg px-3 py-2"
+                          className="flex items-center justify-between bg-[var(--dash-0b0c0f)] border border-[var(--dash-6f5630)]/20 rounded-lg px-3 py-2"
                         >
                           <div className="flex items-center gap-2">
-                            {Icon && <Icon size={16} className="text-[#c6a56b] icon-shimmer" />}
+                            {Icon && <Icon size={16} className="text-[var(--dash-c6a56b)] icon-shimmer" />}
                             <span>{person.name}</span>
                           </div>
-                          <span className="text-[11px] text-[#6b7078]">
+                          <span className="text-[11px] text-[var(--dash-6b7078)]">
                             {getCleanTime(person.soberDate)}
                           </span>
                         </li>
                       );
                     })}
                   </ul>
-                  <p className="text-[10px] text-[#4a4f58] pt-1">
+                  <p className="text-[10px] text-[var(--dash-4a4f58)] pt-1">
                     They kept coming. That's all anyone ever did.
                   </p>
                 </>
@@ -1136,7 +1143,7 @@ useEffect(() => {
           {/* Boss access (super stealth) */}
           <Link
             to="/boss"
-            className="text-[10px] text-[#1e2025] hover:text-[#6f5630] underline underline-offset-2 block text-right transition-colors"
+            className="text-[10px] text-[var(--dash-1e2025)] hover:text-[var(--dash-6f5630)] underline underline-offset-2 block text-right transition-colors"
           >
             system / root / backdoor / control panel
           </Link>
