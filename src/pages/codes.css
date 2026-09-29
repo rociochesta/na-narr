@@ -1,0 +1,37 @@
+.codes-page .codes-panel {
+  border: 1px solid rgb(138 100 47 / 45%);
+  border-radius: 1rem;
+  background: #080b0d;
+  box-shadow: 0 12px 35px rgb(0 0 0 / 35%), inset 0 0 30px rgb(198 165 107 / 6%);
+}
+.codes-page .codes-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 0.8rem;
+  border: 1px solid rgb(198 165 107 / 45%);
+  border-radius: 0.6rem;
+  background: #17120d;
+  color: #e5d3ad;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: background 150ms, border-color 150ms;
+}
+.codes-page button:hover { background: #292014; border-color: #c6a56b; }
+.codes-page button:focus-visible,
+.codes-page input:focus-visible { outline: 2px solid #f4d48a; outline-offset: 3px; }
+.codes-page .codes-past { opacity: 0.65; }
+@media print {
+  .codes-page { background: white !important; color: black !important; }
+  .codes-page .codes-screen-only, .codes-page .codes-lantern { display: none !important; }
+  .codes-page .codes-sheet { max-width: 700px; padding: 0; }
+  .codes-page .codes-panel, .codes-page .codes-day {
+    background: white !important;
+    border-color: #aaa !important;
+    box-shadow: none;
+    opacity: 1;
+    break-inside: avoid;
+  }
+  .codes-page .codes-sheet * { color: black !important; }
+  .codes-page .codes-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}

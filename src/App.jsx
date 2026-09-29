@@ -3,6 +3,7 @@ import React from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 import Home from "./pages/Home.jsx";
+import Codes from "./pages/codes.jsx";
 import PublicHome from "./pages/PublicHome.jsx";
 import SeventhTradition from "./pages/SeventhTradition.jsx";
 import MeetingVerification from "./pages/MeetingVerification.jsx";
@@ -52,6 +53,7 @@ export default function App() {
         <Route path="/seventh-tradition" element={<SeventhTradition />} />
         <Route path="/meeting-verification" element={<MeetingVerification />} />
         <Route path="/about" element={<About />} />
+        <Route path="/codes" element={<Codes />} />
 
         {/* Root: always the public home */}
         <Route path="/" element={<PublicHome />} />
