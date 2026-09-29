@@ -3,8 +3,7 @@ import React, { useState } from "react";
 import { Anchor, ShieldCheck } from "lucide-react";
 import PublicHeader from "../components/PublicHeader.jsx";
 import homeIcon from "../assets/homeicon.png";
-import lanternImg from "../assets/lantern.png";
-import shipImg from "../assets/ship.png";
+import shipLog from "../assets/shiplogo.png";
 
 const WORDS = ["NARR", "RANG", "RECOV", "HOPE", "UNITY", "CLEAN", "BRAVE", "RISE", "LIGHT", "PATH"];
 const EMAILJS_URL = "https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js";
@@ -87,7 +86,6 @@ export default function MeetingVerification() {
         <section className="relative overflow-hidden rounded-2xl border border-[#8a642f]/45 bg-[#080b0d] px-4 py-5 shadow-[0_12px_35px_rgba(0,0,0,0.55),inset_0_0_30px_rgba(198,165,107,0.06)]">
           <div className="absolute inset-0 rounded-2xl border border-[#d6a84f]/20 pointer-events-none" />
           <div className="absolute top-0 left-4 right-4 h-px bg-gradient-to-r from-transparent via-[#f0c56e]/60 to-transparent" />
-          <img src={lanternImg} alt="" className="absolute -right-3 top-0 h-full object-contain opacity-80 drop-shadow-[0_0_18px_rgba(198,165,107,0.4)] pointer-events-none" />
           <div className="relative flex items-center gap-3 pr-16">
             <img src={homeIcon} alt="" className="h-20 w-20 shrink-0 object-contain drop-shadow-[0_0_14px_rgba(198,165,107,0.45)]" />
             <div>
@@ -100,10 +98,10 @@ export default function MeetingVerification() {
         <section className="relative overflow-hidden rounded-2xl border border-[#8a642f]/45 bg-[#080b0d] px-5 py-5 shadow-[0_12px_35px_rgba(0,0,0,0.55),inset_0_0_30px_rgba(198,165,107,0.06)]">
           <div className="absolute inset-0 rounded-2xl border border-[#d6a84f]/20 pointer-events-none" />
           <div className="absolute top-0 left-4 right-4 h-px bg-gradient-to-r from-transparent via-[#f0c56e]/60 to-transparent" />
-          <img src={shipImg} alt="" className="absolute -right-6 top-0 h-32 w-40 object-cover opacity-20 pointer-events-none" />
+          <img src={shipLog} alt="" className="absolute -right-6 top-0 h-32 w-40 object-cover opacity-20 pointer-events-none" />
           <div className="relative">
             <div className="flex items-center gap-2 text-[#d4b06a]"><ShieldCheck size={17} /><h2 className="text-sm font-semibold">Log your attendance</h2></div>
-            <p className="mt-2 mb-5 text-xs leading-relaxed text-[#8d9199]">Enter the code your meeting organizer shared for the date you attended. We’ll email your confirmation.</p>
+            <p className="mt-2 mb-5 text-xs leading-relaxed text-[#8d9199]">Enter the code your meeting host shared for the date you attended. We’ll email your confirmation.</p>
             <form onSubmit={handleSubmit} noValidate className="space-y-4">
               <div><label className={labelClass} htmlFor="verification-name">Your name</label><input className={inputClass} id="verification-name" value={name} onChange={(e) => setName(e.target.value)} placeholder="First name" autoComplete="name" required /></div>
               <div><label className={labelClass} htmlFor="verification-email">Email address</label><input className={inputClass} id="verification-email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="you@example.com" autoComplete="email" required /></div>
