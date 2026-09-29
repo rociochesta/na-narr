@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight, Copy, LockKeyhole, Printer } from "lucide-react";
 import Header3PM from "../components/Header3PM.jsx";
 import homeIcon from "../assets/homeicon.png";
