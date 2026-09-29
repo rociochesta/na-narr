@@ -1,178 +1,68 @@
-// src/pages/ToolQuestionPage.jsx
-import React, { useMemo, useState, useEffect } from "react";
-import { useNavigate, useParams } from "react-router-dom";
-import Header3PM from "../components/Header3PM.jsx";
-import BottomNav from "../components/BottomNav.jsx";
-
-const QUESTIONS = [
-  {
-    step: 1,
-    key: "thought",
-    label: "What thought is bothering you right now?",
-    hint: "Write it as a sentence.",
-    subtext: "This is the line your brain keeps replaying. Put it on the table.",
-    placeholder: "“I’m going to screw this up.”",
-  },
-  {
-    step: 2,
-    key: "for",
-    label: "What facts support this thought?",
-    hint: "Only things you could prove to someone else.",
-    subtext: "Not vibes. Not fears. Actual receipts.",
-    placeholder: "“She said X.” “I missed the deadline.”",
-  },
-  {
-    step: 3,
-    key: "against",
-    label: "What facts do NOT support this thought?",
-    hint: "Evidence that goes against it.",
-    subtext: "Yes, this part is annoying. Do it anyway.",
-    placeholder: "“They also said Y.” “No one confirmed the fear.”",
-  },
-  {
-    step: 4,
-    key: "likely",
-    label: "What is the most likely outcome?",
-    hint: "Not the worst-case. Not the best-case. The realistic one.",
-    subtext: "If this were a boring Tuesday, how would it probably end?",
-    placeholder: "“Uncomfortable conversation. Then life continues.”",
-  },
-];
-
-function getStorageKey(sectionId, toolSlug) {
-  return `na_toolrun_${sectionId}_${toolSlug}`;
-}
-
-function readDraft(sectionId, toolSlug) {
-  try {
-    const raw = localStorage.getItem(getStorageKey(sectionId, toolSlug));
-    return raw ? JSON.parse(raw) : {};
-  } catch {
-    return {};
-  }
-}
-
-function writeDraft(sectionId, toolSlug, patch) {
-  try {
-    const current = readDraft(sectionId, toolSlug);
-    localStorage.setItem(
-      getStorageKey(sectionId, toolSlug),
-      JSON.stringify({
-        ...current,
-        ...patch,
-        updatedAt: new Date().toISOString(),
-      })
-    );
-  } catch {}
-}
+import React, { useEffect, useState } from 'react';
+import { Navigate, useNavigate, useParams } from 'react-router-dom';
+import useToolExercise from '../hooks/useToolExercise.js';
+import ToolExerciseLayout from '../components/ToolExerciseLayout.jsx';
 
 export default function ToolQuestionPage() {
   const { sectionId, toolSlug, step } = useParams();
-  const navigate = useNavigate();
-
-  const stepNum = Number(step || 1);
-
-  const q = useMemo(
-    () => QUESTIONS.find((x) => x.step === stepNum) || QUESTIONS[0],
-    [stepNum]
-  );
-
-  const [value, setValue] = useState("");
-
-useEffect(() => {
-  if (!sectionId || !toolSlug) return;
-  const draft = readDraft(sectionId, toolSlug);
-  setValue(typeof draft[q.key] === "string" ? draft[q.key] : "");
-}, [sectionId, toolSlug, q.key]);
-
-useEffect(() => {
-  if (!sectionId || !toolSlug) return;
-  writeDraft(sectionId, toolSlug, { [q.key]: value });
-}, [sectionId, toolSlug, q.key, value]);
-
-
-  function goBack() {
-    if (stepNum <= 1) {
-      navigate(`/tools/${sectionId}/${toolSlug}`);
-    } else {
-      navigate(`/tools/${sectionId}/${toolSlug}/${stepNum - 1}`);
-    }
-  }
-
-function goNext() {
-  if (stepNum >= 4) {
-    navigate(`/tools/${sectionId}/${toolSlug}`, { state: { fromFinish: true } });
-  } else {
-    navigate(`/tools/${sectionId}/${toolSlug}/${stepNum + 1}`);
-  }
+  const { steps, loading, error } = useToolExercise(sectionId, toolSlug);
+  const index = Number(step) - 1;
+  if (loading || error) return <ToolExerciseLayout><p role={error ? 'alert' : undefined}>{error || 'Loading step…'}</p></ToolExerciseLayout>;
+  if (!/^\d+$/.test(step || '') || !Number.isSafeInteger(index) || !steps[index]) return <Navigate to={`/tools/${sectionId}/${toolSlug}`} replace />;
+  return <ExerciseStep key={`${sectionId}/${toolSlug}/${steps[index].id}`} q={steps[index]} index={index} total={steps.length} sectionId={sectionId} toolSlug={toolSlug} />;
 }
 
-
- const canContinue = value.trim().length > 0;
-
-
-  return (
-    <div className="min-h-screen bg-slate-950 text-slate-50 flex flex-col pb-16">
-      <Header3PM showMenu />
-
-      <main className="flex-1">
-        <div className="max-w-md mx-auto px-4 py-6 space-y-6">
-          <button
-            onClick={goBack}
-            className="text-[11px] text-slate-400 underline hover:text-cyan-300"
-          >
-            ← Back
-          </button>
-
-          <p className="text-[10px] uppercase tracking-[0.16em] text-slate-500">
-            Question {q.step} of 4
-          </p>
-
-          <div className="space-y-2">
-            <h1 className="text-lg font-semibold">{q.label}</h1>
-            <p className="text-[12px] text-slate-400">{q.hint}</p>
-            <p className="text-sm text-slate-400">{q.subtext}</p>
-          </div>
-
-          <textarea
-            rows={4}
-            value={value}
-            onChange={(e) => setValue(e.target.value)}
-            placeholder={q.placeholder}
-            className="w-full rounded-xl bg-slate-900 border border-slate-800 px-3 py-2 text-sm focus:outline-none focus:border-cyan-400/60"
-          />
-<button
-  type="button"
-  onClick={() => setValue("I don’t know.")}
-  className="text-[11px] text-slate-500 underline hover:text-slate-300"
->
-  I don’t know
-</button>
-
-          <div className="flex gap-2">
-            <button
-              onClick={goBack}
-              className="flex-1 rounded-xl border border-slate-800 py-3 text-sm"
-            >
-              Back
-            </button>
-
-            <button
-              disabled={!canContinue}
-              onClick={goNext}
-              className={`flex-1 rounded-xl py-3 text-sm font-medium ${
-                !canContinue
-                  ? "bg-slate-800 text-slate-500"
-                  : "bg-cyan-500 text-slate-900 hover:bg-cyan-400"
-              }`}
-            >
-              {q.step === 4 ? "Finish" : "Continue"}
-            </button>
-          </div>
-        </div>
-      </main>
-
-      <BottomNav />
+function ExerciseStep({ q, index, total, sectionId, toolSlug }) {
+  const navigate = useNavigate();
+  const base = `/tools/${sectionId}/${toolSlug}`;
+  const storageKey = `na_toolrun_${sectionId}_${toolSlug}`;
+  const [value, setValue] = useState(() => {
+    try { const draft = JSON.parse(localStorage.getItem(storageKey) || '{}'); return typeof draft?.[q.key] === 'string' ? draft[q.key] : ''; } catch { return ''; }
+  });
+  const [remaining, setRemaining] = useState(q.durationSeconds || 0);
+  const [running, setRunning] = useState(false);
+  const [saveError, setSaveError] = useState('');
+  useEffect(() => {
+    if (!running || remaining <= 0) return;
+    const timer = setTimeout(() => setRemaining(n => Math.max(0, n - 1)), 1000);
+    return () => clearTimeout(timer);
+  }, [running, remaining]);
+  function update(next) {
+    setValue(next);
+    try {
+      const raw = JSON.parse(localStorage.getItem(storageKey) || '{}');
+      const draft = raw && typeof raw === 'object' && !Array.isArray(raw) ? raw : {};
+      localStorage.setItem(storageKey, JSON.stringify({ ...draft, [q.key]: next, updatedAt: new Date().toISOString() }));
+      setSaveError('');
+    } catch { setSaveError('Your answer could not be saved on this device.'); }
+  }
+  const supported = ['question', 'instruction', 'timer'].includes(q.type);
+  const canContinue = supported && (!q.required || (q.type === 'question' ? value.trim().length > 0 : q.type === 'timer' ? remaining === 0 : true));
+  function next() {
+    if (!canContinue) return;
+    if (index + 1 === total) navigate(base, { state: { completedTool: `${sectionId}/${toolSlug}` } });
+    else navigate(`${base}/${index + 2}`);
+  }
+  return <ToolExerciseLayout>
+    <p className="text-xs uppercase tracking-widest">Step {index + 1} of {total}</p>
+    <section className="border rounded-2xl p-4 space-y-4">
+      <h1 id="step-title" className="text-lg font-semibold">{q.title}</h1>
+      {q.hint && <p className="text-sm">{q.hint}</p>}
+      {q.body && <p className="whitespace-pre-wrap">{q.body}</p>}
+      {q.type === 'question' && <>
+        <textarea aria-labelledby="step-title" rows={4} value={value} onChange={e => update(e.target.value)} placeholder={q.placeholder || ''} className="w-full rounded-xl border border-[var(--dash-6f5630)] bg-[var(--dash-0b0c0f)] p-3" />
+        <button onClick={() => update('I don’t know.')} className="text-xs underline">I don’t know</button>
+      </>}
+      {q.type === 'timer' && <div className="space-y-2">
+        <p role="timer" className="text-3xl">{remaining}s</p>
+        <button disabled={!remaining} onClick={() => setRunning(v => !v)} className="border rounded-xl p-2">{remaining === 0 ? 'Done' : running ? 'Pause' : 'Start timer'}</button>
+      </div>}
+      {!supported && <p role="alert">This step type is not supported yet.</p>}
+      {saveError && <p role="alert">{saveError}</p>}
+    </section>
+    <div className="flex gap-3">
+      <button onClick={() => navigate(index === 0 ? base : `${base}/${index}`)} className="flex-1 border rounded-xl p-3">Back</button>
+      <button disabled={!canContinue} onClick={next} className="flex-1 border rounded-xl p-3 disabled:opacity-40 text-[var(--dash-c6a56b)]">{index + 1 === total ? 'Finish' : 'Continue'}</button>
     </div>
-  );
+  </ToolExerciseLayout>;
 }
